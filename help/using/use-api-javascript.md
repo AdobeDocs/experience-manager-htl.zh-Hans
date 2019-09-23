@@ -1,35 +1,35 @@
 ---
-title: HTL JavaScript使用API
-seo-title: HTL JavaScript使用API
-description: HTML模板语言- HTL- JAR JavaScript使用API允许HTL文件使用JavaScript编写的辅助代码。
-seo-description: HTML模板语言- HTL- JAR JavaScript使用API允许HTL文件使用JavaScript编写的辅助代码。
+title: HTL javaScript Use-API
+seo-title: HTL javaScript Use-API
+description: HTML模板语言- HTL - javaScript Use-API使HTL文件能够访问使用JavaScript编写的辅助代码。
+seo-description: HTML模板语言- HTL - javaScript Use-API使HTL文件能够访问使用JavaScript编写的辅助代码。
 uuid: 7ab34b10-30ac-44d6-926b-0234f52e5541
 contentOwner: 用户
-products: SG_ EXPERIENCE MANAGER/HTL
+products: SG_EXPERIENCEMANAGER/HTL
 topic-tags: html-template-language
 content-type: 引用
-discoiquuid: 18871af8-e44 b-4eec-a483-cfci765 af58 f
-mwpw-migration-script-version: 2017-10-12T214658.665-0400
+discoiquuid: 18871af8-e44b-4eec-a483-fcc765dae58f
+mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
 translation-type: tm+mt
-source-git-commit: 271c355ae56e16e309853b02b8ef09f2ff971a2e
+source-git-commit: bd1962e25d152be4f1608d0a83d8d5b3e728b4aa
 
 ---
 
 
-# HTL JavaScript使用API {#htl-javascript-use-api}
+# HTL javaScript Use-API {#htl-javascript-use-api}
 
-HTML模板语言(HTL) JavaScript使用API允许HTL文件使用JavaScript编写的辅助代码。这使所有复杂的业务逻辑都封装在JavaScript代码中，而HTL代码只能进行直接标记制作。
+HTML模板语言(HTL)JavaScript Use-API使HTL文件能够访问使用JavaScript编写的辅助代码。 这允许将所有复杂的业务逻辑封装在JavaScript代码中，而HTL代码只处理直接标记制作。
 
 ## 简单示例 {#a-simple-example}
 
-我们定义一个组件， `info`位于
+我们定义一个组 `info`件，位于
 
 **`/apps/my-example/components/info`**
 
 它包含两个文件：
 
-* **`info.js`**：用于定义use-class的JavaScript文件。
-* `info.html`：定义组件 `info`的HTL文件。此代码将使用 `info.js` 使用API的功能。
+* **`info.js`**:定义use类的JavaScript文件。
+* `info.html`:定义组件的HTL文件 `info`。 This code will use the functionality of `info.js` through the use-API.
 
 ### /apps/my-example/component/info/info.js {#apps-my-example-component-info-info-js}
 
@@ -52,9 +52,9 @@ use(function () {
 </div>
 ```
 
-我们还会在以下位置创建使用该 **`info`** 组件的内容节点：
+我们还会在以下位置创建一个内容节 **`info`** 点：
 
-**`/content/my-example`**具有属性：
+**`/content/my-example`**, with properties:
 
 * `sling:resourceType = "my-example/component/info"`
 * `title = "My Example"`
@@ -99,7 +99,7 @@ use(function () {
 </section>
 ```
 
-相应的逻辑可以使用以下 ***服务器端*** JavaScript编写，位于紧靠模板旁边 `component.js` 的文件中：
+相应的逻辑可以使用以下服务器端 ***JavaScript编写*** ，它位于模板旁 `component.js` 的文件中：
 
 ```
 use(function () {
@@ -118,11 +118,11 @@ use(function () {
 });
 ```
 
-这会尝试来自 `title` 不同来源，并将描述裁切为50个字符。
+这会尝试从不同 `title` 的来源获取描述，并将描述裁切为50个字符。
 
 ## 依赖关系 {#dependencies}
 
-假设我们有一个已经配备智能功能的实用程序类，如导航标题的默认逻辑或将字符串精确剪辑到某个长度：
+让我们想象一下，我们有一个实用程序类，它已经装备了智能功能，如导航标题的默认逻辑或将字符串精心剪切到某个长度：
 
 ```
 use(['../utils/MyUtils.js'], function (utils) {
@@ -143,9 +143,9 @@ use(['../utils/MyUtils.js'], function (utils) {
 
 ## 扩展 {#extending}
 
-依赖关系模式还可用于扩展其他组件的逻辑(通常是当前组件的一 `sling:resourceSuperType` 部分)。
+依赖关系模式还可用于扩展另一个组件的逻辑(通常是当 `sling:resourceSuperType` 前组件的逻辑)。
 
-想象一下，父组件已经提供了该 `title`组件，我们也希望添加 **`description`** 一个：
+请想象一下，父组件已 `title`经提供，并且我们也要添 **`description`** 加：
 
 ```
 use(['../parent-component/parent-component.js'], function (component) {
@@ -160,17 +160,17 @@ use(['../parent-component/parent-component.js'], function (component) {
 });
 ```
 
-## 将参数传递给模板 {#passing-parameters-to-a-template}
+## 将参数传递到模板 {#passing-parameters-to-a-template}
 
-**`data-sly-template`** 对于可以与组件无关的语句，将参数传递给关联的Use-API很有用。
+如果语句可 **`data-sly-template`** 以与组件无关，则将参数传递到关联的Use-API可能很有用。
 
-因此，在我们的组件中，我们可以调用位于不同文件中的模板：
+因此，在我们的组件中，让我们调用一个位于其他文件中的模板：
 
 ```xml
 <section class="component-name" data-sly-use.tmpl="template.html" data-sly-call="${tmpl.templateName @ page=currentPage}"></section>
 ```
 
-然后，该模板 `template.html`位于以下位置：
+这是位于以下位置的模板 `template.html`:
 
 ```xml
 <template data-sly-template.templateName="${@ page}" data-sly-use.tmpl="${'template.js' @ page=page, descriptionLength=50}">
@@ -179,7 +179,7 @@ use(['../parent-component/parent-component.js'], function (component) {
 </template>
 ```
 
-相应的逻辑可以使用以下 ***服务器端*** JavaScript编写，位于紧靠模板文件旁边的 `template.js` 文件中：
+相应的逻辑可以使用以下服务器端 ***JavaScript编写*** ，它位于模板文件 `template.js` 旁边的文件中：
 
 ```
 use(function () {
@@ -197,4 +197,4 @@ use(function () {
 });
 ```
 
-传递的参数在 `this` 关键字上设置。
+传递的参数在关键字上设 `this` 置。
