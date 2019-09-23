@@ -1,10 +1,10 @@
 ---
 title: HTL TCK
 seo-title: HTL TCK
-description: HTL是AEM的官方服务器端模板系统
-seo-description: HTL是AEM的官方服务器端模板系统，TCK提供了一套测试，用于HTL实施的认证。
-uuid: cffe68f3-d26 a-4c1 f-a41 b-a35 f84288 b7
-discoiquuid: af8b9d6-d776-4b49 be12-6492e0016096
+description: HTL是AEM的正式服务器端模板系统
+seo-description: HTL是AEM的正式服务器端模板系统，TCK为HTL实施的认证提供一套测试。
+uuid: cdfe68f3-d26a-4c1f-a41b-a35f849288b7
+discoiquuid: 5af8b9d6-d776-4b49-be12-6492e0016096
 translation-type: tm+mt
 source-git-commit: 32eaffd24a2734036467a6231b8a1f1bd1659338
 
@@ -15,10 +15,10 @@ source-git-commit: 32eaffd24a2734036467a6231b8a1f1bd1659338
 
 ## 什么是HTL TCK
 
-[HTML模板语言(](https://docs.adobe.com/docs/en/htl.html "HTL)(以前称为Sightly)是随")[Adobe Experience Manager](http://www.adobe.com/solutions/web-experience-management.html) 6.0引入的，它将JSP(JavaServer页面)作为首选和建议的HTML端模板系统，作为HTML的首选服务器端模板系统。
+[HTML模板语](https://docs.adobe.com/docs/en/htl.html "言HTML模板语言(HTL)简介（以前称为Sightly）随") Adobe Experience Manager [](http://www.adobe.com/solutions/web-experience-management.html) 6.0引入，取代JSP(JavaServer Pages)作为首选和推荐的HTML服务器端模板系统。
 
-HTML模板语言技术兼容性套件- HTL TCK提供一套测试，旨在证明HTL实施符合官方 [语言规范](https://github.com/adobe/htl-spec)。
+HTML模板语言技术兼容性工具包- HTL TCK-提供一套测试，用于证明HTL实施符合官方语 [言规范](https://github.com/adobe/htl-spec)。
 
 ## 更多信息
 
-[可在此处获得Adobe Experience Manager HTL TCK的完整信息](https://github.com/adobe/htl-tck)
+[有关Adobe Experience Manager HTL TCK的完整信息，请访问](https://github.com/adobe/htl-tck)
