@@ -10,8 +10,9 @@ topic-tags: 简介
 content-type: 引用
 discoiquuid: 8f779e08-94c7-43bc-a6e5-d81a9f818c5c
 mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
+skyline: 测试复制
 translation-type: tm+mt
-source-git-commit: 1d4565a4cffa6e5d42d6a5242f7ce62203dc7c63
+source-git-commit: 0aa1e905fd6d24f7031dceb0a8a89b56da198719
 
 ---
 
@@ -20,7 +21,7 @@ source-git-commit: 1d4565a4cffa6e5d42d6a5242f7ce62203dc7c63
 
 HTML模板语言(HTL)由Adobe Experience Manager(AEM)支持，其目的是提供高效的企业级Web框架，该框架可提高安全性，并允许不具备Java知识的HTML开发人员更好地参与AEM项目。
 
-AEM 6.0中引入了HTML模板语言，它取代了JSP(JavaServer Pages)，成为HTML的首选和推荐的服务器端模板系统。 对于需要构建强大企业网站的Web开发人员，HTML模板语言有助于提高安全性和开发效率。
+AEM 6.0中引入了HTML模板语言，它取代了JSP(JavaServer Pages)，成为HTML的首选和推荐的服务器端模板系统。 For web developers who need to build robust enterprise websites, the HTML Template Language helps to achieve increased security and development efficiency.
 
 ## 增强的安全性 {#increased-security}
 
@@ -30,25 +31,25 @@ AEM 6.0中引入了HTML模板语言，它取代了JSP(JavaServer Pages)，成为
 
 ## 简化的开发 {#simplified-development}
 
-HTML模板语言易于学习，其功能有意限制，以确保其简单直接。 它还具有强大的机制来构造标记和调用逻辑，同时始终强制在标记和逻辑之间严格地分隔问题。 HTL本身是标准HTML5，因为它使用表达式和数据属性用所需的动态行为对标记进行注释，这意味着它不会破坏标记的有效性并使其可读。 请注意，表达式和数据属性的评估完全在服务器端完成，在客户端将不可见，在客户端，可以使用任何所需的JavaScript框架而不会受到干扰。
+HTML模板语言易于学习，其功能有意限制，以确保其简单直接。 它还具有强大的机制来构造标记和调用逻辑，同时始终强制在标记和逻辑之间严格地分隔问题。 HTL itself is standard HTML5 as it uses expressions and data attributes to annotate the markup with the desired dynamic behavior, meaning that it doesn't break the validity of the markup and keeps it readable. 请注意，表达式和数据属性的评估完全在服务器端完成，在客户端将不可见，在客户端，可以使用任何所需的JavaScript框架而不会受到干扰。
 
-这些功能使没有Java知识且产品特定知识少的HTML开发人员能编辑HTL模板，使他们成为开发团队的一部分，并简化了与整个Java开发人员的协作。 反之，这使Java开发人员能专注于后端代码，而无需担心HTML。
+这些功能使没有Java知识且产品特定知识少的HTML开发人员能编辑HTL模板，使他们成为开发团队的一部分，并简化了与整个Java开发人员的协作。 And vice versa this allows Java developers to focus on the back-end code without worrying about HTML.
 
-## 降低成本 {#reduced-costs}
+## Reduced Costs {#reduced-costs}
 
-增强的安全性、简化的开发和改进的团队协作，以更少的工作量为AEM项目提供转换，缩短上市时间(TTM)，并降低总体拥有成本(TCO)。
+Increased security, simplified development and improved team collaboration, translates for AEM projects in reduced effort, faster time to market (TTM), and lower total cost of ownership (TCO).
 
-具体而言，使用HTML模板语言重新实施Adobe.com站点时观察到的情况是，项目的成本和持续时间可减少约25%。
+Concretely, from what has been observed when re-implementing the Adobe.com site with the HTML Template Language is that the cost and duration of the project could be reduced by about 25%.
 
 ![](assets/chlimage_1.png)
 
-上图显示了HTL可能提高的以下效率：
+The diagram above shows following improvements in efficiency potentially made possible by HTL:
 
-* **** HTML/CSS/JS:由于HTML开发人员能够直接编辑HTL模板，因此前端设计不必再与AEM项目分开实施，而是可以直接在实际AEM组件上实施。 这减少了与整个堆栈的Java开发人员之间痛苦的迭代。
-* **** JSP/HTL:由于HTL本身不需要任何Java知识并且可以直接编写，因此任何具有HTML专业知识的开发人员都可以编辑模板。
-* **** Java:由于HTL提供的Use-API使用简单明了，所以明确了与业务逻辑的接口，从而有利于Java的整体开发。
+* **** HTML / CSS / JS: Because the HTML developers are able to directly edit HTL templates, the front-end designs don't have to be implemented separately from the AEM project anymore, but can be implemented directly on the actual AEM components. This reduces painful iterations with the full-stack Java developers.
+* **JSP / HTL:** Since HTL itself doesn't require any Java knowledge and is straight-forward to write, any developer with HTML expertise is empowered to edit the templates.
+* **Java:** Thanks to the clear and simple to use Use-API provided by HTL, the interface with the business logic is clarified, which also benefits Java development overall.
 
-**阅读下一页：**
+**Read next:**
 
-* [HTML模板语言快速入门](getting-started.md)
+* [Getting Started with the HTML Template Language](getting-started.md)
 
