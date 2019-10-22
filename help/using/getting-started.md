@@ -1,20 +1,20 @@
 ---
-title: HTL快速入门
-seo-title: Getting Started with HTL
+title: HTL 快速入门
+seo-title: HTL 快速入门
 description: AEM支持的HTL代替JSP作为AEM中HTML的首选和推荐的服务器端模板系统。
 seo-description: Adobe Experience manager支持的HTML模板语言- HTL代替JSP作为AEM中HTML的首选和推荐的服务器端模板系统。
 uuid: 4a7d6748-8cdf-4280-a85d-6c5319abf487
-content-type: 引用
-topic-tags: introduction
+content-type: 参考
+topic-tags: 简介
 discoiquuid: 3bf2ca75-0d68-489d-bd1c-1d4fd730c61a
 mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
 translation-type: tm+mt
-source-git-commit: 1e3df6159b48da27460f3ad95c22c13d025b1a72
+source-git-commit: 6de5ed20e4463c0c2e804e24cb853336229a7c1f
 
 ---
 
 
-# HTL快速入门 {#getting-started-with-htl}
+# HTL 快速入门 {#getting-started-with-htl}
 
 Adobe Experience Manager(AEM)支持的HTML模板语言(HTL)代替JSP(JavaServer Pages)作为AEM中HTML的首选和推荐的服务器端模板系统。
 
@@ -48,18 +48,18 @@ Adobe Experience Manager(AEM)支持的HTML模板语言(HTL)代替JSP(JavaServer 
 否，但正如“加载客户端 [库”部分所示](getting-started.md#loading-client-libraries) ，模板和 [](block-statements.md#template-call) call语句提供类似的模式。
 
 **HTL功能是否可以在AEM项目上扩展？**
-**否，但如“加载客户端库” [部分所示](getting-started.md#loading-client-libraries) ，模板和 [](block-statements.md#template-call) call语句提供类似的模式。
+否，但正如“加载客户端 [库”部分所示](getting-started.md#loading-client-libraries) ，模板和 [](block-statements.md#template-call) call语句提供类似的模式。
 不，他们不能。 HTL具有用于重用逻辑的强大扩展机制- [Use-API](getting-started.md#use-api-for-accessing-logic) —— 和标记( [template &amp; call](block-statements.md#template-call) statements)，这些机制可用于模块化项目的代码。
 
 **与JSP相比，HTL有哪些主要优势？**
-Security and project efficiency are the main benefits, which are detailed on the [Overview](overview.md).
+安全性和项目效率是主要优势，详见概 [述](overview.md)。
 
-**Will JSP eventually go away?**
+**JSP最终会消失吗？**
 在当前日期，没有这些计划。
 
 ## HTL的基本概念 {#fundamental-concepts-of-htl}
 
-HTML模板语言使用表达式语言将内容片段插入渲染的标记中，HTML5数据属性用于定义标记块（如条件或迭代）上的语句。 As HTL gets compiled into Java Servlets, the expressions and the HTL data attributes are both evaluated entirely server-side, and nothing remains visible in the resulting HTML.
+HTML模板语言使用表达式语言将内容片段插入渲染的标记中，HTML5数据属性用于定义标记块（如条件或迭代）上的语句。 当HTL编译为Java Servlets时，表达式和HTL数据属性将完全在服务器端计算，结果HTML中不会显示任何内容。
 
 ### 块和表达式 {#blocks-and-expressions}
 
@@ -417,7 +417,7 @@ for (var i = 0; i < elements.length; i++) {
 
 但是，更现代的技巧是改用HTML元素，因为这样做的好处是，它不需要将模板的内容分离为单独的文件。 **`template`**
 
-**阅读下一页：**
+**阅读下一篇文章：**
 
 * [表达式语言](expression-language.md) -详细了解在HTL表达式中可以执行哪些操作。
 * [块语句](block-statements.md) -发现HTL中可用的所有块语句，以及如何使用它们。
