@@ -1,22 +1,22 @@
 ---
-title: HTL表达语言
-seo-title: HTL表达语言
+title: HTL 表达式语言
+seo-title: HTL 表达式语言
 description: HTML模板语言使用表达式语言访问提供HTML输出的动态元素的数据结构。
 seo-description: 'HTML模板语言使用表达式语言访问提供HTML输出的动态元素的数据结构。 '
 uuid: 38b4a259-03b5-4847-91c6-e2037760070
 contentOwner: 用户
 products: SG_EXPERIENCEMANAGER/HTL
 topic-tags: html-template-language
-content-type: 引用
+content-type: 参考文件
 discoiquuid: 9ba37ca0-f318-48b0-a791-a944a72502ed
 mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
 translation-type: tm+mt
-source-git-commit: 84ed515309831fe413abf317d8739f2bba79afdb
+source-git-commit: 6de5ed20e4463c0c2e804e24cb853336229a7c1f
 
 ---
 
 
-# HTL表达语言 {#htl-expression-language}
+# HTL 表达式语言 {#htl-expression-language}
 
 HTML模板语言使用表达式语言访问提供HTML输出的动态元素的数据结构。 这些表达式由字符和 `${` 分隔 `}`。 为避免格式错误的HTML，表达式只能用于属性值、元素内容或注释中。
 
@@ -45,8 +45,10 @@ HTML模板语言使用表达式语言访问提供HTML输出的动态元素的数
 
 有两种方法可以访问变量的属性，包括点记号或括号记号：
 
-`${currentPage.title}  
-${currentPage['title']} or ${currentPage["title"]}`
+```
+${currentPage.title}  
+${currentPage['title']} or ${currentPage["title"]}
+```
 
 大多数情况下，最好使用更简单的点记号，并使用括号记号来访问包含无效标识符字符的属性或动态访问属性。 以下两章将详细介绍这两个案例。
 
@@ -222,7 +224,7 @@ ${myArray[2]}
 
 由于逻辑OR运算符返回第一个真实的变量，因此它还可以非常方便地用于提供回退值。
 
-有条件地显示HTML属性，因为HTL删除了由计算结果为false或空字符串的表达式设置的值的属性。 因此，以下示例将显示**`properties.jcr:`**`properties.jcr:description`** **标题（如果它存在且不为空），否则，如果它存在且不为空，则它将返回显示，否则它将显示消息“未提供标题或说明”:
+有条件地显示HTML属性，因为HTL删除了由计算结果为false或空字符串的表达式设置的值的属性。 因此，如果标题存在且 **`properties.jcr:`****`properties.jcr:description`** 不为空，则以下示例将显示标题；如果标题存在且不为空，则它将返回显示，否则将显示消息“未提供标题或说明”:
 
 ```xml
 <p>${properties.jcr:title || properties.jcr:description || "no title or description provided"}</p>
@@ -409,7 +411,7 @@ HTL表达式的显示上下文指其在HTML页结构中的位置。 例如，如
 | uri | 显示链接和路径href和src属性值的默认值 | 验证URI以编写为href或src属性值，如果验证失败，则不输出任何内容。 |
 | 数字 | 要显示编号，请执行以下操作： | 验证URI是否包含整数，如果验证失败，则输出零。 |
 | attributeName | 在设置属性名称时，data-sly-attribute的默认值 | 验证属性名称，如果验证失败，则不输出任何内容。 |
-|  elementName | 数据密钥元素的默认值 | 验证元素名称，如果验证失败，则不输出任何内容。 |
+| elementName | 数据密钥元素的默认值 | 验证元素名称，如果验证失败，则不输出任何内容。 |
 | scriptToken | 对于JS标识符、文本数字或文本字符串 | 验证JavaScript令牌，如果验证失败，则不输出任何内容。 |
 | scriptString | 在JS字符串中 | 对字符串中分开的字符进行编码。 |
 | scriptComment | 在JS注释中 | 验证JavaScript注释，如果验证失败，则不输出任何内容。 |
