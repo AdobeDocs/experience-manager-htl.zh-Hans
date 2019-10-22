@@ -7,11 +7,11 @@ uuid: b340f8f7-a193-45c8-aa39-5c6e2c0194ea
 contentOwner: 用户
 products: SG_EXPERIENCEMANAGER/HTL
 topic-tags: html-template-language
-content-type: 引用
+content-type: 参考文件
 discoiquuid: 126ebc9d-5f7b-47a4-aea2-c8840d34864c
 mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
 translation-type: tm+mt
-source-git-commit: 48f09cfbdc5ef0bc5b951de1444ce40ea53dc07f
+source-git-commit: 6de5ed20e4463c0c2e804e24cb853336229a7c1f
 
 ---
 
@@ -45,7 +45,7 @@ HTML模板语言(HTL)Java Use-API使HTL文件能够访问自定义Java类中的�
 }
 ```
 
-访问此内容时，将执行HTL文件。 在HTL代码中，我们使用上下文对象**`properties`**访问当前资源并显 `title` 示 `description` 它们。 输出HTML将为：
+访问此内容时，将执行HTL文件。 在HTL代码中，我们使用上下文对 **`properties`** 象访问并显示当前资源 `title` 的 `description` 资源和资源。 输出HTML将为：
 
 ### `view-source:http://localhost:4502/content/my-example.html` {#view-source-http-localhost-content-my-example-html}
 
@@ -108,21 +108,21 @@ public class Info extends WCMUsePojo {
 
 Java use-class可以通过两种方式安装：本 **地** 或 **捆绑**。 *此示例使用本地安装。*
 
-In a local install, the Java source file is placed alongside the HTL file, in the same repository folder. 该源将根据需要自动编译。 无需单独的编译或打包步骤。
+在本地安装中，Java源文件与HTL文件一起放置在同一存储库文件夹中。 该源将根据需要自动编译。 无需单独的编译或打包步骤。
 
-In a bundle install, the Java class must be compiled and deployed within an OSGi bundle using the standard AEM bundle deployment mechanism (see Bundled Java Class).[](#bundled-java-class)
+在捆绑安装中，必须使用标准AEM捆绑部署机制在OSGi捆绑内编译和部署Java类(请参 [阅捆绑Java类](#bundled-java-class))。
 
 >[!NOTE]
 >
->A local Java use-class is recommended when the use-class is specific to the component in question.****
+>当 **use类特定于相关组件时** ，建议使用本地Java use-class。
 >
->A bundle Java use-class is recommended when the Java code implements a service that is accessed from multiple HTL components.****
+>当 **Java代码实现从多个HTL组件访问的服务时** ，建议使用捆绑的Java用类。
 
-### Java package is repository path {#java-package-is-repository-path}
+### Java包是存储库路径 {#java-package-is-repository-path}
 
-When a local install is used, the package name of the use-class must match that of the repository folder location, with any hyphens in the path replaced by underscores in the package name.
+使用本地安装时，use-class的包名称必须与存储库文件夹位置的包名称匹配，路径中的任何连字符将替换为包名称中的下划线。
 
-In this case  is located at  so the package is  :**`Info.java`****`/apps/my-example/components/info`****`apps.my_example.components.info`**
+在本例中， **`Info.java`** 位于以下位 **`/apps/my-example/components/info`** 置，因此包位于 **`apps.my_example.components.info`** :
 
 ### `/apps/my-example/component/info/Info.java` {#apps-my-example-component-info-info-java-1}
 
@@ -140,11 +140,11 @@ public class Info extends WCMUsePojo {
 
 >[!NOTE]
 >
->Using hyphens in the names of repository items is a recommended practice in AEM developement. However, hyphens are illegal within Java package names. 因此，必须将 **存储库路径中的所有连字符转换为包名称中的下划线**。
+>在AEM开发中，建议在存储库项目名称中使用连字符。 但是，连字符在Java包名称中是非法的。 因此，必须将 **存储库路径中的所有连字符转换为包名称中的下划线**。
 
-### Extending  `WCMUsePojo`{#extending-wcmusepojo}
+### 扩展功 `WCMUsePojo` 能 {#extending-wcmusepojo}
 
-While there are number of ways of incorporating a Java class with HTL (see Alternatives to ), the simplest is to extend the  class:`WCMUsePojo``WCMUsePojo`
+虽然有多种将Java类与HTL相结合的方法(请参阅替代 `WCMUsePojo`)，但最简单的方法是扩展 `WCMUsePojo` 类：
 
 #### `/apps/my-example/component/info/Info.java` {#apps-my-example-component-info-info-java-2}
 
@@ -159,7 +159,7 @@ public class Info extends WCMUsePojo {
 }
 ```
 
-### Initializing the class {#initializing-the-class}
+### 初始化类 {#initializing-the-class}
 
 从扩展use-class时，通过覆盖 **`WCMUsePojo`**&#x200B;方法来执行初始化 **`activate`** 操作：
 
@@ -185,9 +185,9 @@ public class Info extends WCMUsePojo {
 
 ### 上下文 {#context}
 
-Typically, the activate method is used to precompute and store (in member variables) the values needed in your HTL code, based on the current context (the current request and resource, for example).[](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html)
+通常， [activate](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html) 方法用于基于当前上下文（例如，当前请求和资源）预计算和存储HTL代码中所需的值（在成员变量中）。
 
-The  class provides access to the same set of context objects as are available within an HTL file (see Global Objects).`WCMUsePojo`[](global-objects.md)
+该 `WCMUsePojo` 类提供对HTL文件中可用的同一组上下文对象的访问(请参阅 [全局对象](global-objects.md))。
 
 在扩展的类中， **`WCMUsePojo`**&#x200B;可以使用名称访问上 *下文对象*
 
@@ -217,11 +217,11 @@ The  class provides access to the same set of context objects as are available w
 
 use-class初始化后，将运行HTL文件。 在此阶段，HTL通常会拉入use-class的各个成员变量的状态，并呈现这些变量以供演示。
 
-To provide access to these values from within the HTL file you must define custom getter methods in the use-class according to the following naming convention:****
+要从HTL文件中提供对这些值的访问，您必须根据以下命名约定在use-class中定 **义自定义getter方法**:
 
-* A method of the form  will expose within the HTL file an object property called xyz.**`getXyz`********
+* 表单的方法将在HTL文 **`getXyz`** 件中显示一个名为xyz的对象属 ***性***。
 
-For example, in the following example, the methods  and  result in the object properties  and  becoming accessible within the context of the HTL file:**`getTitle`****`getDescription`****`title`****`description`**
+例如，在以下示例中，这些方 **`getTitle`** 法和 **`getDescription`** 结果导致对象属性 **`title`** 并在HTL文 **`description`** 件的上下文中变得可访问：
 
 ### `/apps/my-example/component/info/Info.java` {#apps-my-example-component-info-info-java-4}
 
@@ -242,9 +242,9 @@ public class Info extends WCMUsePojo {
 }
 ```
 
-### data-sly-use attribute {#data-sly-use-attribute}
+### data-slyuse属性 {#data-sly-use-attribute}
 
-The  attribute is used to initialize the use-class within your HTL code. **`data-sly-use`** In our example, the  attribute declares that we want to use the class . `data-sly-use`**`Info`** We can use just the local name of the class because we are using a local install (having placed the Java source file is in the same folder as the HTL file). If we were using a bundle install we would have to specify the fully qualified classname (See Use-class Bundle Install).[](#LocalvsBundleJavaClass)
+该 **`data-sly-use`** 属性用于初始化HTL代码中的use类。 在我们的示例中， `data-sly-use` 属性声明我们要使用类 **`Info`**。 我们只能使用类的本地名称，因为我们使用的是本地安装（将Java源文件放在与HTL文件相同的文件夹中）。 如果我们使用捆绑安装，则必须指定完全限定的类名(请参 [阅Use类捆绑安装](#LocalvsBundleJavaClass))。
 
 ### `/apps/my-example/component/info/info.html` {#apps-my-example-component-info-info-html-2}
 
@@ -255,9 +255,9 @@ The  attribute is used to initialize the use-class within your HTL code. **`data
 </div>
 ```
 
-### Local identifier {#local-identifier}
+### 本地标识符 {#local-identifier}
 
-The identifier '' (after the dot in ) is used within the HTL file to identify the class. **`info`****`data-sly-use.info`**&#x200B;声明后，此标识符的范围在文件中是全局的。 它不限于包含语句的元 `data-sly-use` 素。
+在HTL文&#x200B;**`info`**&#x200B;件中使用标识符''( **`data-sly-use.info`**&#x200B;在中的点之后)来标识类。 声明后，此标识符的范围在文件中是全局的。 它不限于包含语句的元 `data-sly-use` 素。
 
 ### `/apps/my-example/component/info/info.html`{#apps-my-example-component-info-info-html-3}
 
@@ -382,11 +382,11 @@ public class Info extends WCMUsePojo {
 </template>
 ```
 
-The template , takes a single parameter, . **`extra`****`text`**&#x200B;然后，它使用本地名 `ExtraHelper` 称初始化Java use-class, **`extraHelper`** 并将template参数的值传递给它 **`text`** 作为use-class参数 **`text`**。
+该模 **`extra`**&#x200B;板采用单个参数 **`text`**。 然后，它使用本地名 `ExtraHelper` 称初始化Java use-class, **`extraHelper`** 并将template参数的值传递给它 **`text`** 作为use-class参数 **`text`**。
 
-The body of the template gets the property  (which, under the hood, actually calls ) and displays that value.`extraHelper.reversedText``ExtraHelper.getReversedText()`
+模板的主体获取属性( `extraHelper.reversedText` 实际调用该属性)并显 `ExtraHelper.getReversedText()`示该值。
 
-We also adapt our existing  to use this new template:**`info.html`**
+我们还会调整现有模 **`info.html`** 板，以使用此新模板：
 
 ### `/apps/my-example/component/info/info.html` {#apps-my-example-component-info-info-html-5}
 
@@ -406,7 +406,7 @@ We also adapt our existing  to use this new template:**`info.html`**
 
 请注意，我们可能已将模板块放在文件中以避 **`info.html`** 免第二个模板块 **`data-sly-use`**，但单独的模板文件更常见、可重用。
 
-The  class is employed as before, calling its getter methods  and  through their corresponding HTL properties  and .**`Info`****`getLowerCaseTitle()`**`getLowerCaseDescription()``info.lowerCaseTitle`**`info.lowerCaseDescription`**
+类 **`Info`** 如前所述，调用其getter方法并通过其相应的HTL属性和 **`getLowerCaseTitle()`**`getLowerCaseDescription()` 调用它们的getter `info.lowerCaseTitle` 方法 **`info.lowerCaseDescription`**。
 
 然后，我们对模 **`data-sly-call`** 板执行操作， **`extra`** 并将值作为参 `properties.description` 数传递给它 **`text`**。
 
@@ -441,7 +441,7 @@ public class ExtraHelper extends WCMUsePojo {
 
 ### 捆绑的Java类 {#bundled-java-class}
 
-With a bundle use-class the class must be compiled, packaged and deployed in AEM using the standard OSGi bundle deployment mechanism. 与本地安装不同，use-class包声明 **应正常命** 名：
+对于捆绑使用类，必须使用标准OSGi捆绑部署机制在AEM中编译、打包和部署该类。 与本地安装不同，use-class包声明 **应正常命** 名：
 
 ### `/apps/my-example/component/info/Info.java` {#apps-my-example-component-info-info-java-6}
 
@@ -489,7 +489,7 @@ public class Info extends WCMUsePojo {
 
 * 否则，请尝试将当前版本调 **`Request`** 整为 *`UseClass`*。 如果成功，请转到(3)。
 
-* 否则，请尝试使用 *`UseClass`* 零参数构造函数实例化。 If successful, go to (3).
+* 否则，请尝试使用 *`UseClass`* 零参数构造函数实例化。 如果成功，请转到(3)。
 
 (3)
 
@@ -616,6 +616,6 @@ public class MyComponent implements Use {
 
 ### 可适应性自请求 {#adaptable-from-request}
 
-It is also possible to emply as a use-class any class that is adaptable from **` [org.apache.sling.api.SlingHttpServletRequest](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/SlingHttpServletRequest.html)`**
+还可以作为使用类应用任何可从 **` [org.apache.sling.api.SlingHttpServletRequest](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/SlingHttpServletRequest.html)`**
 
 与上述适用于自的use类的情况一样， `Resource`可在语句中指定适 [`SlingHttpServletRequest`](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/SlingHttpServletRequest.html) 用于自的use类 `data-sly-use` 。 执行时，当前请求将适应给定的类，并使得生成的对象在HTL中可用。
