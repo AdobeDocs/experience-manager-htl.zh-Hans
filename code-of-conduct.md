@@ -1,5 +1,5 @@
 ---
-source-git-commit: f09b2268dc4745a8c2e3c53bb20fa3d35f6a7c2b
+source-git-commit: c84f8d43494965874c2fba8c005d355237580401
 translation-type: tm+mt
 
 ---
@@ -45,4 +45,4 @@ translation-type: tm+mt
 
 ## 归因
 
-本行为准则根据《投稿人公约》第1.4版( [https://contributor-covenant.org/version/1/4](https://contributor-covenant.org))进行修 [订](https://contributor-covenant.org/version/1/4/)
+本《行为准则》根据《投稿人 [盟约](https://contributor-covenant.org)》第1.4版(网址为 [https://contributor-covenant.org/version/1/4)进行调整](https://contributor-covenant.org/version/1/4/)。
