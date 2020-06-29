@@ -1,30 +1,23 @@
 ---
-title: 代码示例
-seo-title: AEM HTL的代码示例
+title: 代码样本
 description: 包括We.Retail Reference Implementation的代码示例
-seo-description: 包括We.Retail Reference Implementation的代码示例
-uuid: 4c84532e-1cd0-4faf-b99c-1965557b5d15
-contentOwner: 用户
-products: SG_EXPERIENCEMANAGER/HTL
-topic-tags: html-template-language
-content-type: 引用
-discoiquuid: bea6396e-13c4-4048-9a8a-e5d7c281deba
-mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
-index: y
-internal: n
-snippet: y
 translation-type: tm+mt
-source-git-commit: f0473c2d7c2fc22a63232565452558001a9fd99e
+source-git-commit: d7efae3d1b4d1bc22c63c21f544a99bf0ae4b3c9
+workflow-type: tm+mt
+source-wordcount: '107'
+ht-degree: 11%
 
 ---
 
 
-# 代码示例{#code-samples}
+# 代码样本 {#code-samples}
 
 以下是HTL的代码示例：
 
-* [We.Retail Reference Implementation](https://helpx.adobe.com/experience-manager/6-4/sites/developing/using/we-retail.html)\
-   一个AEM站点，已与HTL完全实现。
+* [WKND教程](https://docs.adobe.com/content/help/en/experience-manager-learn/getting-started-wknd-tutorial-develop/overview.html) -本教程将演练WKND中虚构生活方式品牌的AEM站点的实施，并涵盖基本主题，如项目设置、核心组件、可编辑模板、客户端库以及使用Adobe Experience Manager站点进行组件开发，所有这些都在HTL中实现。
+* [HTL TodoMVC示例](https://github.com/Adobe-Marketing-Cloud/aem-sightly-sample-todomvc) -著名练习的AEM + HTL实现。
 
-* [HTL TodoMVC示例](https://github.com/Adobe-Marketing-Cloud/aem-sightly-sample-todomvc)\
-   著名练习的AEM + HTL实现。
+咨询专家会议：
+
+* [2015年1月HTL会议（HTL简介）](http://scottsdigitalcommunity.blogspot.ca/2015/01/upcoming-sessions-of-ask-aem-community.html)
+* [2016年3月HTL会议（高级组件开发）](http://scottsdigitalcommunity.blogspot.ca/2016/03/ask-aem-community-experts-deep-dive.html)
