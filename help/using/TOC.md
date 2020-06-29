@@ -1,16 +1,16 @@
 ---
-cloud: experience-cloud
-product: experience manager
-sub-product: experience manager htl
-archetype: 管理员
-user-guide-title: Experience Manager HTL 帮助
-translation-type: ht
-source-git-commit: 60258140976a8d2182c4d75c18863c4b607bffbd
+sub-product: Adobe Experience ManagerHTL
+user-guide-title: Adobe Experience ManagerHTL
+translation-type: tm+mt
+source-git-commit: 7c37792729ca8caaf94ce6879ac02f241a571e44
+workflow-type: tm+mt
+source-wordcount: '54'
+ht-degree: 75%
 
 ---
 
 
-# Experience Manager HTL 帮助 {#using}
+# Adobe Experience Manager HTL Help {#using}
 
 + [概述](overview.md)
 + 入门{#getting-started}
@@ -28,5 +28,3 @@ source-git-commit: 60258140976a8d2182c4d75c18863c4b607bffbd
    + [HTL 表达式语言](expression-language.md)
    + [代码样本](code-samples.md)
    + [标准化](standardization.md)
-+ 相关资源{#resources}
-   + [相关社区文章](related-community-articles.md)
