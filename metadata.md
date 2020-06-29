@@ -1,30 +1,55 @@
 ---
-cloud: experience-cloud
-solution-title: 学习和支持
-solution-hub-url: https://helpx.adobe.com/support/experience-manager/6-4.html
-solution-image: null
-getting-started-title: 入门
-getting-started-url: https://helpx.adobe.com/experience-manager/get-started.html
-tutorials-title: Tutorials
-tutorials-url: https://helpx.adobe.com/experience-manager/kt/index/aem-6-4-videos.html
-git-repo: https://github.com/AdobeDocs/experience-manager-htl.en
+product: Adobe Experience Manager
+git-repo: https://git.corp.adobe.com/AdobeDocs/experience-manager-htl.zh-Hans
 index: y
+solution-title: HTL学习和支持
+solution-hub-url: https://docs.adobe.com/content/help/zh-Hans/experience-manager-cloud-service/sites/home.html
+getting-started-title: AEM开发入门
+getting-started-url: https://docs.adobe.com/content/help/zh-Hans/experience-manager-cloud-service/core-concepts/home.html
+tutorials-title: AEM 教程
+tutorials-url: https://docs.adobe.com/content/help/en/experience-manager-learn/cloud-service/overview.html
 translation-type: tm+mt
-source-git-commit: febf84d3ae38626891574ba05958678a3b23aaf1
+source-git-commit: d3426d87dce09ac34ff1aca431ff2bfad2f7134a
+workflow-type: tm+mt
+source-wordcount: '139'
+ht-degree: 20%
 
 ---
 
 
-# Metadata for internal use
+# 元数据供内部使用
 
-The metadata.md file includes repo-level metadata that passes through to user guide TOC.md files in the repo. If you want to change metadata.md content for any user guide, do so in any TOC.md file.
+GitHub创作系统中的元数据是分层的，定义为以下不断增加的先例级别。
 
-| 元数据 | what it does |
-|--- |--- |
-| solution-title | Used in article header as link |
-| solution-hub-url | Opens helpx hub page |
-| 解决方案图标 | 在解决方案标题旁边显示解决方案图标。 尚未实施 |
-| getting-started-url | 帮助快速入门页的链接 |
-| 教程-url | 链接到视频教程——帮助教程或KT教程 |
-| 微目录级别 | 确定显示在右边栏中的标题级别数。 默认为2 |
-| git-repo | 指定主存储库的内部使用位置 |
+1. metadata.md
+1. ToC
+1. 文章
+
+metadata.md文件中定义的元数据适用于整个回购区，但可以在ToC和文章级别覆盖。 对元数据的任何覆盖都应在尽可能低的级别执行。
+
+experience-manager-core-components.en repo中的元数据是最低要求。
+
+metadata.md
+
+* `product`
+* `git-repo`
+* `index: y`
+* `solution-title`
+* `solution-hub-url`
+* `getting-started-title`
+* `getting-started-url`
+* `tutorials-title`
+* `tutorials-url`
+
+ToCs
+
+* `sub-product`
+* `user-guide-title`
+
+文章
+
+* `title`
+* `description`
+* `index: n` （仅适用于以前版本的组件）
+
+有关元数据的其他信息，请参阅内 [部创作指南。](https://docs.adobe.com/help/en/collaborative-doc-instructions/collaboration-guide/markdown/metadata.html#solution-metadata)
