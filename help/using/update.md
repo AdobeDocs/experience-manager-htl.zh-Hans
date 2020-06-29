@@ -1,35 +1,27 @@
 ---
 title: 什么是HTL
-seo-title: 什么是Adobe HTML模板语言- HTL
 description: 'HTML 模板语言 - HTL - 是 Adobe Experience Manager 首选和推荐的针对 HTML 的服务器端模板系统。 '
-seo-description: 'HTML模板语言（也称为HTL）是Adobe Experience manager的首选和推荐的HTML服务器端模板系统。 '
-uuid: 196e79f4-f9ff-451d-86e5-394feecd2e50
-contentOwner: 用户
-products: SG_EXPERIENCEMANAGER/HTL
-content-type: 引用
-topic-tags: 简介
-discoiquuid: f94c2abc-2752-4922-9369-acb76c3f00e9
-disttype: dist5
-gnavtheme: 浅色
-mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
 translation-type: tm+mt
-source-git-commit: 41d6afffb2f01def6398c0a17c53b28769b43f4b
+source-git-commit: 7c37792729ca8caaf94ce6879ac02f241a571e44
+workflow-type: tm+mt
+source-wordcount: '180'
+ht-degree: 10%
 
 ---
 
 
-# 什么是HTL? {#what-is-htl}
+# 什么是 HTL？{#what-is-htl}
 
-**以前称为&#x200B;*Sightly***
+**以前称为&#x200B;*Sightly ***
 
-更新：2016年8月
+更新： 2016年8月
 
-HTML模板语言（也称为HTL）是Adobe Experience manager的首选和推荐的HTML服务器端模板系统。 与在所有HTML服务器端模板系统中一样，HTL文件通过指定HTML本身、一些要在运行时评估的基本表示逻辑和变量来定义发送到浏览器的输出。
+HTML模板语言（也称为HTL）是Adobe Experience Manager首选的、推荐的HTML服务器端模板系统。 与所有HTML服务器端模板系统一样，HTL文件通过指定HTML本身、一些基本的表示逻辑和变量来定义发送到浏览器的输出，这些逻辑和变量在运行时进行评估。
 
-在AEM 6.0和6.1中，HTL称为 **Sightly**。 我们将其重命名为“HTML模板语言”，以阐明规范的用途并大致与Adobe的命名准则保持一致。 此命名更改自2016年8月开始生效，并适用于AEM版本6.0、6.1、6.2及以后的所有版本。
+在AEM 6.0和6.1 HTL中称为 **Sightly**。 Adobe将其重命名为“HTML模板语言”，以阐明规范的用途并大致与Adobe的命名准则保持一致。 此命名更改从2016年8月开始生效，并且适用于AEM 6.0版及以后版本。
 
 >[!NOTE]
 >
->此命名更改不影响代码或API，因此兼容性不受影响。 有关详细信息，请参阅有关Experience Matters的博客文章，该文章深入到重命名中。
+>此命名更改不影响代码或API，因此兼容性不受影响。 有关详细信 [息，请参阅本公告视频。](https://helpx.adobe.com/experience-manager/how-to/announce-htl.html)
 
-要进一步了解HTL并找到最佳起点，请阅读我们的官方 [HTML模板语言(HTL)入门指南](overview.md)。
+要进一步了解HTL并从我们的官方HTML模板语 [言(HTL)入门指南开始，您可以找到一个不错的开始](overview.md)。
