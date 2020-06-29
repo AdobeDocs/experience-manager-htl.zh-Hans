@@ -1,18 +1,11 @@
 ---
 title: AEM HTL 概述
-seo-title: AEM HTL 技术文档概述。
 description: AEM 支持的 HTL 目的在于提供可增加安全性的高效企业级 Web 框架，并让不了解 Java 的 HTML 开发者更好地参与 AEM 项目。
-seo-description: 本文档阐述了 Adobe Experience Manager 支持的 HTML 模板语言 (HTL) 的原则和用途。 HTL 是一个高效的企业级 Web 框架，可增加安全性，同时让不了解 Java 的 HTML 开发者更好地参与 AEM 项目。
-uuid: 8f486325-0a1b-4186-a998-96fc0034c44a
-contentOwner: 用户
-products: SG_EXPERIENCEMANAGER/HTL
-topic-tags: 简介
-content-type: 引用
-discoiquuid: 8f779e08-94c7-43bc-a6e5-d81a9f818c5c
-mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
-skyline: 测试复制
-translation-type: ht
-source-git-commit: 0aa1e905fd6d24f7031dceb0a8a89b56da198719
+translation-type: tm+mt
+source-git-commit: d3426d87dce09ac34ff1aca431ff2bfad2f7134a
+workflow-type: tm+mt
+source-wordcount: '662'
+ht-degree: 95%
 
 ---
 
@@ -21,7 +14,7 @@ source-git-commit: 0aa1e905fd6d24f7031dceb0a8a89b56da198719
 
 HTML 模板语言(HTL) 由 Adobe Experience Manager (AEM) 提供支持，其目的是提供可增加安全性的高效企业级 Web 框架，并让不了解 Java 的 HTML 开发者更好地参与 AEM 项目。
 
-AEM 6.0 中引入了 HTML 模板语言，它取代了 JSP (JavaServer Pages)，成为 HTML 的首选和推荐的服务器端模板系统。 对于需要构建强大企业网站的 Web 开发者来说，HTML 模板语言有助于提高安全性和开发效率。
+HTML模板语言是在AEM 6.0中引入的，它取代了JSP(JavaServer Pages)作为HTML的首选和推荐的服务器端模板系统。 对于需要构建强大企业网站的 Web 开发者来说，HTML 模板语言有助于提高安全性和开发效率。
 
 ## 增强的安全性 {#increased-security}
 
@@ -41,7 +34,7 @@ HTML 模板语言易于学习，且其功能经过刻意限制，可确保既简
 
 具体地，从使用 HTML 模板语言重新实现 Adobe.com 站点来看，项目成本和持续时间缩短了约 25%。
 
-![](assets/chlimage_1.png)
+![有效增加和成本减少](assets/chlimage_1.png)
 
 上图显示了 HTL 可能提供的以下效率改进：
 
@@ -52,4 +45,3 @@ HTML 模板语言易于学习，且其功能经过刻意限制，可确保既简
 **阅读下一篇文章：**
 
 * [HTML 模板语言快速入门](getting-started.md)
-
