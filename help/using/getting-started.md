@@ -1,10 +1,10 @@
 ---
 title: HTL 快速入门
-description: AEM支持的HTL将取代JSP作为AEM中HTML的首选和推荐的服务器端模板系统。
+description: AEM支持的HTL取代JSP作为AEM中HTML的首选和推荐的服务器端模板系统。
 translation-type: tm+mt
-source-git-commit: ee712ef61018b5e05ea052484e2a9a6b12e6c5c8
+source-git-commit: c7fa6014cd954a2ccb175e4c3a6be9deb83af890
 workflow-type: tm+mt
-source-wordcount: '2490'
+source-wordcount: '2471'
 ht-degree: 0%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # HTL 快速入门 {#getting-started-with-htl}
 
-Adobe Experience Manager(AEM)支持的HTML模板语言(HTL)是AEM中HTML的首选和推荐的服务器端模板系统。 它取代了JSP(JavaServer Pages)，它用于AEM的先前版本。
+Adobe Experience Manager(AEM)支持的HTML模板语言(HTL)是AEM中HTML的首选和推荐的服务器端模板系统。 它取代了先前版本的AEM中使用的JSP(JavaServer Pages)。
 
 >[!NOTE]
 >
@@ -20,7 +20,7 @@ Adobe Experience Manager(AEM)支持的HTML模板语言(HTL)是AEM中HTML的首�
 
 ## HTL over JSP {#htl-over-jsp}
 
-建议新AEM项目使用HTML模板语言，因为与JSP相比，它优惠了多种优势。 但是，对于现有项目，仅在估计未来几年的工作少于维护现有JSP时，迁移才有意义。
+建议新的AEM项目使用HTML模板语言，因为与JSP相比，它优惠了多种优势。 但是，对于现有项目，仅在估计未来几年的工作少于维护现有JSP时，迁移才有意义。
 
 但是，转向HTL并非一无是处的选择，因为用HTL编写的组件与用JSP或ESP编写的组件兼容。 这意味着现有项目可以无问题地对新组件使用HTL，同时保留现有组件的JSP。
 
@@ -39,7 +39,7 @@ Adobe Experience Manager(AEM)支持的HTML模板语言(HTL)是AEM中HTML的首�
 
 **HTL是否支持JSP标签库？** -否，但如“加载客户端库” [部分所示](getting-started.md#loading-client-libraries) ，模板 [和调用语句优惠](block-statements.md#template-call) 着类似的模式。
 
-**HTL功能是否可以在AEM项目上扩展？** -不，他们不能。 HTL具有用于重用逻辑( [Use-API](getting-started.md#use-api-for-accessing-logic) )和标记(模 [板和调用语句](block-statements.md#template-call) )的强大扩展机制，可用于模块化项目代码。
+**HTL功能能否在AEM项目上扩展？** -不，他们不能。 HTL具有用于重用逻辑( [Use-API](getting-started.md#use-api-for-accessing-logic) )和标记(模 [板和调用语句](block-statements.md#template-call) )的强大扩展机制，可用于模块化项目代码。
 
 **与JSP相比，HTL有哪些主要优势？** -安全性和项目效率是主要优势，详见概 [述](overview.md)。
 
@@ -61,9 +61,9 @@ HTML模板语言使用表达式语言将内容片段插入渲染的标记中，H
 
 可以区分两种不同的语法：
 
-* **[块语句](block-statements.md)**-要有条件地显&#x200B;**示&lt;h1>元素**，请使用[`data-sly-test`](block-statements.md#test)HTML5数据属性。 HTL提供多个此类属性，这些属性允许将行为附加到任何HTML元素，并且所有属性都带有前缀`data-sly`。
+* **[块语句](block-statements.md)** -要有条件地显 **示&lt;h1>元素** ，请使用 [`data-sly-test`](block-statements.md#test) HTML5数据属性。 HTL提供多个此类属性，这些属性允许将行为附加到任何HTML元素，并且所有属性都带有前缀 `data-sly`。
 
-* **[表达式语](expression-language.md)**- HTL表达式由字符和`${`字符`}`分隔。 在运行时，将评估这些表达式，并将其值注入传出的HTML流中。
+* **[表达式语](expression-language.md)** - HTL表达式由字符和 `${` 字符 `}`分隔。 在运行时，将评估这些表达式，并将其值注入传出的HTML流中。
 
 上面链接的两页提供了可用语法功能的详细列表。
 
@@ -89,7 +89,7 @@ HTL的一个核心概念是优惠重用现有HTML元素来定义块语句的可�
 <p>MY DESCRIPTION</p>
 ```
 
-要记住的一点是，当没有现有元素可以用块语句添加注释时，只使用SLY元素，因为SLY元素会阻止语言提供的值在使静态HTML变为动态时不改变它。
+要记住的一点是，当没有现有元素可以用块语句添加注释时，只使用SLY元素，因为SLY元素阻止语言提供的值在使静态HTML变为动态时不改变它。
 
 例如，如果上一个示例已包装在DIV元素中，则添加的SLY元素将是谩骂：
 
@@ -102,7 +102,7 @@ HTL的一个核心概念是优惠重用现有HTML元素来定义块语句的可�
 </div>
 ```
 
-并且DIV元素可能已添加以下条件注释：
+并且DIV元素可能已添加条件注释：
 
 ```xml
 <div data-sly-test="${properties.jcr:title && properties.jcr:description}">
@@ -110,12 +110,6 @@ HTL的一个核心概念是优惠重用现有HTML元素来定义块语句的可�
     <p>${properties.jcr:description}</p>
 </div>
 ```
-
->[!NOTE]
->
->SLY元素在AEM 6.1或HTL 1.1中引入。
->
->在此之前， [`data-sly-unwrap`](block-statements.md) 必须改用属性。
 
 ### HTL注释 {#htl-comments}
 
@@ -154,7 +148,7 @@ HTML注释不能包含HTL注释，反之亦然。
 
 其原因在于这些上下文的内容是文本而不是HTML，包含的HTML元素将被视为简单的字符数据。 因此，如果没有真实的HTML元素，也无法执行 **`data-sly`** 属性。
 
-这听起来可能是一个很大的限制，但是它是理想的限制，因为不应滥用HTML模板语言生成非HTML的输出。 下面 [的“访问逻辑的Use](getting-started.md#use-api-for-accessing-logic) -API”部分介绍了如何从模板调用其他逻辑，如果需要为这些上下文准备复杂输出，可以使用该模板。 例如，将数据从后端发送到前端脚本的一种简单方法是让组件的逻辑生成JSON字符串，然后使用简单的HTL表达式将该字符串放在数据属性中。
+这听起来可能是一个很大的限制，但是它是理想的限制，因为不应滥用HTML模板语言生成非HTML的输出。 下面 [的“访问逻辑的Use](getting-started.md#use-api-for-accessing-logic) -API”部分介绍了如何从模板调用其他逻辑，如果需要为这些上下文准备复杂输出，可以使用该模板。 例如，将数据从后端发送到前端脚本的一种简单方法是，使组件的逻辑生成JSON字符串，然后使用简单的HTL表达式将该字符串放在数据属性中。
 
 以下示例说明了HTML注释的行为，但在脚本或样式元素中，会观察到相同的行为：
 
@@ -311,7 +305,7 @@ use(function () {
 
 ### 加载客户端库 {#loading-client-libraries}
 
-在HTL中，客户端库通过AEM提供的帮助程序模板加载，可通过该模板进行访问 [`data-sly-use`](block-statements.md#use)。 此文件中提供了三个模板，可通过以下方式调用这些模板 [`data-sly-call`](block-statements.md#template-call):
+在HTL中，客户端库通过AEM提供的帮助模板加载，可通过该模板进行访问 [`data-sly-use`](block-statements.md#use)。 此文件中提供了三个模板，可通过以下方式调用这些模板 [`data-sly-call`](block-statements.md#template-call):
 
 * **`css`** -仅加载引用的客户端库的CSS文件。
 * **`js`** -仅加载引用的客户端库的JavaScript文件。
