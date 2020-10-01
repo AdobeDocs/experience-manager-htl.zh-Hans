@@ -2,9 +2,9 @@
 title: HTL 表达式语言
 description: HTML模板语言使用表达式语言访问提供HTML输出动态元素的数据结构。
 translation-type: tm+mt
-source-git-commit: ee712ef61018b5e05ea052484e2a9a6b12e6c5c8
+source-git-commit: c7fa6014cd954a2ccb175e4c3a6be9deb83af890
 workflow-type: tm+mt
-source-wordcount: '1848'
+source-wordcount: '1854'
 ht-degree: 0%
 
 ---
@@ -48,13 +48,13 @@ ${currentPage['title']} or ${currentPage["title"]}
 
 被访问的属性可以是函数，但是不支持传递参数，因此只能访问不期望参数的函数，如getter。 这是一个理想的限制，旨在减少嵌入到表达式中的逻辑量。 如果需要， [`data-sly-use`](block-statements.md#use) 可以使用语句将参数传递给逻辑。
 
-上例中还显示了Java getter函数(如 `getTitle()`，可以访问它，而 `get`不预先设置，并降低后面字符的大小写。
+上例中还显示了Java getter函数(如 `getTitle()`，可以访问它，而 `get`不预先预定，并通过降低后面字符的大小写。
 
 ### 有效标识符字符 {#valid-identifier-characters}
 
 变量名称（称为标识符）符合某些规则。 它们必须用字母(`A`-和`Z` - `a`)或下划线()开始，后续字符也可以是数字(-)或冒号(`z``_``0``9``:`)。 Unicode字母(如 `å` 和) `ü` 不能用于标识符。
 
-由于冒号()`:`字符在AEM属性名称中是通用的，因此应强调它是一个方便有效的标识符字符：
+鉴于冒号()`:`字符在AEM属性名称中是通用的，应强调它是一个方便有效的标识符字符：
 
 `${properties.jcr:title}`
 
@@ -86,7 +86,7 @@ Boolean表示逻辑实体，可以有两个值： `true`和 `false`。
 
 ### 数字 {#numbers}
 
-只有一个数字类型： 正整数。 其他数字格式（如浮点）在变量中受支持，但不能表示为文字。
+只有一个数字类型：正整数。 其他数字格式（如浮点）在变量中受支持，但不能表示为文字。
 
 `${42}`
 
@@ -149,13 +149,13 @@ ${myArray[2]}
 
 ### 逻辑运算符 {#logical-operators}
 
-这些运算符通常与布尔值一起使用，但是，与JavaScript中一样，它们实际上返回指定操作数之一的值，因此当与非布尔值一起使用时，它们可能返回非布尔值。
+这些运算符通常与布尔值一起使用，但是，与JavaScript中一样，它们实际上返回指定操作数之一的值，因此与非布尔值一起使用时，它们可能返回非布尔值。
 
 如果某个值可以转换 `true`为，则该值称为truthy。 如果某个值可以转换 `false`为，则该值称为falsy。 可转换为的值 `false` 是未定义的变量、空值、数字零和空字符串。
 
 #### 逻辑非 {#logical-not}
 
-`${!myVar}` 返回 `false` 其单个操作数是否可转换为 `true`; 否则，它将返回 `true`。
+`${!myVar}` 返回 `false` 其单个操作数是否可转换为 `true`;否则，它将返回 `true`。
 
 例如，这可用于反转测试条件，如仅在没有子页面时显示元素：
 
@@ -165,7 +165,7 @@ ${myArray[2]}
 
 #### 逻辑与 {#logical-and}
 
-`${varOne && varTwo}` 如 `varOne` 果是虚假的，则返回； 否则，它将返回 `varTwo`。
+`${varOne && varTwo}` 如 `varOne` 果是虚假的，则返回；否则，它将返回 `varTwo`。
 
 此运算符可用于同时测试两个条件，如验证是否存在两个属性：
 
@@ -184,7 +184,7 @@ ${myArray[2]}
 
 #### 逻辑或 {#logical-or}
 
-`${varOne || varTwo}` 如 `varOne` 果真实，则返回； 否则，它将返回 `varTwo`。
+`${varOne || varTwo}` 如 `varOne` 果真实，则返回；否则，它将返回 `varTwo`。
 
 此运算符可用于测试是否适用以下两种条件之一，如验证是否存在至少一个属性：
 
@@ -194,7 +194,7 @@ ${myArray[2]}
 
 由于逻辑OR运算符返回第一个变量是真的，因此它也可以非常方便地用于提供回退值。
 
-有条件地显示HTML属性，因为HTL删除了由表达式设置的、结果为false或空字符串的属性。 因此，以下示例将显 **`properties.jcr:`** 示标题（如果存在且不为空），否则它将返回显示 **`properties.jcr:description`** （如果存在且不为空），否则它将显示消息“未提供标题或说明”:
+它还可用于有条件地显示HTML属性，因为HTL删除了由表达式设置的属性值，这些值的计算结果为false或空字符串。 因此，以下示例将显 **`properties.jcr:`** 示标题（如果存在且不为空），否则它将返回显示 **`properties.jcr:description`** （如果存在且不为空），否则它将显示消息“未提供标题或说明”:
 
 ```xml
 <p>${properties.jcr:title || properties.jcr:description || "no title or description provided"}</p>
@@ -202,7 +202,7 @@ ${myArray[2]}
 
 ### 条件（三元）运算符 {#conditional-ternary-operator}
 
-`${varCondition ? varOne : varTwo}` 如 `varOne` 果真 `varCondition` 实，则返回； 否则它将返回 `varTwo`。
+`${varCondition ? varOne : varTwo}` 如 `varOne` 果真 `varCondition` 实，则返回；否则它将返回 `varTwo`。
 
 此运算符通常可用于定义表达式中的条件，如根据页面状态显示不同的消息：
 
