@@ -14,7 +14,7 @@ ht-degree: 11%
 
 以下是HTL的代码示例：
 
-* [WKND教程](https://docs.adobe.com/content/help/en/experience-manager-learn/getting-started-wknd-tutorial-develop/overview.html) -本教程将演练WKND中虚构生活方式品牌的AEM站点的实施，并涵盖基本主题，如项目设置、核心组件、可编辑模板、客户端库以及使用Adobe Experience Manager站点进行组件开发，所有这些都在HTL中实现。
+* [WKND教程](https://docs.adobe.com/content/help/en/experience-manager-learn/getting-started-wknd-tutorial-develop/overview.html) -本教程将演练AEM站点在WKND中为一个虚构的生活方式品牌实施的过程，并涵盖基本主题，如项目设置、核心组件、可编辑模板、客户端库以及Adobe Experience Manager Sites组件开发（全部都在HTL中实现）。
 * [HTL TodoMVC示例](https://github.com/Adobe-Marketing-Cloud/aem-sightly-sample-todomvc) -著名练习的AEM + HTL实现。
 
 咨询专家会议：
