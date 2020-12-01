@@ -12,19 +12,19 @@ ht-degree: 3%
 
 # HTL 全局对象 {#htl-global-objects}
 
-无需指定任何内容，HTL即可提供对JSP中包含后通常可用的所有对象的访问 `global.jsp`。 这些对象是通过Use-API引入的任 [何对象之外](use-api.md)。
+无需指定任何内容，HTL即可提供对包含`global.jsp`后JSP中常用的所有对象的访问。 这些对象是通过[Use-API](use-api.md)引入的任何对象之外的。
 
-## 可枚举的对象 {#enumerable-objects}
+## 可枚举的对象{#enumerable-objects}
 
-这些对象提供了对常用信息的便捷访问。 可以使用点记号访问其内容，也可以使用或重复 `data-sly-list` 显示 `data-sly-repeat`。
+这些对象提供了对常用信息的便捷访问。 可以使用点记号访问其内容，也可以使用`data-sly-list`或`data-sly-repeat`重复访问它们。
 
 | 变量名称 | 描述 |
 |--- |--- |
-| `properties` | 列表当前资源的属性。 由org. [apache.sling.api.resource.ValueMap支持](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
-| `pageProperties` | 列表当前页面的页面属性。 由org. [apache.sling.api.resource.ValueMap支持](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
-| `inheritedPageProperties` | 列表当前页面的继承页面属性。 由org. [apache.sling.api.resource.ValueMap支持](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
+| `properties` | 列表当前资源的属性。 由[org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html)支持 |
+| `pageProperties` | 列表当前页面的页面属性。 由[org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html)支持 |
+| `inheritedPageProperties` | 列表当前页面的继承页面属性。 由[org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html)支持 |
 
-## Java支持的对象 {#java-backed-objects}
+## Java支持的对象{#java-backed-objects}
 
 以下每个对象都由相应的Java对象进行备份。
 
@@ -56,9 +56,9 @@ ht-degree: 3%
 | **`wcmmode`** | `com.adobe.cq.sightly.SightlyWCMMode` |
 | `xssAPI` | `com.adobe.granite.xss.XSSAPI` |
 
-## JavaScript支持的对象 {#javascript-backed-objects}
+## JavaScript支持的对象{#javascript-backed-objects}
 
-可以使用JavaScript支持HTL逻辑。 但是，首选或推荐的方法是使用 [Sling Models。](https://sling.apache.org/documentation/bundles/models.html)
+可以使用JavaScript支持HTL逻辑。 但是，首选或推荐的方法是使用[Sling Models。](https://sling.apache.org/documentation/bundles/models.html)
 
 <!-- 
 
