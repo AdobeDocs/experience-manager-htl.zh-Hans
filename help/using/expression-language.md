@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # HTL 表达式语言 {#htl-expression-language}
 
-HTML模板语言使用表达式语言访问提供HTML输出动态元素的数据结构。 这些表达式以字符和 `${` 分隔 `}`。 为避免格式错误的HTML,表达式只能用于属性值、元素内容或注释中。
+HTML模板语言使用表达式语言访问提供HTML输出动态元素的数据结构。 这些表达式以字符`${`和`}`分隔。 为避免格式错误的HTML,表达式只能用于属性值、元素内容或注释中。
 
 ```xml
 <!-- ${component.path} -->
@@ -21,21 +21,21 @@ HTML模板语言使用表达式语言访问提供HTML输出动态元素的数据
 </h1>
 ```
 
-表达式可以通过预挂字符进 `\` 行转义，例如 `\${test}` 将呈现 `${test}`。
+表达式可以通过预挂`\`字符进行转义，例如`\${test}`将呈现`${test}`。
 
 >[!NOTE]
 >
->要试用本页中提供的示例，可以使用名为“读取评 [估打印循环](https://github.com/Adobe-Marketing-Cloud/aem-sightly-repl) ”的实时执行环境。
+>要试用本页中提供的示例，可使用名为[读取评估打印循环](https://github.com/Adobe-Marketing-Cloud/aem-sightly-repl)的实时执行环境。
 
-表达式语法包 [括变量](#variables)、 [文本](#literals)、运 [算符](#operators) 和 [选](#options)项：
+表达式语法包括[变量](#variables)、[文字](#literals)、[运算符](#operators)和[选项](#options):
 
 ## 变量 {#variables}
 
 变量是存储数据值或对象的容器。 变量的名称称为标识符。
 
-无需指定任何内容，HTL即可提供对JSP中包含后通常可用的所有对象的访问 `global.jsp`。 “全 [局对象](global-objects.md) ”页提供HTL提供访问的所有对象的列表。
+无需指定任何内容，HTL即可提供对包含`global.jsp`后JSP中常用的所有对象的访问。 [全局对象](global-objects.md)页面提供HTL提供访问的所有对象的列表。
 
-### 属性访问 {#property-access}
+### 属性访问{#property-access}
 
 有两种方法可以访问变量的属性，使用点记号或括号记号：
 
@@ -46,15 +46,15 @@ ${currentPage['title']} or ${currentPage["title"]}
 
 大多数情况下最好使用更简单的点记号，括号记号应用于访问包含无效标识符字符的属性，或动态访问属性。 以下两章将提供这两个案例的详细信息。
 
-被访问的属性可以是函数，但是不支持传递参数，因此只能访问不期望参数的函数，如getter。 这是一个理想的限制，旨在减少嵌入到表达式中的逻辑量。 如果需要， [`data-sly-use`](block-statements.md#use) 可以使用语句将参数传递给逻辑。
+被访问的属性可以是函数，但是不支持传递参数，因此只能访问不期望参数的函数，如getter。 这是一个理想的限制，旨在减少嵌入到表达式中的逻辑量。 如果需要，可以使用[`data-sly-use`](block-statements.md#use)语句将参数传递给逻辑。
 
-上例中还显示了Java getter函数(如 `getTitle()`，可以访问它，而 `get`不预先预定，并通过降低后面字符的大小写。
+上例中还显示了Java getter函数（如`getTitle()`）的访问，无需预先预定`get`，并通过降低后面字符的大小写。
 
-### 有效标识符字符 {#valid-identifier-characters}
+### 有效标识符字符{#valid-identifier-characters}
 
-变量名称（称为标识符）符合某些规则。 它们必须用字母(`A`-和`Z` - `a`)或下划线()开始，后续字符也可以是数字(-)或冒号(`z``_``0``9``:`)。 Unicode字母(如 `å` 和) `ü` 不能用于标识符。
+变量名称（称为标识符）符合某些规则。 它们必须用字母（`A`-`Z`和`a`-`z`）或下划线(`_`)开始，后续字符也可以是数字(`0`-`9`)或冒号(`:`)。 标识符中不能使用`å`和`ü`等Unicode字母。
 
-鉴于冒号()`:`字符在AEM属性名称中是通用的，应强调它是一个方便有效的标识符字符：
+由于冒号(`:`)字符在AEM属性名称中是通用的，因此应强调它是有效的标识符字符：
 
 `${properties.jcr:title}`
 
@@ -62,35 +62,35 @@ ${currentPage['title']} or ${currentPage["title"]}
 
 `${properties['my property']}`
 
-### 动态访问成员 {#accessing-members-dynamically}
+### 动态访问成员{#accessing-members-dynamically}
 
 ```xml
 ${properties[myVar]}
 ```
 
-### Null值的允许处理 {#permissive-handling-of-null-values}
+### 对Null值{#permissive-handling-of-null-values}的权限处理
 
 ```xml
 ${currentPage.lastModified.time.toString}
 ```
 
-## 文字 {#literals}
+## 文本{#literals}
 
 文本是表示固定值的记号。
 
 ### 布尔型 {#boolean}
 
-Boolean表示逻辑实体，可以有两个值： `true`和 `false`。
+Boolean表示逻辑实体，可以有两个值：`true`和`false`。
 
 `${true} ${false}`
 
-### 数字 {#numbers}
+### 数字{#numbers}
 
 只有一个数字类型：正整数。 其他数字格式（如浮点）在变量中受支持，但不能表示为文字。
 
 `${42}`
 
-### 字符串 {#strings}
+### 字符串{#strings}
 
 字符串表示文本多次，可以是单个或引号：
 
@@ -128,7 +128,7 @@ Boolean表示逻辑实体，可以有两个值： `true`和 `false`。
 <p title="it&#39;s great, she said &#34;yes!&#34;">...</p>
 ```
 
-### 阵列 {#arrays}
+### 阵列{#arrays}
 
 数组是一组有序值，可以用名称和索引引用。 其元素类型可以混合。
 
@@ -145,15 +145,15 @@ ${myArray[2]}
 </ul>
 ```
 
-## 运营商 {#operators}
+## 运算符{#operators}
 
-### 逻辑运算符 {#logical-operators}
+### 逻辑运算符{#logical-operators}
 
 这些运算符通常与布尔值一起使用，但是，与JavaScript中一样，它们实际上返回指定操作数之一的值，因此与非布尔值一起使用时，它们可能返回非布尔值。
 
-如果某个值可以转换 `true`为，则该值称为truthy。 如果某个值可以转换 `false`为，则该值称为falsy。 可转换为的值 `false` 是未定义的变量、空值、数字零和空字符串。
+如果某个值可以转换为`true`，则该值称为truthy。 如果某个值可以转换为`false`，则该值称为falsy。 可转换为`false`的值是未定义的变量、空值、数字零和空字符串。
 
-#### 逻辑非 {#logical-not}
+#### 逻辑NOT {#logical-not}
 
 `${!myVar}` 返回 `false` 其单个操作数是否可转换为 `true`;否则，它将返回 `true`。
 
@@ -163,9 +163,9 @@ ${myArray[2]}
 <p data-sly-test="${!currentPage.hasChild}">current page has no children</p>
 ```
 
-#### 逻辑与 {#logical-and}
+#### 逻辑AND {#logical-and}
 
-`${varOne && varTwo}` 如 `varOne` 果是虚假的，则返回；否则，它将返回 `varTwo`。
+`${varOne && varTwo}` 如果 `varOne` 是假的，则返回；否则，它将返回 `varTwo`。
 
 此运算符可用于同时测试两个条件，如验证是否存在两个属性：
 
@@ -176,15 +176,15 @@ ${myArray[2]}
 </div>
 ```
 
-逻辑AND运算符还可用于有条件地显示HTML属性，因为HTL删除了值动态设置为false或空字符串的属性。 因此，在以下示例中， `class` 只有属性是真的且 `logic.showClass` 存在且不 `logic.className` 为空时，才显示该属性：
+逻辑AND运算符还可用于有条件地显示HTML属性，因为HTL删除了值动态设置为false或空字符串的属性。 因此，在以下示例中，仅当`logic.showClass`为truthy且`logic.className`存在且不为空时，才显示`class`属性：
 
 ```xml
 <div class="${logic.showClass && logic.className}">...</div>
 ```
 
-#### 逻辑或 {#logical-or}
+#### 逻辑OR {#logical-or}
 
-`${varOne || varTwo}` 如 `varOne` 果真实，则返回；否则，它将返回 `varTwo`。
+`${varOne || varTwo}` 如 `varOne` 果是真的，则返回；否则，它将返回 `varTwo`。
 
 此运算符可用于测试是否适用以下两种条件之一，如验证是否存在至少一个属性：
 
@@ -194,15 +194,15 @@ ${myArray[2]}
 
 由于逻辑OR运算符返回第一个变量是真的，因此它也可以非常方便地用于提供回退值。
 
-它还可用于有条件地显示HTML属性，因为HTL删除了由表达式设置的属性值，这些值的计算结果为false或空字符串。 因此，以下示例将显 **`properties.jcr:`** 示标题（如果存在且不为空），否则它将返回显示 **`properties.jcr:description`** （如果存在且不为空），否则它将显示消息“未提供标题或说明”:
+它还可用于有条件地显示HTML属性，因为HTL删除了由表达式设置的属性值，这些值的计算结果为false或空字符串。 因此，以下示例将显示&#x200B;**`properties.jcr:`**&#x200B;标题（如果存在且不为空），否则它返回显示&#x200B;**`properties.jcr:description`**（如果存在且不为空），否则它将显示消息“未提供标题或说明”:
 
 ```xml
 <p>${properties.jcr:title || properties.jcr:description || "no title or description provided"}</p>
 ```
 
-### 条件（三元）运算符 {#conditional-ternary-operator}
+### 条件（三元）运算符{#conditional-ternary-operator}
 
-`${varCondition ? varOne : varTwo}` 如 `varOne` 果真 `varCondition` 实，则返回；否则它将返回 `varTwo`。
+`${varCondition ? varOne : varTwo}` 如果 `varOne` 真 `varCondition` 实，则返回；否则它将返回 `varTwo`。
 
 此运算符通常可用于定义表达式中的条件，如根据页面状态显示不同的消息：
 
@@ -218,32 +218,32 @@ ${myArray[2]}
 <p>${properties.showDescription ? properties.jcr:description : properties.jcr:title}</p>
 ```
 
-### 比较运算符 {#comparison-operators}
+### 比较运算符{#comparison-operators}
 
 等式和不等式运算符只支持相同类型的操作数。 类型不匹配时，将显示错误。
 
 * 如果字符串具有相同的字符序列，则字符串相等。
 * 数值相同时，数值相等
-* 如果两者均为，则布尔 `true` 值相等，或两者 `false`均为。
+* 如果两者均为`true`或两者均为`false`，则布尔值相等。
 * null或未定义的变量彼此相等。
 
-`${varOne == varTwo}` 在 `true` 和 `varOne` 相等 `varTwo` 时返回。
+`${varOne == varTwo}` 如果 `true` 和 `varOne` 相 `varTwo` 等则返回。
 
-`${varOne != varTwo}` 返 `true` 回 `varOne` (如 `varTwo` 果和不相等)。
+`${varOne != varTwo}` 返回 `true` 如 `varOne` 果 `varTwo` 和不相等。
 
 关系运算符仅支持数字操作数。 对于所有其他类型，将显示错误。
 
-`${varOne > varTwo}` 返 `true` 回 `varOne` 大于 `varTwo`。
+`${varOne > varTwo}` 如果 `true` 大 `varOne` 于，则返回 `varTwo`。
 
-`${varOne < varTwo}` 返 `true` 回 `varOne` 小于的 `varTwo`。
+`${varOne < varTwo}` 返 `true` 回 `varOne` 小于 `varTwo`。
 
 `${varOne >= varTwo}` 如 `true` 果 `varOne` 大于或等于，则返回 `varTwo`。
 
-`${varOne <= varTwo}` 返 `true` 回 `varOne` 值(如果小于或等于 `varTwo`)
+`${varOne <= varTwo}` 如 `true` 果 `varOne` 小于或等于，则返回 `varTwo`。
 
-### 分组括号 {#grouping-parentheses}
+### 分组括号{#grouping-parentheses}
 
-分组运算符控 `()` 制表达式中评估的优先级。
+分组运算符`()`控制表达式中评估的优先级。
 
 `${varOne && (varTwo || varThree)}`
 
@@ -251,7 +251,7 @@ ${myArray[2]}
 
 表达式选项可以对表达式执行操作并修改它，或在与块语句结合使用时用作参数。
 
-之后的一 `@` 切都是一个选项：
+`@`后的所有内容都是一个选项：
 
 ```xml
 ${myVar @ optOne}
@@ -278,15 +278,15 @@ ${myVar @ optOne, optTwo=bar}
 ${@ optOne, optTwo=bar}
 ```
 
-### 字符串格式 {#string-formatting}
+### 字符串格式{#string-formatting}
 
-用相应的变量替换枚举的占&#x200B;*位符*{n}的选项：
+用相应的变量替换枚举的占位符{*n*}的选项：
 
 ```xml
 ${'Page {0} of {1}' @ format=[current, total]}
 ```
 
-## URL处理 {#url-manipulation}
+## URL操作{#url-manipulation}
 
 有一组新的url操作可用。
 
@@ -310,13 +310,13 @@ ${'Page {0} of {1}' @ format=[current, total]}
 <a href="${item.path @ extension = 'html', fragment=item.name}">${item.name}</a>
 ```
 
-在所 `@extension` 有情况下均可使用，检查是否添加扩展。
+`@extension`在所有情况下均有效，检查是否添加扩展。
 
 ```xml
 ${ link @ extension = 'html' }
 ```
 
-### 数字／日期格式 {#number-date-formatting}
+### Number/Date-formatting {#number-date-formatting}
 
 HTL允许数字和日期的本机格式化，无需编写自定义代码。 这还支持时区和区域设置。
 
@@ -333,11 +333,11 @@ HTL允许数字和日期的本机格式化，无需编写自定义代码。 这�
 
 >[!NOTE]
 >
->有关可使用格式的完整详细信息，请参 [阅HTL规范](https://github.com/Adobe-Marketing-Cloud/htl-spec/blob/master/SPECIFICATION.md)。
+>有关可使用的格式的完整详细信息，请参阅[HTL-specification](https://github.com/Adobe-Marketing-Cloud/htl-spec/blob/master/SPECIFICATION.md)。
 
-### 国际化 {#internationalization}
+### 国际化{#internationalization}
 
-使用当前词典将字符串转换 *为当前* 源的语言(请参 [见下)](https://docs.adobe.com/content/help/en/experience-manager-65/developing/components/internationalization/i18n-translator.html)。 如果未找到转换，则使用原始字符串。
+使用当前[字典](https://docs.adobe.com/content/help/en/experience-manager-65/developing/components/internationalization/i18n-translator.html)将字符串转换为当前&#x200B;*源*&#x200B;的语言（请参见下文）。 如果未找到转换，则使用原始字符串。
 
 ```xml
 ${'Page' @ i18n}
@@ -349,7 +349,7 @@ ${'Page' @ i18n}
 ${'Page' @ i18n, hint='Translation Hint'}
 ```
 
-该语言的默认来源 `resource`是，这意味着文本将翻译为与内容相同的语言。 这可以更改 `user`为，这意味着语言是从浏览器区域设置或登录用户的区域设置中获取的：
+该语言的默认源为`resource`，这意味着文本将翻译为与内容相同的语言。 这可以更改为`user`，这意味着该语言是从浏览器区域设置或登录用户的区域设置中获取的：
 
 ```xml
 ${'Page' @ i18n, source='user'}
@@ -367,7 +367,7 @@ ${'Page' @ i18n, locale='en-US'}
 ${'Page {0} of {1}' @ i18n, format=[current, total]}
 ```
 
-### 阵列连接 {#array-join}
+### 阵列连接{#array-join}
 
 默认情况下，当将数组显示为文本时，HTL将显示以逗号分隔的值（无间距）。
 
@@ -377,9 +377,9 @@ ${'Page {0} of {1}' @ i18n, format=[current, total]}
 ${['one', 'two'] @ join='; '}
 ```
 
-### 显示上下文 {#display-context}
+### 显示上下文{#display-context}
 
-HTL表达式的显示上下文指其在HTML页面结构中的位置。 例如，如果表达式显示在渲染后会生成文本节点的位置，则表示它位于上下文 `text` 中。 如果在属性的值中找到它，则它被称为在上 `attribute` 下文中，依此类推。
+HTL表达式的显示上下文指其在HTML页面结构中的位置。 例如，如果表达式显示在渲染后会生成文本节点的位置，则它据说位于`text`上下文中。 如果在属性的值中找到它，则它被认为位于`attribute`上下文中，依此类推。
 
 除脚本(JS)和样式(CSS)上下文外，HTL将自动检测表达式的上下文并相应地进行转义，以防止XSS安全问题。 对于脚本和CSS，必须显式设置所需的上下文行为。 此外，在需要覆盖自动行为的任何其他情况下也可以显式设置上下文行为。
 
@@ -395,7 +395,7 @@ HTL将根据各自上下文的安全要求以不同方式逃避这些漏洞。 �
 <a href="${properties.link}" title="${properties.title}">${properties.text}</a>
 ```
 
-要安全输出标记(即，表达式自身的计算结果为HTML)，请使用 `html` 上下文：
+要安全地输出标记(即，表达式自身的计算结果为HTML)，请使用`html`上下文：
 
 ```xml
 <div>${properties.richText @ context='html'}</div>
@@ -419,7 +419,7 @@ HTL将根据各自上下文的安全要求以不同方式逃避这些漏洞。 �
 <div>${myScript @ context='unsafe'}</div>
 ```
 
-### 上下文设置 {#context-settings}
+### 上下文设置{#context-settings}
 
 | 上下文 | 何时使用 | 它的用途 |
 |--- |--- |--- |
