@@ -12,11 +12,11 @@ ht-degree: 1%
 
 # HTL 块语句 {#htl-block-statements}
 
-HTML模板语言(HTL)块语句是直接添加到现 `data` 有HTML的自定义属性。 这样，原型静态HTML页面便于轻松、不显眼地进行批注，可将其转换为有效的动态模板，而不会破坏HTML代码的有效性。
+HTML模板语言(HTL)块语句是自定义`data`属性，直接添加到现有HTML。 这样，原型静态HTML页面便于轻松、不显眼地进行批注，可将其转换为有效的动态模板，而不会破坏HTML代码的有效性。
 
-## 块概述 {#overview}
+## 块概述{#overview}
 
-HTL块插件由在HTML元 `data-sly-*` 素上设置的属性定义。 元素可以具有结束标记或自结束标记。 属性可以有值(可以是静态字符串或表达式)，也可以只是布尔属性（没有值）。
+HTL块插件由在HTML元素上设置的`data-sly-*`属性定义。 元素可以具有结束标记或自结束标记。 属性可以有值(可以是静态字符串或表达式)，也可以只是布尔属性（没有值）。
 
 ```xml
 <tag data-sly-BLOCK></tag>                                 <!--/* A block is simply consists in a data-sly attribute set on an element. */-->
@@ -27,9 +27,9 @@ HTL块插件由在HTML元 `data-sly-*` 素上设置的属性定义。 元素可�
 <tag data-sly-BLOCKONE="value" data-sly-BLOCKTWO="value"/> <!--/* Several block statements can be set on a same element. */-->
 ```
 
-从生成的 `data-sly-*` 标记中删除所有评估的属性。
+从生成的标记中删除所有评估的`data-sly-*`属性。
 
-### 标识符 {#identifiers}
+### 标识符{#identifiers}
 
 块语句后跟标识符：
 
@@ -52,26 +52,26 @@ HTL块插件由在HTML元 `data-sly-*` 素上设置的属性定义。 元素可�
 
 顶级标识符不区分大小写（因为它们可以通过HTML属性进行设置，而HTML属性不区分大小写），但它们的所有属性都区分大小写。
 
-## 可用的块语句 {#available-block-statements}
+## 可用块语句{#available-block-statements}
 
 有许多块语句可用。 在同一元素上使用时，以下优先级列表定义如何评估块语句：
 
 1. `data-sly-template`
-1. `data-sly-set`, `data-sly-test`, `data-sly-use`
+1. `data-sly-set`,  `data-sly-test`  `data-sly-use`
 1. `data-sly-call`
 1. `data-sly-text`
-1. `data-sly-element`, `data-sly-include`, `data-sly-resource`
+1. `data-sly-element`,  `data-sly-include`  `data-sly-resource`
 1. `data-sly-unwrap`
 1. `data-sly-list`, `data-sly-repeat`
 1. `data-sly-attribute`
 
 当两个块语句具有相同的优先级时，其评估顺序从左到右。
 
-### use {#use}
+### 使用{#use}
 
 `data-sly-use` 初始化帮助对象（在JavaScript或Java中定义），并通过变量显示它。
 
-初始化JavaScript对象，源文件位于与模板相同的目录中。 请注意，必须使用文件名：
+初始化JavaScript对象，其中源文件与模板位于同一目录中。 请注意，必须使用文件名：
 
 ```xml
 <div data-sly-use.nav="navigation.js">${nav.foo}</div>
@@ -89,13 +89,13 @@ HTL块插件由在HTML元 `data-sly-*` 素上设置的属性定义。 元素可�
 <div data-sly-use.nav="org.example.Navigation">${nav.foo}</div>
 ```
 
-可以使用选项将参数传递到初始化。 通常，此功能仅应由块内的HTL代码使 `data-sly-template` 用：
+可以使用选项将参数传递到初始化。 通常，此功能仅应由位于`data-sly-template`块中的HTL代码使用：
 
 ```xml
 <div data-sly-use.nav="${'navigation.js' @parentPage=currentPage}">${nav.foo}</div>
 ```
 
-初始化另一个HTL模板，然后可使用以下方式调用该模 `data-sly-call`板：
+初始化另一个HTL模板，然后使用`data-sly-call`调用该模板：
 
 ```xml
 <div data-sly-use.nav="navTemplate.html" data-sly-call="${nav.foo}"></div>
@@ -109,9 +109,9 @@ HTL块插件由在HTML元 `data-sly-*` 素上设置的属性定义。 元素可�
 >* [JavaScript Use-API](use-api-javascript.md)
 
 
-#### 与资源的数据密集使用 {#data-sly-use-with-resources}
+#### 对资源{#data-sly-use-with-resources}的data-sly使用
 
-这允许在HTL中直接获取资 `data-sly-use` 源，无需编写代码即可获取。
+这允许使用`data-sly-use`直接在HTL中获取资源，并且无需编写代码即可获取资源。
 
 例如：
 
@@ -123,11 +123,11 @@ HTL块插件由在HTML元 `data-sly-*` 素上设置的属性定义。 元素可�
 
 >[!TIP]
 >
->另请参阅路 [径不总是必需。](#path-not-required)
+>另请参阅[路径并非始终必需部分。](#path-not-required)
 
-### 取消换行 {#unwrap}
+### 取消换行{#unwrap}
 
-`data-sly-unwrap` 从生成的标记中删除主机元素，同时保留其内容。 这允许排除作为HTL表示逻辑的一部分而在实际输出中不需要的元素。
+`data-sly-unwrap` 从生成的标记中删除主机元素，同时保留其内容。这允许排除作为HTL表示逻辑的一部分而在实际输出中不需要的元素。
 
 但是，应少用这一说法。 通常，最好使HTL标记尽可能接近预期的输出标记。 换言之，在添加HTL块语句时，尽量不引入新元素，只需对现有HTML添加注释即可。
 
@@ -186,9 +186,9 @@ Hello World
 <p data-sly-text="${properties.jcr:description}">Lorem ipsum</p>
 ```
 
-两者都将显示段 `jcr:description` 落文本值。 第二种方法的优点是允许在保留原始设计人员的静态占位符内容的同时对HTML进行不显眼的批注。
+两者都将`jcr:description`的值显示为段落文本。 第二种方法的优点是允许在保留原始设计人员的静态占位符内容的同时对HTML进行不显眼的批注。
 
-### 属性 {#attribute}
+### 属性{#attribute}
 
 `data-sly-attribute` 向主机元素添加属性。
 
@@ -204,11 +204,11 @@ Hello World
 <div title="Lorem Ipsum" data-sly-attribute.title="${properties.jcr:title}"></div>
 ```
 
-两者都将 `title` 属性设置为值 `jcr:title`。 第二种方法的优点是允许在保留原始设计人员的静态占位符内容的同时对HTML进行不显眼的批注。
+两者都会将`title`属性设置为`jcr:title`的值。 第二种方法的优点是允许在保留原始设计人员的静态占位符内容的同时对HTML进行不显眼的批注。
 
-属性从左到右解析，属性的最右实例（文本或通过定义）优先于同一属性(从字面或通过定义 `data-sly-attribute`)的任何实例(从字面上定义或通过定义 `data-sly-attribute`)在其左侧定义。
+属性从左到右解析，属性的最右实例（文本或通过`data-sly-attribute`定义）优先于在其左侧定义的相同属性（通过字面或通过`data-sly-attribute`定义）的任何实例。
 
-请注意，其值计算 `literal` 结果为空 `data-sly-attribute`字符串的属性（或通过设置）将在最终标记中删除。 此规则的一个例外是将保留设置为文本空字符串的文本属性。 例如，
+请注意，在最终标记中将删除其值计算为空字符串的属性（`literal`或通过`data-sly-attribute`设置）。 此规则的一个例外是将保留设置为文本空字符串的文本属性。 例如，
 
 ```xml
 <div class="${''}" data-sly-attribute.id="${''}"></div>
@@ -264,9 +264,9 @@ attrMap = {
 <h1 data-sly-element="${titleLevel}">text</h1>
 ```
 
-用 `h1` 值替换该 `titleLevel`。
+用值`titleLevel`替换`h1`。
 
-出于安全原因， `data-sly-element` 仅接受以下元素名称：
+出于安全原因，`data-sly-element`仅接受以下元素名称：
 
 ```xml
 a abbr address article aside b bdi bdo blockquote br caption cite code col colgroup
@@ -275,13 +275,13 @@ kbd li main mark nav ol p pre q rp rt ruby s samp section small span strong sub
 sup table tbody td tfoot th thead time tr u var wbr
 ```
 
-要设置其他元素，必须关闭( `@context='unsafe'`)XSS安全。
+要设置其他元素，必须关闭XSS安全性(`@context='unsafe'`)。
 
 ### 测试 {#test}
 
-`data-sly-test` 有条件地删除主机元素及其内容。 值删除 `false` 元素； 值保 `true` 留元素。
+`data-sly-test` 有条件地删除主机元素及其内容。值`false`将删除元素；值`true`将保留该元素。
 
-例如，元素 `p` 及其内容仅在以下情况下才会 `isShown` 呈现 `true`:
+例如，`isShown`为`true`时，`p`元素及其内容才会呈现：
 
 ```xml
 <p data-sly-test="${isShown}">text</p>
@@ -310,23 +310,23 @@ sup table tbody td tfoot th thead time tr u var wbr
 </div>
 ```
 
-### repeat {#repeat}
+### 重复{#repeat}
 
-通 `data-sly-repeat` 过此操作，您可以根据指定的列表重复元素多次。
+对于`data-sly-repeat`，您可以根据指定的列表重复元素多次。
 
 ```xml
 <div data-sly-repeat="${currentPage.listChildren}">${item.name}</div>
 ```
 
-其工作方式与相同 `data-sly-list`，只是您不需要容器元素。
+其工作方式与`data-sly-list`相同，但您不需要容器元素。
 
-以下示例显示您还可以参考项 *目* ，以获取属性：
+以下示例显示您还可以引用&#x200B;*item*&#x200B;来获取属性：
 
 ```xml
 <div data-sly-repeat="${currentPage.listChildren}" data-sly-attribute.class="${item.name}">${item.name}</div>
 ```
 
-### list {#list}
+### 列表{#list}
 
 `data-sly-list` 为提供的对象中的每个可枚举属性重复主机元素的内容。
 
@@ -341,17 +341,17 @@ sup table tbody td tfoot th thead time tr u var wbr
 
 以下默认变量在列表范围内可用：
 
-* `item`: 迭代中的当前项。
-* `itemList`: 包含以下属性的对象：
-* `index`: 零计数器( `0..length-1`)。
-* `count`: 基于一的计数器( `1..length`)。
+* `item`:迭代中的当前项。
+* `itemList`:包含以下属性的对象：
+* `index`:零计数器( `0..length-1`)。
+* `count`:基于一的计数器( `1..length`)。
 * `first`: `true` 当前项目是第一个项目。
 * `middle`: `true` 如果当前项目既不是第一个项目也不是最后一个项目。
 * `last`: `true` 如果当前项目是最后一个项目。
 * `odd`: `true` 如 `index` 果奇数。
-* `even`: `true` 如果 `index` 是扯平。
+* `even`: `true` 如 `index` 果扯平。
 
-在语句上定义标 `data-sly-list` 识符允许您重命名变量 `itemList` 和 `item` 变量。 `item` 会变 `<variable>` 成 `itemList` 也会变 `<variable>List`成
+在`data-sly-list`语句上定义标识符允许您重命名`itemList`和`item`变量。 `item` 会变 `<variable>` 成 `itemList` 会变 `<variable>List`成
 
 ```xml
 <dl data-sly-list.child="${currentPage.listChildren}">
@@ -379,9 +379,9 @@ sup table tbody td tfoot th thead time tr u var wbr
 <article data-sly-resource="path/to/resource"></article>
 ```
 
-#### 路径不总是必填 {#path-not-required}
+#### 路径不总是必需{#path-not-required}
 
-请注意，如果您已经 `data-sly-resource` 拥有该资源，则不需要使用路径。 如果您已经拥有该资源，则可以直接使用它。
+请注意，如果您已经拥有资源，则不需要使用路径`data-sly-resource`。 如果您已经拥有该资源，则可以直接使用它。
 
 例如，以下内容是正确的。
 
@@ -454,7 +454,7 @@ sup table tbody td tfoot th thead time tr u var wbr
 <article data-sly-resource="${'path/to/resource' @ wcmmode='disabled'}"></article>
 ```
 
-默认情况下，AEM修饰标记处于禁用状态，decorationTagName选项允许将它们重新显示，cssClassName则允许将类添加到该元素。
+默认情况下，AEM decoration标签处于禁用状态，decorationTagName选项允许将它们重新显示，cssClassName则允许将类添加到该元素。
 
 ```xml
 <article data-sly-resource="${'path/to/resource' @ decorationTagName='span',
@@ -463,11 +463,11 @@ cssClassName='className'}"></article>
 
 >[!NOTE]
 >
->AEM优惠能够清晰、简单地逻辑控制包含元素的装饰标签。 有关详细信息， [请参阅开发组](https://docs.adobe.com/content/help/en/experience-manager-65/developing/components/decoration-tag.html) 件文档中的装饰标签。
+>AEM优惠清晰、简单的逻辑，控制包含元素的装饰标签。 有关详细信息，请参阅开发组件文档中的[装饰标签](https://docs.adobe.com/content/help/en/experience-manager-65/developing/components/decoration-tag.html)。
 
 ### 包括 {#include}
 
-`data-sly-include` 将主机元素的内容替换为由指示的HTML模板文件（HTL、JSP、ESP等）生成的标记 当其相应的模板引擎处理它时。 包含文件的渲染上下文将不包括当前的HTL上下文（包含文件的上下文）; 因此，要包含HTL文件，必 `data-sly-use` 须在包含的文件中重复当前文件(在这种情况下，通常最好使用 `data-sly-template` 和 `data-sly-call`)
+`data-sly-include` 将主机元素的内容替换为由指示的HTML模板文件（HTL、JSP、ESP等）生成的标记当其相应的模板引擎处理它时。 包含文件的渲染上下文将不包括当前的HTL上下文（包含文件的上下文）;因此，要包含HTL文件，必须在包含的文件中重复当前`data-sly-use`（在这种情况下，通常最好使用`data-sly-template`和`data-sly-call`）
 
 简单包括：
 
@@ -495,9 +495,9 @@ JSP的包含方式与以下相同：
 <section data-sly-include="${'template.html' @ wcmmode='disabled'}"></section>
 ```
 
-### 请求属性 {#request-attributes}
+### 请求属性{#request-attributes}
 
-在和 `data-sly-include` 中， `data-sly-resource` 您可以传递 `requestAttributes` 以在接收HTL脚本中使用它们。
+在`data-sly-include`和`data-sly-resource`中，您可以传递`requestAttributes`，以便在接收HTL脚本中使用它们。
 
 这允许您将参数正确传入脚本或组件。
 
@@ -521,7 +521,7 @@ public class Settings extends WCMUsePojo {
 }
 ```
 
-例如，通过Sling-Model，您可以使用指定值 `requestAttributes`。
+例如，通过Sling-Model，您可以使用指定的`requestAttributes`的值。
 
 在此示例中，布局通过Use类中的Map插入：
 
@@ -534,13 +534,13 @@ public class ProductSettings {
 }
 ```
 
-### 模板与呼叫 {#template-call}
+### 模板和调用{#template-call}
 
-模板块可以像函数调用一样使用： 在其声明中，它们可以获取参数，然后在调用它们时传递这些参数。 它们还允许递归。
+模板块可以像函数调用一样使用：在其声明中，它们可以获取参数，然后在调用它们时传递这些参数。 它们还允许递归。
 
-`data-sly-template` 定义模板。 HTL不输出主机元素及其内容
+`data-sly-template` 定义模板。HTL不输出主机元素及其内容
 
-`data-sly-call` 调用使用data-sly-template定义的模板。 调用的模板的内容（可选地进行参数化）将替换调用的主机元素的内容。
+`data-sly-call` 调用使用data-sly-template定义的模板。调用的模板的内容（可选地进行参数化）将替换调用的主机元素的内容。
 
 定义静态模板，然后调用它：
 
@@ -556,7 +556,7 @@ public class ProductSettings {
 <div data-sly-call="${two @ title=properties.jcr:title}"></div>
 ```
 
-位于其他文件中的模板可以使用进行初始化 `data-sly-use`。 请注意，在这种情 `data-sly-use` 况下 `data-sly-call` ，也可以放在同一元素上：
+位于其他文件中的模板可以使用`data-sly-use`进行初始化。 请注意，在这种情况下，`data-sly-use`和`data-sly-call`也可放置在同一元素上：
 
 ```xml
 <div data-sly-use.lib="templateLib.html">
@@ -579,21 +579,21 @@ public class ProductSettings {
 <div data-sly-call="${nav @ page=currentPage}" data-sly-unwrap></div>
 ```
 
-## sly元素 {#sly-element}
+## sly元素{#sly-element}
 
-HTML `<sly>` 标记可用于删除当前元素，只允许显示其子元素。 其功能与块元素 `data-sly-unwrap` 类似：
+`<sly>` HTML标记可用于删除当前元素，只允许显示其子元素。 其功能类似于`data-sly-unwrap`块元素：
 
 ```xml
 <!--/* This will display only the output of the 'header' resource, without the wrapping <sly> tag */-->
 <sly data-sly-resource="./header"></sly>
 ```
 
-尽管不是有效的HTML 5标记， `<sly>` 但标记可以使用以下图标在最终输出中显示 `data-sly-unwrap`:
+虽然不是有效的HTML 5标记，但使用`data-sly-unwrap`可以在最终输出中显示`<sly>`标记：
 
 ```xml
 <sly data-sly-unwrap="${false}"></sly> <!--/* outputs: <sly></sly> */-->
 ```
 
-元素的目 `<sly>` 标是使元素不输出更加明显。 如果你想，你仍可以使用 `data-sly-unwrap`。
+`<sly>`元素的目标是使元素不输出更明显。 如果您希望，您仍可以使用`data-sly-unwrap`。
 
-与之一 `data-sly-unwrap`样，请尽量减少此功能的使用。
+与`data-sly-unwrap`一样，尝试尽量减少此功能的使用。
