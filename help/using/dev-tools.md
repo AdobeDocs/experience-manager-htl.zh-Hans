@@ -14,6 +14,6 @@ ht-degree: 4%
 
 HTL提供以下开发人员工具：
 
-* [HTL Read Eval Print Loop](https://github.com/Adobe-Marketing-Cloud/aem-htl-repl) —— 用于播放语言的实时执行环境，非常适合学习。
+* [HTL Read Eval Print Loop](https://github.com/Adobe-Marketing-Cloud/aem-htl-repl)  —— 一种实时执行环境，用于播放语言，非常适合学习。
 * [AEM Brackets扩展](https://docs.adobe.com/content/help/en/experience-manager-65/developing/devtools/aem-brackets.html) -前端开发人员使用AEM组件的简单工具。
 * [AEM Eclipse扩展](https://docs.adobe.com/content/help/en/experience-manager-65/developing/devtools/aem-eclipse.html) -一款供后端开发人员创建AEM项目并轻松编辑的工具。
