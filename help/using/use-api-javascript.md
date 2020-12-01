@@ -36,16 +36,16 @@ use(['dep1.js', 'dep2.js'], function (Dep1, Dep2) {
 });
 ```
 
-## 简单示例 {#a-simple-example}
+## 一个简单示例{#a-simple-example}
 
-我们定义一个 `info`组件，位于
+我们定义一个组件`info`，它位于
 
 `/apps/my-example/components/info`
 
 它包含两个文件：
 
-* **`info.js`**: 定义use类的JavaScript文件。
-* **`info.html`**: 定义组件的HTL文 `info`件。 此代码将通过use- `info.js` API使用功能。
+* **`info.js`**:定义use类的JavaScript文件。
+* **`info.html`**:定义组件的HTL文 `info`件。此代码将通过use-API使用`info.js`的功能。
 
 ### /apps/my-example/component/info/info.js {#apps-my-example-component-info-info-js}
 
@@ -68,7 +68,7 @@ use(function () {
 </div>
 ```
 
-我们还会在以下位置创建一个使用该组 `info` 件的内容节点：
+我们还会创建一个使用`info`组件的内容节点，位于
 
 `/content/my-example`, with属性：
 
@@ -78,7 +78,7 @@ use(function () {
 
 下面是生成的存储库结构：
 
-### 存储库结构 {#repository-structure}
+### 存储库结构{#repository-structure}
 
 ```java
 {
@@ -115,7 +115,7 @@ use(function () {
 </section>
 ```
 
-相应的逻辑可以使用以下服务器端JavaScript编写，它位于模板 `component.js` 旁边的文件中：
+相应的逻辑可以使用以下服务器端JavaScript编写，它位于模板旁的`component.js`文件中：
 
 ```javascript
 use(function () {
@@ -134,7 +134,7 @@ use(function () {
 });
 ```
 
-这会尝试从不同 `title` 来源获取描述，并将描述裁切为50个字符。
+这会尝试从不同来源获取`title`，并将说明裁切为50个字符。
 
 ## 依赖关系 {#dependencies}
 
@@ -157,11 +157,11 @@ use(['../utils/MyUtils.js'], function (utils) {
 });
 ```
 
-## 扩展 {#extending}
+## 扩展{#extending}
 
-该依赖性模式还可用于扩展另一个组件(通常是当前组 `sling:resourceSuperType` 件的逻辑)的逻辑。
+该依赖性模式还可用于扩展另一个组件的逻辑（通常是当前组件的`sling:resourceSuperType`）。
 
-请想象一下，父组件 `title`已经提供，我们也 `description` 要添加：
+请想象一下，父组件已经提供`title`，我们还要添加`description`:
 
 ```javascript
 use(['../parent-component/parent-component.js'], function (component) {
@@ -176,9 +176,9 @@ use(['../parent-component/parent-component.js'], function (component) {
 });
 ```
 
-## 将参数传递到模板 {#passing-parameters-to-a-template}
+## 将参数传递到模板{#passing-parameters-to-a-template}
 
-对于可以 `data-sly-template` 独立于组件的语句，将参数传递到关联的Use-API可能很有用。
+对于可独立于组件的`data-sly-template`语句，将参数传递给关联的Use-API可能很有用。
 
 因此，在我们的组件中，让我们调用位于其他文件中的模板：
 
@@ -186,7 +186,7 @@ use(['../parent-component/parent-component.js'], function (component) {
 <section class="component-name" data-sly-use.tmpl="template.html" data-sly-call="${tmpl.templateName @ page=currentPage}"></section>
 ```
 
-这是位于以下位置的模板 `template.html`:
+这就是位于`template.html`中的模板：
 
 ```xml
 <template data-sly-template.templateName="${@ page}" data-sly-use.tmpl="${'template.js' @ page=page, descriptionLength=50}">
@@ -195,7 +195,7 @@ use(['../parent-component/parent-component.js'], function (component) {
 </template>
 ```
 
-相应的逻辑可以使用以下服务器端JavaScript编写，它位于模板文 `template.js` 件旁的文件中：
+相应的逻辑可以使用以下服务器端JavaScript编写，它位于模板文件旁的`template.js`文件中：
 
 ```javascript
 use(function () {
@@ -213,4 +213,4 @@ use(function () {
 });
 ```
 
-传递的参数在关键字上 `this` 设置。
+传递的参数在`this`关键字上设置。
