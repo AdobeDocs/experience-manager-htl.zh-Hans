@@ -2,7 +2,7 @@
 title: HTL Java Use-API
 description: 'HTML 模板语言 - HTL - Java Use-API 让 HTL 文件可以访问自定义 Java 类中的 Helper 方法。 '
 translation-type: tm+mt
-source-git-commit: ee712ef61018b5e05ea052484e2a9a6b12e6c5c8
+source-git-commit: f7e46aaac2a4b51d7fa131ef46692ba6be58d878
 workflow-type: tm+mt
 source-wordcount: '2558'
 ht-degree: 1%
@@ -551,7 +551,7 @@ public class MyComponent implements Use {
 
 另一个选项是使用从`org.apache.sling.api.resource.Resource`可调整的帮助程序类。
 
-假设您需要编写一个HTL脚本来显示DAM资产的mimetype。 在这种情况下，您知道调用HTL脚本时，它将位于`Resource`的上下文中，该&lt;a0/>用nodetype `dam:Asset`包裹JCR `Node`。
+假设您需要编写一个HTL脚本来显示DAM资产的mimetype。 在这种情况下，您知道调用HTL脚本时，它将位于`Resource`的上下文中，该用nodetype `dam:Asset`包裹JCR `Node`。
 
 您知道`dam:Asset`节点具有如下结构：
 
