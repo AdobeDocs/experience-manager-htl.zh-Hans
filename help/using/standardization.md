@@ -2,7 +2,7 @@
 title: 标准化
 description: HTL的标准化，包括HTL规范和HTL TCK。
 translation-type: tm+mt
-source-git-commit: 832e0563401e38e2121d26ec9f43ef2fade0a20d
+source-git-commit: f7e46aaac2a4b51d7fa131ef46692ba6be58d878
 workflow-type: tm+mt
 source-wordcount: '53'
 ht-degree: 3%
