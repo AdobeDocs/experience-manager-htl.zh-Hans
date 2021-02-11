@@ -2,7 +2,7 @@
 title: HTL 快速入门
 description: AEM支持的HTL取代JSP作为AEM中HTML的首选和推荐的服务器端模板系统。
 translation-type: tm+mt
-source-git-commit: c7fa6014cd954a2ccb175e4c3a6be9deb83af890
+source-git-commit: f7e46aaac2a4b51d7fa131ef46692ba6be58d878
 workflow-type: tm+mt
 source-wordcount: '2471'
 ht-degree: 0%
