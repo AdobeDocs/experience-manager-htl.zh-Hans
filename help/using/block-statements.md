@@ -2,7 +2,7 @@
 title: HTL 块语句
 description: HTML模板语言(HTL)块语句是直接添加到现有HTML的自定义数据属性。
 translation-type: tm+mt
-source-git-commit: 2336ce8860056f5bc6470b23ee4cda135f7107d8
+source-git-commit: f7e46aaac2a4b51d7fa131ef46692ba6be58d878
 workflow-type: tm+mt
 source-wordcount: '1555'
 ht-degree: 1%
@@ -161,7 +161,7 @@ Hello World
 <div class="popup" data-sly-unwrap="${isPopup}">content</div>
 ```
 
-### 设置 {#set}
+### set {#set}
 
 `data-sly-set` 使用预定义的值定义新标识符。
 
