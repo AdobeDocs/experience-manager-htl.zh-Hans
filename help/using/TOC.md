@@ -5,7 +5,7 @@ breadcrumb-title: HTL 指南
 user-guide-description: 使用 HTML 模板语言 (HTL) 创建企业级 Web 框架。
 feature-set: Experience Manager
 feature: Developer Tools
-role: 开发人员
+role: Developer
 translation-type: tm+mt
 source-git-commit: 5b88f6255534ef5af0958681c80303ab3da112b5
 workflow-type: tm+mt
