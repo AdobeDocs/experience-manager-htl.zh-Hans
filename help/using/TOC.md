@@ -6,16 +6,15 @@ user-guide-description: 使用 HTML 模板语言 (HTL) 创建企业级 Web 框�
 feature-set: Experience Manager
 feature: Developer Tools
 role: Developer
-translation-type: tm+mt
 source-git-commit: 5b88f6255534ef5af0958681c80303ab3da112b5
 workflow-type: tm+mt
-source-wordcount: '71'
+source-wordcount: '70'
 ht-degree: 92%
 
 ---
 
 
-# Adobe Experience Manager HTL帮助{#using}
+# Adobe Experience Manager HTL帮助 {#using}
 
 + [概述](overview.md)
 + 入门{#getting-started}
@@ -28,7 +27,7 @@ ht-degree: 92%
    + [HTL JavaScript Use-API](use-api-javascript.md)
    + [HTL 块语句](block-statements.md)
    + [HTL Use-API](use-api.md)
-   + [Developer Tools](dev-tools.md)
+   + [开发人员工具](dev-tools.md)
    + [HTL TCK](htl-tck.md)
    + [HTL 表达式语言](expression-language.md)
    + [代码样本](code-samples.md)
