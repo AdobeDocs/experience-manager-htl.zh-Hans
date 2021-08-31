@@ -4,20 +4,20 @@ user-guide-title: Adobe Experience Manager HTL
 breadcrumb-title: HTL 指南
 user-guide-description: 使用 HTML 模板语言 (HTL) 创建企业级 Web 框架。
 feature-set: Experience Manager
-feature: Developer Tools
+feature: 开发人员工具
 role: Developer
 source-git-commit: 5b88f6255534ef5af0958681c80303ab3da112b5
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '70'
-ht-degree: 92%
+ht-degree: 100%
 
 ---
 
 
-# Adobe Experience Manager HTL帮助 {#using}
+# Adobe Experience Manager HTL 帮助 {#using}
 
 + [概述](overview.md)
-+ 入门{#getting-started}
++ 快速入门{#getting-started}
    + [什么是 HTL？](update.md)
    + [HTL 快速入门](getting-started.md)
    + [HTL 规范](htl-specification.md)
@@ -30,5 +30,5 @@ ht-degree: 92%
    + [开发人员工具](dev-tools.md)
    + [HTL TCK](htl-tck.md)
    + [HTL 表达式语言](expression-language.md)
-   + [代码样本](code-samples.md)
+   + [代码示例](code-samples.md)
    + [标准化](standardization.md)
