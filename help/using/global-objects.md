@@ -1,31 +1,31 @@
 ---
 title: HTL 全局对象
-description: HTL无需指定任何内容，即可访问JSP中在包含global.jsp之后通常可用的所有对象。
+description: 无需指定任何内容，HTL 在包括 global.jsp 之后即可提供对 JSP 中所有常用对象的访问权限。
 exl-id: ca590b92-f1b3-4e44-a04a-a2c10dff256f
 source-git-commit: 8e70ee4921a7ea071ab7e06947824c371f4013d8
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '220'
-ht-degree: 5%
+ht-degree: 100%
 
 ---
 
 # HTL 全局对象 {#htl-global-objects}
 
-无需指定任何内容，HTL即可访问JSP中在包含`global.jsp`之后通常可用的所有对象。 除了可通过[Use-API](use-api.md)引入的任何对象之外，这些对象还包括其他对象。
+无需指定任何内容，HTL 在包括 `global.jsp` 之后即可提供对 JSP 中所有常用对象的访问权限。这些对象是对可能通过 [Use-API](use-api.md) 引入的任何对象的补充。
 
-## 可枚举对象{#enumerable-objects}
+## 可枚举对象 {#enumerable-objects}
 
-这些对象提供了对常用信息的便捷访问。 可以使用点表示法访问其内容，并可以使用`data-sly-list`或`data-sly-repeat`进行迭代。
+这些对象提供对常用信息的便捷访问。可以使用点表示法访问它们的内容，并且可以使用 `data-sly-list` 或 `data-sly-repeat` 循环访问它们。
 
 | 变量名称 | 描述 |
 |--- |--- |
-| `properties` | 当前资源的属性列表。 由[org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html)支持 |
-| `pageProperties` | 当前页面的页面属性列表。 由[org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html)支持 |
-| `inheritedPageProperties` | 当前页面的继承页面属性列表。 由[org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html)支持 |
+| `properties` | 当前资源的属性列表。受 [org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/cn/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) 支持 |
+| `pageProperties` | 当前页面的页面属性列表。受 [org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/cn/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) 支持 |
+| `inheritedPageProperties` | 当前页面的继承的页面属性列表。受 [org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/cn/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) 支持 |
 
-## Java支持的对象{#java-backed-objects}
+## Java 支持的对象 {#java-backed-objects}
 
-以下每个对象都由相应的Java对象进行备份。
+以下每个对象都受相应的 Java 对象支持。
 
 下表中最有用的变量以粗体突出显示。
 
@@ -55,9 +55,9 @@ ht-degree: 5%
 | **`wcmmode`** | `com.adobe.cq.sightly.SightlyWCMMode` |
 | `xssAPI` | `com.adobe.granite.xss.XSSAPI` |
 
-## JavaScript支持的对象{#javascript-backed-objects}
+## JavaScript 支持的对象 {#javascript-backed-objects}
 
-可以使用JavaScript支持HTL逻辑。 但是，首选或推荐的方法是使用[Sling模型。](https://sling.apache.org/documentation/bundles/models.html)
+可以使用 JavaScript 支持 HTL 逻辑。但是，首选或推荐的方法是使用 [Sling 模型](https://sling.apache.org/documentation/bundles/models.html)。
 
 <!-- 
 
