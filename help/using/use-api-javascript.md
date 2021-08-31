@@ -1,19 +1,19 @@
 ---
 title: HTL JavaScript Use-API
-description: HTML模板语言 — HTL - JavaScript Use-API允许HTL文件访问使用JavaScript编写的帮助程序代码。
+description: 利用 HTML 模板语言 (HTL) JavaScript Use-API，HTL 文件可以访问使用 JavaScript 编写的帮助程序代码。
 exl-id: e98bfbd5-fa64-48c7-bd14-477d4c5e1788
 source-git-commit: 8e70ee4921a7ea071ab7e06947824c371f4013d8
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '324'
-ht-degree: 2%
+ht-degree: 100%
 
 ---
 
 # HTL JavaScript Use-API {#htl-javascript-use-api}
 
-HTML模板语言(HTL)JavaScript Use-API允许HTL文件访问使用JavaScript编写的帮助程序代码。 这允许将所有复杂的业务逻辑封装在JavaScript代码中，而HTL代码仅处理直接标记生产。
+利用 HTML 模板语言 (HTL) JavaScript Use-API，HTL 文件可以访问使用 JavaScript 编写的帮助程序代码。这样可以将所有复杂的业务逻辑封装在 JavaScript 代码中，而 HTL 代码只处理直接标记生成。
 
-使用了以下约定。
+使用以下约定。
 
 ```javascript
 /**
@@ -35,16 +35,16 @@ use(['dep1.js', 'dep2.js'], function (Dep1, Dep2) {
 });
 ```
 
-## {#a-simple-example}的简单示例
+## 简单示例 {#a-simple-example}
 
-我们定义一个组件`info`，位于
+我们定义一个组件 `info`，位于
 
 `/apps/my-example/components/info`
 
 它包含两个文件：
 
-* **`info.js`**:定义use类的JavaScript文件。
-* **`info.html`**:用于定义组件的HTL文 `info`件。此代码将通过use-API使用`info.js`的功能。
+* **`info.js`**：定义 use 类的 JavaScript 文件。
+* **`info.html`**：定义组件 `info` 的 HTL 文件。此代码将通过 use-API 使用 `info.js` 的功能。
 
 ### /apps/my-example/component/info/info.js {#apps-my-example-component-info-info-js}
 
@@ -67,17 +67,17 @@ use(function () {
 </div>
 ```
 
-我们还会在`info`
+我们还创建一个 content 节点，它在以下位置使用 `info` 组件：
 
-`/content/my-example`，其中包含属性：
+`/content/my-example`，属性为：
 
 * `sling:resourceType = "my-example/component/info"`
 * `title = "My Example"`
 * `description = "This is some example content."`
 
-以下是生成的存储库结构：
+下面是生成的存储库结构：
 
-### 存储库结构{#repository-structure}
+### 存储库结构 {#repository-structure}
 
 ```java
 {
@@ -105,7 +105,7 @@ use(function () {
 }
 ```
 
-请考虑以下组件模板：
+考虑以下组件模板：
 
 ```xml
 <section class="component-name" data-sly-use.component="component.js">
@@ -114,7 +114,7 @@ use(function () {
 </section>
 ```
 
-可以使用以下服务器端JavaScript编写相应的逻辑，该JavaScript位于模板旁边的`component.js`文件中：
+相应的逻辑可以使用位于模板旁边的 `component.js` 文件中的以下服务器端 JavaScript 进行编写：
 
 ```javascript
 use(function () {
@@ -133,11 +133,11 @@ use(function () {
 });
 ```
 
-这会尝试从不同来源获取`title`，并将描述裁剪为50个字符。
+这会尝试从不同源获取 `title` 并将 description 裁剪为 50 个字符。
 
 ## 依赖关系 {#dependencies}
 
-假设我们有一个实用工具类，该类已经配备了智能功能，例如导航标题的默认逻辑或将字符串精心剪切到一定长度：
+假设我们有一个实用程序类，它已经配备了智能功能，例如导航标题的默认逻辑或很好地将字符串剪切为特定长度：
 
 ```javascript
 use(['../utils/MyUtils.js'], function (utils) {
@@ -158,9 +158,9 @@ use(['../utils/MyUtils.js'], function (utils) {
 
 ## 扩展 {#extending}
 
-依赖关系模式还可用于扩展其他组件（通常是当前组件的`sling:resourceSuperType`）的逻辑。
+依赖模式还可用于扩展另一个组件（通常是当前组件的 `sling:resourceSuperType`）的逻辑。
 
-假设父组件已经提供`title`，并且我们还要添加`description`:
+假设父组件已经提供了 `title`，我们还想添加一个 `description`：
 
 ```javascript
 use(['../parent-component/parent-component.js'], function (component) {
@@ -175,17 +175,17 @@ use(['../parent-component/parent-component.js'], function (component) {
 });
 ```
 
-## 将参数传递到模板{#passing-parameters-to-a-template}
+## 将参数传递给模板 {#passing-parameters-to-a-template}
 
-对于与组件无关的`data-sly-template`语句，将参数传递到关联的Use-API会非常有用。
+对于可以独立于组件的 `data-sly-template` 语句来说，将参数传递给关联的 Use-API 可能很有用。
 
-因此，在我们的组件中，让我们调用位于其他文件中的模板：
+因此，在我们的组件中，让我们调用位于不同文件中的模板：
 
 ```xml
 <section class="component-name" data-sly-use.tmpl="template.html" data-sly-call="${tmpl.templateName @ page=currentPage}"></section>
 ```
 
-下面是位于`template.html`中的模板：
+下面是位于 `template.html` 中的模板：
 
 ```xml
 <template data-sly-template.templateName="${@ page}" data-sly-use.tmpl="${'template.js' @ page=page, descriptionLength=50}">
@@ -194,7 +194,7 @@ use(['../parent-component/parent-component.js'], function (component) {
 </template>
 ```
 
-可以使用以下服务器端JavaScript编写相应的逻辑，该JavaScript位于模板文件旁边的`template.js`文件中：
+相应的逻辑可以使用位于模板文件旁边的 `template.js` 文件中的以下服务器端 JavaScript 进行编写：
 
 ```javascript
 use(function () {
@@ -212,4 +212,4 @@ use(function () {
 });
 ```
 
-传递的参数在`this`关键字上设置。
+在 `this` 关键词上设置传递的参数。
