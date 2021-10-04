@@ -4,10 +4,10 @@ type: Documentation
 product: adobe experience manager
 git-repo: https://git.corp.adobe.com/AdobeDocs/experience-manager-htl.zh-Hans
 index: y
-source-git-commit: 5b88f6255534ef5af0958681c80303ab3da112b5
-workflow-type: ht
+source-git-commit: 89b9e89254f341e74f1a5a7b99735d2e69c8a91e
+workflow-type: tm+mt
 source-wordcount: '107'
-ht-degree: 100%
+ht-degree: 91%
 
 ---
 
@@ -50,4 +50,4 @@ ToC
 * `description`
 * `index: n`（仅适用于组件的以前版本）
 
-有关元数据的其他信息可在[内部创作指南](https://docs.adobe.com/help/en/collaborative-doc-instructions/collaboration-guide/markdown/metadata.html#solution-metadata)中找到。
+有关元数据的其他信息可在[内部创作指南](https://experienceleague.adobe.com/docs/authoring-guide-exl/using/authoring/features/metadata.html#solution)中找到。

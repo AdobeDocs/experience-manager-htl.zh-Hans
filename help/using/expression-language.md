@@ -2,10 +2,10 @@
 title: HTL 表达式语言
 description: HTML 模板语言使用表达式语言来访问提供 HTML 输出的动态元素的数据结构。
 exl-id: 57e3961b-8c84-4d56-a049-597c7b277448
-source-git-commit: 8e70ee4921a7ea071ab7e06947824c371f4013d8
-workflow-type: ht
-source-wordcount: '1854'
-ht-degree: 100%
+source-git-commit: 89b9e89254f341e74f1a5a7b99735d2e69c8a91e
+workflow-type: tm+mt
+source-wordcount: '1852'
+ht-degree: 99%
 
 ---
 
@@ -336,7 +336,7 @@ HTL 允许数字和日期的本机格式，而无需编写自定义代码。这�
 
 ### 国际化 {#internationalization}
 
-使用当前[词典](https://docs.adobe.com/content/help/zh-Hans/experience-manager-65/developing/components/internationalization/i18n-translator.html)，将字符串翻译为当前&#x200B;*源* 的语言（参见下文）。如果找不到翻译，则使用原始字符串。
+使用当前[词典](https://experienceleague.adobe.com/docs/experience-manager-65/developing/components/internationalization/i18n-translator.html)，将字符串翻译为当前&#x200B;*源* 的语言（参见下文）。如果找不到翻译，则使用原始字符串。
 
 ```xml
 ${'Page' @ i18n}
