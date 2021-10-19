@@ -3,9 +3,9 @@ title: HTL 块语句
 description: HTML 模板语言 (HTL) 块语句是直接添加到现有 HTML 的自定义 data 属性。
 exl-id: a517dcef-ab7a-4d4c-a1a9-2e57aad034f7
 source-git-commit: 89b9e89254f341e74f1a5a7b99735d2e69c8a91e
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '1555'
-ht-degree: 99%
+ht-degree: 100%
 
 ---
 
@@ -59,7 +59,7 @@ HTL 块插件由 HTML 元素上设置的 `data-sly-*` 属性定义。元素可�
 1. `data-sly-set`, `data-sly-test`, `data-sly-use`
 1. `data-sly-call`
 1. `data-sly-text`
-1. `data-sly-element`,  `data-sly-include`  `data-sly-resource`
+1. `data-sly-element`, `data-sly-include`, `data-sly-resource`
 1. `data-sly-unwrap`
 1. `data-sly-list`, `data-sly-repeat`
 1. `data-sly-attribute`
@@ -462,7 +462,7 @@ cssClassName='className'}"></article>
 
 >[!NOTE]
 >
->AEM 可提供清晰而简单的逻辑来控制用于封装所包含元素的修饰标记。有关详细信息，请参阅开发组件文档中的[修饰标记](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/implementing/developing/full-stack/components-templates/decoration-tag.html)。
+>AEM 可提供清晰而简单的逻辑来控制用于封装所包含元素的修饰标记。有关详细信息，请参阅开发组件文档中的[修饰标记](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/implementing/developing/full-stack/components-templates/decoration-tag.html?lang=zh-Hans)。
 
 ### include {#include}
 
