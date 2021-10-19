@@ -1,11 +1,11 @@
 ---
 source-git-commit: 89b9e89254f341e74f1a5a7b99735d2e69c8a91e
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '532'
 ht-degree: 100%
 
 ---
-# 为 Adobe Experience Manager 文档贡献内容
+# 向 Adobe Experience Manager 文档贡献内容
 
 感谢您选择向 Adobe Experience Manager Cloud Service 文档贡献内容！我们由衷欢迎整个读者社区以及 Adobe 员工贡献内容。
 
