@@ -1,11 +1,11 @@
 ---
-title: 什么是HTL块语句？
-description: 了解HTL块语句或HTML模板语言(HTL)。 块语句是直接添加到现有HTML的自定义数据属性。
+title: 什么是 HTL 块语句？
+description: 了解 HTL 块语句或 HTML 模板语言 (HTL)。块语句是直接添加到现有 HTML 的自定义数据属性。
 exl-id: a517dcef-ab7a-4d4c-a1a9-2e57aad034f7
 source-git-commit: 79d299766da07dae001708b396b05c73cd70d4cc
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '1563'
-ht-degree: 98%
+ht-degree: 100%
 
 ---
 
