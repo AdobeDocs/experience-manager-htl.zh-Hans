@@ -1,11 +1,11 @@
 ---
 title: HTL JavaScript Use-API
-description: 利用 HTML 模板语言 (HTL) JavaScript Use-API，HTL 文件可以访问使用 JavaScript 编写的帮助程序代码。
+description: 了解HTML模板语言(HTL)JavaScript use-API如何使HTL文件能够访问使用JavaScript编写的帮助程序代码。
 exl-id: e98bfbd5-fa64-48c7-bd14-477d4c5e1788
-source-git-commit: 8e70ee4921a7ea071ab7e06947824c371f4013d8
-workflow-type: ht
-source-wordcount: '324'
-ht-degree: 100%
+source-git-commit: 7b53eff0652f650ffb8caae0e69aa349b5c548eb
+workflow-type: tm+mt
+source-wordcount: '326'
+ht-degree: 93%
 
 ---
 

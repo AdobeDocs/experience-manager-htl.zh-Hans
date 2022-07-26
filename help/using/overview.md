@@ -1,11 +1,11 @@
 ---
-title: Adobe Experience Manager HTL 概述
-description: AEM 支持 HTL 的目的在于提供可增加安全性的高效企业级 Web 框架，并让不了解 Java 的 HTML 开发者更好地参与 AEM 项目。
+title: HTL概述
+description: 了解AEM如何支持HTML模板语言(HTL)来提供高效的企业级Web框架。 HTL提高了安全性，并允许不了解Java的HTML开发人员更好地参与AEM项目。
 exl-id: 5d06ff25-d681-4b95-8375-c28a8364eb7e
-source-git-commit: 8e70ee4921a7ea071ab7e06947824c371f4013d8
-workflow-type: ht
-source-wordcount: '667'
-ht-degree: 100%
+source-git-commit: 7b53eff0652f650ffb8caae0e69aa349b5c548eb
+workflow-type: tm+mt
+source-wordcount: '663'
+ht-degree: 95%
 
 ---
 
