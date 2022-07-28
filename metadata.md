@@ -2,10 +2,10 @@
 solution: Experience Manager
 type: Documentation
 product: adobe experience manager
-git-repo: https://git.corp.adobe.com/AdobeDocs/experience-manager-htl.zh-Hans
+git-repo: https://github.com/AdobeDocs/experience-manager-htl.zh-Hans
 index: y
 source-git-commit: 89b9e89254f341e74f1a5a7b99735d2e69c8a91e
-workflow-type: ht
+workflow-type: tm+mt
 source-wordcount: '107'
 ht-degree: 100%
 
