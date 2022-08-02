@@ -1,11 +1,11 @@
 ---
-title: HTL概述
-description: 了解AEM如何支持HTML模板语言(HTL)来提供高效的企业级Web框架。 HTL提高了安全性，并允许不了解Java的HTML开发人员更好地参与AEM项目。
+title: HTL 概述
+description: 了解 AEM 如何支持 HTML 模板语言 (HTL)，提供高效的企业级 Web 框架。 HTL 提高了安全性，并允许不具备 Java 知识的 HTML 开发人员更好地参与 AEM 项目。
 exl-id: 5d06ff25-d681-4b95-8375-c28a8364eb7e
 source-git-commit: 7b53eff0652f650ffb8caae0e69aa349b5c548eb
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '663'
-ht-degree: 95%
+ht-degree: 100%
 
 ---
 
