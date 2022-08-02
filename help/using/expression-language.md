@@ -1,11 +1,11 @@
 ---
-title: HTL表达式语言
-description: 了解如何在AEM中使用HTL表达式语言。 HTML 模板语言使用表达式语言来访问提供 HTML 输出的动态元素的数据结构。
+title: HTL 表达式语言
+description: 了解如何在 AEM 中使用 HTL 表达式语言。 HTML 模板语言使用表达式语言来访问提供 HTML 输出的动态元素的数据结构。
 exl-id: 57e3961b-8c84-4d56-a049-597c7b277448
 source-git-commit: 7b53eff0652f650ffb8caae0e69aa349b5c548eb
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '1860'
-ht-degree: 99%
+ht-degree: 100%
 
 ---
 
