@@ -1,22 +1,22 @@
 ---
 title: HTL Java Use-API
-description: HTL Java Use-API允许HTL文件访问自定义Java类中的Helper方法。
+description: HTL Java Use-API 让 HTL 文件可以访问自定义 Java 类中的 Helper 方法。
 exl-id: 9a9a2bf8-d178-4460-a3ec-cbefcfc09959
 source-git-commit: da2375a2390f0254dba9745d9f4970e88788e5d5
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '1518'
-ht-degree: 39%
+ht-degree: 100%
 
 ---
 
 
 # HTL Java Use-API {#htl-java-use-api}
 
-HTL Java Use-API允许HTL文件访问自定义Java类中的Helper方法。
+HTL Java Use-API 让 HTL 文件可以访问自定义 Java 类中的 Helper 方法。
 
 ## 用例 {#use-case}
 
-HTL Java Use-API允许HTL文件通过访问自定义Java类中的Helper方法 `data-sly-use`. 这样可以将所有复杂的业务逻辑封装在 Java 代码中，而 HTL 代码只处理直接标记生成。
+HTL Java Use-API 让 HTL 文件可以通过 `data-sly-use` 访问自定义 Java 类中的 Helper 方法。 这样可以将所有复杂的业务逻辑封装在 Java 代码中，而 HTL 代码只处理直接标记生成。
 
 Java Use-API 对象可以是一个简单的 POJO，由特定的实现通过 POJO 的默认构造器实例化。
 
@@ -35,13 +35,13 @@ Use-API POJO 也可以使用以下签名公开名为 init 的公共方法：
 
 ## 简单示例 {#a-simple-example}
 
-此示例说明了Use-API的用法。
+此示例说明了 Use-API 的用法。
 
 >[!NOTE]
 >
->为了简化此示例，以便简单说明其用法。 在生产环境中，建议使用 [Sling模型。](https://sling.apache.org/documentation/bundles/models.html)
+>为了简单说明其使用，简化了该示例。 在生产环境中，建议使用 [Sling 模型。](https://sling.apache.org/documentation/bundles/models.html)
 
-我们首先从一个名为 `info`，则没有use类。 它由单个文件 `/apps/my-example/components/info.html` 组成
+我们先来看一个没有 use 类的 HTL 组件，名为 `info`。 它由单个文件 `/apps/my-example/components/info.html` 组成
 
 ```xml
 <div>
@@ -60,7 +60,7 @@ Use-API POJO 也可以使用以下签名公开名为 init 的公共方法：
 }
 ```
 
-当用户访问此内容时，系统会执行 HTL 文件。在HTL代码中，我们使用上下文对象 `properties` 访问当前资源的 `title` 和 `description` 并显示它们。 输出文件 `/content/my-example.html` 将为：
+当用户访问此内容时，系统会执行 HTL 文件。在 HTL 代码内，我们使用上下文对象 `properties` 来访问当前资源的 `title` 和 `description`，并显示它们。 输出的文件 `/content/my-example.html` 会是这样：
 
 ```html
 <div>
@@ -71,13 +71,13 @@ Use-API POJO 也可以使用以下签名公开名为 init 的公共方法：
 
 ### 添加一个 use 类 {#adding-a-use-class}
 
-的 `info` 组件本身就不需要use类即可执行其简单功能。 有些情况下，您需要做的事情无法在 HTL 中完成，因此需要 use 类。但请记住：
+目前 `info` 组件不需要 use 类来执行其（非常简单的）功能。 有些情况下，您需要做的事情无法在 HTL 中完成，因此需要 use 类。但请记住：
 
 >[!NOTE]
 >
 >只有当某些事情无法单独在 HTL 中完成时，才应使用 use 类。
 
-例如，假设您想让 `info` 组件显示资源的 `title` 和 `description` 属性且必须全部小写。由于 HTL 没有将字符串转换为小写的方法，所以您需要 use 类。我们可以通过添加Java用例类并更改 `/apps/my-example/component/info/info.html` 如下所示：
+例如，假设您想让 `info` 组件显示资源的 `title` 和 `description` 属性且必须全部小写。由于 HTL 没有将字符串转换为小写的方法，所以您需要 use 类。我们的解决办法是，添加一个 Java use 类并更改 `/apps/my-example/component/info/info.html`，如下所示：
 
 ```xml
 <div data-sly-use.info="Info">
@@ -86,7 +86,7 @@ Use-API POJO 也可以使用以下签名公开名为 init 的公共方法：
 </div>
 ```
 
-此外，我们还创建 `/apps/my-example/component/info/Info.java`.
+此外，我们还创建了 `/apps/my-example/component/info/Info.java`。
 
 ```java
 package apps.my_example.components.info;
@@ -113,25 +113,25 @@ public class Info extends WCMUsePojo {
 }
 ```
 
-请参阅 [的Javaoc `com.adobe.cq.sightly.WCMUsePojo`](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/adobe/cq/sightly/WCMUsePojo.html) 以了解更多详细信息。
+有关详细信息，请参见`com.adobe.cq.sightly.WCMUsePojo`](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/adobe/cq/sightly/WCMUsePojo.html) 的 [Javadocs。
 
-现在，让我们浏览代码的不同部分。
+现在让我们浏览代码的不同部分。
 
 ### 局部与捆绑 Java 类 {#local-vs-bundle-java-class}
 
-Java用例类可通过两种方式安装：
+Java use 类有以下两种安装方式：
 
-* **本地**  — 在本地安装中，Java源文件与HTL文件一起放置在同一存储库文件夹中。 根据需要自动编译源。无需单独的编译或打包步骤。
-* **捆绑**  — 在包安装中，必须使用标准AEM包部署机制编译Java类并将其部署在OSGi包中（请参阅部分） [捆绑的Java类](#bundled-java-class))。
+* **局部** – 在局部安装中，Java 源文件与 HTL 文件放在一起，位于同一个存储库文件夹下。 根据需要自动编译源。无需单独的编译或打包步骤。
+* **捆绑** – 在捆绑安装中，必须使用标准 AEM 捆绑部署机制在 OSGi 捆绑包中编译和部署 Java 类（参阅[捆绑的 Java 类](#bundled-java-class)部分）。
 
-要了解何时使用哪种方法，请牢记以下两点：
+要知道何时使用哪种方法，请记住以下两点：
 
 * 当 use 类特定于所针对的组件时，建议使用&#x200B;**局部 Java use 类**。
 * 当 Java 代码实现从多个 HTL 组件访问的服务时，建议使用&#x200B;**捆绑 Java use 类**。
 
 本例使用局部安装。
 
-### Java包是存储库路径 {#java-package-is-repository-path}
+### Java 包是存储库路径 {#java-package-is-repository-path}
 
 使用局部安装时，use 类的包名称必须与存储库文件夹位置的名称匹配，在包名称中将路径中的所有连字符替换为下划线。
 
@@ -155,7 +155,7 @@ public class Info extends WCMUsePojo {
 
 ### 扩展 `WCMUsePojo` {#extending-wcmusepojo}
 
-虽然有许多将Java类与HTL结合的方法(请参阅 [替代 `WCMUsePojo`](#alternatives-to-wcmusepojo))，最简单的方法是 `WCMUsePojo` 类。 例如 `/apps/my-example/component/info/Info.java`:
+尽管 Java 类与 HTL 结合的方法很多（请参阅[ `WCMUsePojo`](#alternatives-to-wcmusepojo) 的替代项部分），但更简单的方法是扩展 `WCMUsePojo` 类。 以我们为例`/apps/my-example/component/info/Info.java`：
 
 ```java
 package apps.my_example.components.info;
@@ -170,7 +170,7 @@ public class Info extends WCMUsePojo
 
 ### 初始化类 {#initializing-the-class}
 
-从 `WCMUsePojo`，则通过覆盖 `activate` 方法，在本例中为 `/apps/my-example/component/info/Info.java`
+从 `WCMUsePojo` 扩展 use 类时，通过覆盖 `activate` 方法来执行初始化，在本例中为 `/apps/my-example/component/info/Info.java`
 
 ```java
 ...
@@ -194,15 +194,15 @@ public class Info extends WCMUsePojo {
 
 通常，[activate](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/adobe/cq/sightly/WCMUsePojo.html) 方法用于根据当前上下文（例如当前请求和资源）预先计算和存储（在成员变量中）HTL 代码中所需的值。
 
-的 `WCMUsePojo` 类提供对与HTL文件中可用的上下文对象集的访问权限（请参阅文档） [全局对象。](global-objects.md))
+`WCMUsePojo` 类提供对 HTL 文件中同样的上下文对象集的访问（请参阅[全局对象](global-objects.md)文档）。
 
 在扩展 `WCMUsePojo` 的类中，可以使用名称访问对象
 
 [`<T> T get(String name, Class<T> type)`](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/adobe/cq/sightly/WCMUsePojo.html)
 
-或者，常用的上下文对象可以直接使用此表中所列的相应方便方法进行访问。
+或者，可以通过本表中列出的适当方便方法直接访问常用的上下文对象。
 
-| Object | 方便方法 |
+| 对象 | 方便方法 |
 |---|---|
 | [`PageManager`](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/day/cq/wcm/api/PageManager.html) | [`getPageManager()`](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/adobe/cq/sightly/WCMUsePojo.html#getPageManager--) |
 | [`Page`](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/day/cq/wcm/api/Page.html) | [`getCurrentPage()`](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/adobe/cq/sightly/WCMUsePojo.html#getCurrentPage--) |
@@ -220,15 +220,15 @@ public class Info extends WCMUsePojo {
 | [`SlingHttpServletResponse`](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/org/apache/sling/api/SlingHttpServletResponse.html) | [`getResponse()`](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/adobe/cq/sightly/WCMUsePojo.html#getResponse--) |
 | [`SlingScriptHelper`](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/org/apache/sling/api/scripting/SlingScriptHelper.html) | [`getSlingScriptHelper()`](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/adobe/cq/sightly/WCMUsePojo.html#getSlingScriptHelper--) |
 
-### Getter方法 {#getter-methods}
+### Getter 方法 {#getter-methods}
 
 一旦 use 类初始化，HTL 文件即会运行。在此阶段，HTL 通常会拉入 use 类的各种成员变量的状态，并渲染它们以便呈现。
 
-要在HTL文件中提供对这些值的访问，您必须根据以下命名约定在use-class中定义自定义getter方法：
+要提供从 HTL 文件内访问这些值的权限，您必须根据以下命名惯例在 use 类中定义自定义 getter 方法：
 
 * 表单 `getXyz` 的一种方法会在 HTL 文件内公开一个名为 `xyz` 的对象属性。
 
-在以下示例文件中 `/apps/my-example/component/info/Info.java`，方法 `getTitle` 和 `getDescription` 导致对象属性 `title` 和 `description` 在HTL文件的上下文中变得可访问。
+在以下示例文件`/apps/my-example/component/info/Info.java`中，方法 `getTitle` 和 `getDescription` 使对象属性 `title` 和 `description` 在 HTL 文件上下文内变为可访问。
 
 ```java
 ...
@@ -247,11 +247,11 @@ public class Info extends WCMUsePojo {
 }
 ```
 
-### data-sly-use属性 {#data-sly-use-attribute}
+### data-sly-use 属性 {#data-sly-use-attribute}
 
 `data-sly-use` 属性用于初始化 HTL 代码中的 use 类。在我们的示例中，`data-sly-use` 属性声明我们需要使用类 `Info`：我们可以只使用该类的局部名称，因为我们使用的是局部安装（Java 源文件与 HTL 文件放在同一文件夹中）。如果我们使用捆绑安装，则须指定完全限定的类名称。
 
-请注意 `/apps/my-example/component/info/info.html` 示例。
+注意本 `/apps/my-example/component/info/info.html` 示例中的用法。
 
 ```xml
 <div data-sly-use.info="Info">
@@ -260,11 +260,11 @@ public class Info extends WCMUsePojo {
 </div>
 ```
 
-### 本地标识符 {#local-identifier}
+### 局部标识符 {#local-identifier}
 
 标识符 `info`（位于 `data-sly-use.info` 中的点后）用于在 HTL 文件中标识类。声明该标识符后，其作用范围是整个文件。这不限于包含 `data-sly-use` 语句的元素。
 
-请注意 `/apps/my-example/component/info/info.html` 示例。
+注意本 `/apps/my-example/component/info/info.html` 示例中的用法。
 
 ```xml
 <div data-sly-use.info="Info">
@@ -273,11 +273,11 @@ public class Info extends WCMUsePojo {
 </div>
 ```
 
-### 获取资产 {#getting-properties}
+### 获取属性 {#getting-properties}
 
 标识符 `info` 然后用于访问通过 getter 方法 `Info.getTitle` 和 `Info.getDescription` 公开的对象属性 `title` 和 `description`。
 
-请注意 `/apps/my-example/component/info/info.html` 示例。
+注意本 `/apps/my-example/component/info/info.html` 示例中的用法。
 
 ```xml
 <div data-sly-use.info="Info">
@@ -288,7 +288,7 @@ public class Info extends WCMUsePojo {
 
 ### 输出 {#output}
 
-现在，当我们 `/content/my-example.html` 它将返回以下 `/content/my-example.html` 文件。
+现在，当我们访问 `/content/my-example.html` 时，它会返回以下 `/content/my-example.html` 文件：
 
 ```xml
 <div>
@@ -299,24 +299,24 @@ public class Info extends WCMUsePojo {
 
 >[!NOTE]
 >
->为了简化此示例，以便简单说明其用法。 在生产环境中，建议使用 [Sling模型。](https://sling.apache.org/documentation/bundles/models.html)
+>为了简单说明其使用，简化了该示例。 在生产环境中，建议使用 [Sling 模型。](https://sling.apache.org/documentation/bundles/models.html)
 
-## 超越基础知识 {#beyond-the-basics}
+## 基本功能拓展 {#beyond-the-basics}
 
-本节将介绍一些除前面介绍的简单示例之外的其他功能。
+本节介绍了一些超出前述简单示例的其他功能。
 
-* 将参数传递到use类
-* 捆绑的Java用类
+* 将参数传递给 use 类
+* 捆绑的 Java use 类
 
 ### 传递参数 {#passing-parameters}
 
 初始化时，可将参数传递给 use 类。例如，我们可以这样做：
 
-有关详细信息，请参阅Sling [HTL脚本引擎文档。](https://sling.apache.org/documentation/bundles/scripting/scripting-htl.html#passing-parameters-to-java-use-objects)
+有关详细信息，请参阅 Sling [HTL 脚本引擎文档。](https://sling.apache.org/documentation/bundles/scripting/scripting-htl.html#passing-parameters-to-java-use-objects)
 
 ### 捆绑的 Java 类 {#bundled-java-class}
 
-使用捆绑的使用类，必须使用标准OSGi包部署机制在AEM中编译、打包和部署类。 与本地安装不同， use-class包声明的名称应通常与此中的声明相同 `/apps/my-example/component/info/Info.java` 示例。
+对于捆绑的 use 类，必须使用标准 OSGi 捆绑包部署机制在 AEM 中编译、打包和部署类。 与局部安装相反，use 类包声明应按照该 `/apps/my-example/component/info/Info.java` 示例中的方式正常命名。
 
 ```java
 package org.example.app.components;
@@ -328,7 +328,7 @@ public class Info extends WCMUsePojo {
 }
 ```
 
-和 `data-sly-use` 语句必须引用完全限定的类名，而不是仅引用此中的本地类名 `/apps/my-example/component/info/info.html` 示例。
+同时，`data-sly-use` 语句必须引用完全限定的类名称，而非该 `/apps/my-example/component/info/info.html` 示例中仅引用局部类名称：
 
 ```xml
 <div data-sly-use.info="org.example.app.components.info.Info">
