@@ -7,9 +7,9 @@ feature-set: Experience Manager
 feature: Developer Tools
 role: Developer
 source-git-commit: f9b59d5fcc380413f2727b06f41ecacca6518227
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '46'
-ht-degree: 89%
+ht-degree: 100%
 
 ---
 
@@ -21,7 +21,7 @@ ht-degree: 89%
 + [HTL 规范](specification.md)
 + [HTL 全局对象](global-objects.md)
 + [HTL Java Use-API](java-use-api.md)
-+ [AEM扩展](aem-extensions.md)
++ [AEM 扩展](aem-extensions.md)
 + [开发人员工具](developer-tools.md)
 + [代码示例](code-samples.md)
-+ [HTL历史](history.md)
++ [HTL 历史记录](history.md)
