@@ -3,7 +3,7 @@ title: HTL 历史记录
 description: 对于 AEM 的长期用户，本文档提供了 HTL 的背景知识、它如何取代 JSP，以及 Sightly 的名称更改。
 exl-id: 00985b35-2130-4946-959a-0a09a34a0f05
 source-git-commit: 5ab1275c984135fe946f36905bbc979cf19edd80
-workflow-type: ht
+workflow-type: tm+mt
 source-wordcount: '542'
 ht-degree: 100%
 
