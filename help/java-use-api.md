@@ -3,9 +3,9 @@ title: HTL Java Use-API
 description: HTL Java Use-API 让 HTL 文件可以访问自定义 Java 类中的 Helper 方法。
 exl-id: 9a9a2bf8-d178-4460-a3ec-cbefcfc09959
 source-git-commit: 83f07cab5e2f4604701708f6a1a4bc19e3b54107
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '1505'
-ht-degree: 98%
+ht-degree: 100%
 
 ---
 
@@ -155,7 +155,7 @@ public class Info extends WCMUsePojo {
 
 ### 扩展 `WCMUsePojo` {#extending-wcmusepojo}
 
-尽管Java类与HTL结合的方法很多，但更简单的方法是扩展 `WCMUsePojo` 类。 以我们为例`/apps/my-example/component/info/Info.java`：
+尽管 Java 类与 HTL 结合的方法很多，但最简单的方法是扩展 `WCMUsePojo` 类。以我们为例`/apps/my-example/component/info/Info.java`：
 
 ```java
 package apps.my_example.components.info;
