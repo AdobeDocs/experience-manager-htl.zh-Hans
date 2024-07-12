@@ -3,7 +3,7 @@ title: 代码示例
 description: 通过代码示例，包括 WKND 参考实施和核心组件等实例，探索 HTL。
 exl-id: cdc0a525-e5d1-4d7f-97ae-b9192163caee
 source-git-commit: 88edbd2fd66de960460df5928a3b42846d32066b
-workflow-type: ht
+workflow-type: tm+mt
 source-wordcount: '110'
 ht-degree: 100%
 

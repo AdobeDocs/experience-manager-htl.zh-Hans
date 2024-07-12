@@ -3,7 +3,7 @@ title: HTL 全局对象
 description: 了解 HTL 中可枚举对象、Java 支持的对象和 JavaScript 支持的对象。
 exl-id: ca590b92-f1b3-4e44-a04a-a2c10dff256f
 source-git-commit: 88edbd2fd66de960460df5928a3b42846d32066b
-workflow-type: ht
+workflow-type: tm+mt
 source-wordcount: '166'
 ht-degree: 100%
 
