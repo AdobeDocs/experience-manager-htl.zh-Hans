@@ -2,10 +2,10 @@
 title: HTL Java Use-API
 description: HTL Java Use-API 让 HTL 文件可以访问自定义 Java 类中的 Helper 方法。
 exl-id: 9a9a2bf8-d178-4460-a3ec-cbefcfc09959
-source-git-commit: ebeac25c38b81c92011c163c7860688f43547a7d
+source-git-commit: c6bb6f0954ada866cec574d480b6ea5ac0b51a3f
 workflow-type: tm+mt
 source-wordcount: '1137'
-ht-degree: 69%
+ht-degree: 66%
 
 ---
 
@@ -194,7 +194,7 @@ public class Info extends WCMUsePojo {
 
 通常，[activate](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/adobe/cq/sightly/WCMUsePojo.html) 方法用于根据当前上下文（例如当前请求和资源）预先计算和存储（在成员变量中）HTL 代码中所需的值。
 
-`WCMUsePojo` 类提供对 HTL 文件中同样的上下文对象集的访问（请参阅[全局对象](global-objects.md)文档）。
+`WCMUsePojo`类提供对HTL文件中同样的上下文对象集的访问（请参阅文档[全局对象](global-objects.md)）。
 
 在扩展`WCMUsePojo`的类中，可以使用上下文对象的名称访问这些对象：
 
@@ -312,7 +312,7 @@ public class Info extends WCMUsePojo {
 
 初始化时，可将参数传递给 use 类。
 
-有关详细信息，请参阅 Sling [HTL 脚本引擎文档。](https://sling.apache.org/documentation/bundles/scripting/scripting-htl.html#passing-parameters-to-java-use-objects)
+有关详细信息，请参阅Sling [HTL脚本引擎文档](https://sling.apache.org/documentation/bundles/scripting/scripting-htl.html#passing-parameters-to-java-use-objects)。
 
 ### 捆绑的 Java 类 {#bundled-java-class}
 

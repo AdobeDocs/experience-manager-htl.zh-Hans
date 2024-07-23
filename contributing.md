@@ -1,8 +1,8 @@
 ---
-source-git-commit: 22f62868df0fcfc558e5d62434dde843a9f3ca83
+source-git-commit: c6bb6f0954ada866cec574d480b6ea5ac0b51a3f
 workflow-type: tm+mt
 source-wordcount: '502'
-ht-degree: 96%
+ht-degree: 94%
 
 ---
 # 向 Adobe Experience Manager 文档贡献内容
@@ -30,7 +30,7 @@ Adobe 希望让您能够尽可能轻松地贡献内容。您可以通过两种�
 
 >[!NOTE]
 >
->您提交的内容将受 [Adobe 使用条款](https://www.adobe.com/cn/legal/terms.html)约束。
+>您提交的内容将受[Adobe使用条款](https://www.adobe.com/cn/legal/terms.html)的约束。
 
 ### 创建问题 {#create-an-issue}
 
