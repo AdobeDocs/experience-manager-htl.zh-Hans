@@ -1,11 +1,11 @@
 ---
 title: AEM 扩展
-description: 为开发人员方便起见，AEM 提供了面向 AEM 的 HTL 规范扩展。
+description: 为了开发人员方便起见，AEM提供了面向AEM的HTL规范扩展。
 exl-id: d78cb84d-f958-45e2-9c6c-df86a68277d5
-source-git-commit: 88edbd2fd66de960460df5928a3b42846d32066b
+source-git-commit: ebeac25c38b81c92011c163c7860688f43547a7d
 workflow-type: tm+mt
-source-wordcount: '234'
-ht-degree: 100%
+source-wordcount: '228'
+ht-degree: 64%
 
 ---
 
@@ -21,15 +21,15 @@ ht-degree: 100%
 * `hint`
 * `basename`
 
-然而，在 AEM 中，HTL 的[国际化支持](https://experienceleague.adobe.com/docs/experience-manager-65/developing/components/internationalization/i18n-dev.html)是在 `com.day.cq.i18n` 包中的 API 帮助下实施的。
+然而，在 AEM 中，HTL 的[国际化支持](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/implementing/developing/components/internationalization/i18n-dev)是在 `com.day.cq.i18n` 包中的 API 帮助下实施的。
 
-## data-sly-include {#data-sly-include}
+## `data-sly-include` {#data-sly-include}
 
 在 AEM 中，`data-sly-include` 可以采用附加的 `wcmmode` 选项，用于控制所包含脚本的 [WCM 模式](https://developer.adobe.com/experience-manager/reference-materials/cloud-service/javadoc/com/day/cq/wcm/api/WCMMode.html)。 允许的值是可用枚举常量的名称。
 
-## data-sly-resource {#data-sly-resource}
+## `data-sly-resource` {#data-sly-resource}
 
-除了路径和 `Resources` 之外，`data-sly-resource` 块元素还可以与 [`Maps`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html) 或 [`Records` 一起使用。](https://github.com/apache/sling-org-apache-sling-scripting-sightly-runtime/blob/master/src/main/java/org/apache/sling/scripting/sightly/Record.java)对于这两种方法，必须提供 `resourceName` String 属性。 其值用于创建包含在渲染上下文中的[合成资源](https://www.javadoc.io/doc/org.apache.sling/org.apache.sling.api/latest/org/apache/sling/api/resource/SyntheticResource.html)。 传递给 `data-sly-resource` 的 `Record` 或 `Map` 中的其余属性，将作为正常 `Resource` 属性使用。 如果此映射中缺少 `sling:resourceType` 属性，则资源类型将被假定为 `resourceType` [表达式选项](https://github.com/adobe/htl-spec/blob/1.4/SPECIFICATION.md#229-resource)的值，或者是驱动渲染的当前资源的资源类型。
+除了路径和 `Resources` 之外，`data-sly-resource` 块元素还可以与 [`Maps`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html) 或 [`Records` 一起使用。](https://github.com/apache/sling-org-apache-sling-scripting-sightly-runtime/blob/master/src/main/java/org/apache/sling/scripting/sightly/Record.java)对于这两种方法，必须提供 `resourceName` String 属性。 其值用于创建包含在渲染上下文中的[合成资源](https://www.javadoc.io/doc/org.apache.sling/org.apache.sling.api/latest/org/apache/sling/api/resource/SyntheticResource.html)。 传递给`data-sly-resource`的`Record`或`Map`中的其余属性用作普通`Resource`属性。 如果此映射中缺少`sling:resourceType`属性，则假定资源类型是`resourceType` [表达式选项](https://github.com/adobe/htl-spec/blob/1.4/SPECIFICATION.md#229-resource)的值，或者是驱动渲染的当前资源的资源类型。
 
 给定脚本范围中可用的以下映射/记录属性为 `map`：
 

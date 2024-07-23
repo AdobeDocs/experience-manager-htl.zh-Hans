@@ -1,27 +1,27 @@
 ---
-source-git-commit: 89b9e89254f341e74f1a5a7b99735d2e69c8a91e
-workflow-type: ht
-source-wordcount: '532'
-ht-degree: 100%
+source-git-commit: 22f62868df0fcfc558e5d62434dde843a9f3ca83
+workflow-type: tm+mt
+source-wordcount: '502'
+ht-degree: 96%
 
 ---
 # 向 Adobe Experience Manager 文档贡献内容
 
-感谢您选择向 Adobe Experience Manager Cloud Service 文档贡献内容！我们由衷欢迎整个读者社区以及 Adobe 员工贡献内容。
+感谢您选择向 Adobe Experience Manager Cloud Service 文档贡献内容！Adobe欢迎整个读者社区以及Adobe员工贡献内容。
 
 本文将介绍如何贡献内容，并列出了贡献内容时应遵循的准则。
 
 ## Adobe 开源项目行为准则
 
-本项目采用 [Adobe 开源项目行为准则](code-of-conduct.md)。如果选择为 AEM 文档贡献内容，即表明您同意遵守本行为准则。请将不可接受的行为报告给 [Grp-opensourceoffice@adobe.com](mailto:Grp-opensourceoffice@adobe.com)。
+本项目采用 [Adobe 开源项目行为准则](code-of-conduct.md)。如果选择为 AEM 文档贡献内容，即表明您同意遵守本行为准则。请联系 [Grp-opensourceoffice@adobe.com](mailto:Grp-opensourceoffice@adobe.com) 举报不可接受的行为。
 
 ## 内容贡献准则
 
-为完善 AEM 文档，我们欢迎任何人贡献内容，但是我们要求贡献的内容尽可能遵守特定的准则和标准。有关更多信息，请参阅 [AEM 文档内容贡献准则](guidelines.md)。
+为完善 AEM 文档，虽然欢迎任何人贡献内容，但是确保贡献的内容尽可能遵守特定的准则和标准。请参阅 [AEM 文档内容贡献准则](guidelines.md)，了解更多信息。
 
 ## 如何贡献内容
 
-我们希望让您能够尽可能轻松地贡献内容。您可以通过两种方式贡献内容：
+Adobe 希望让您能够尽可能轻松地贡献内容。您可以通过两种方式贡献内容：
 
 * [创建问题](#create-an-issue)
 * [创建拉取请求](#create-a-pull-request)
@@ -34,15 +34,15 @@ ht-degree: 100%
 
 ### 创建问题 {#create-an-issue}
 
-对于当前的文档或者内容陈述方式，您是否有任何建议、发现或疑问？如果有，请创建问题。如果您想贡献内容，但却不喜欢编辑文档或创建拉取请求，则创建问题也是很不错的选择。
+对于当前的文档或者内容陈述方式，您是否有任何建议、发现或疑问？然后创建一个问题。如果您想贡献内容，但却不喜欢编辑文档或创建拉取请求，则创建问题也是很不错的选择。
 
-通过创建问题，您可以轻松描述自己关于如何改进文档的想法，以供 AEM 文档团队成员查阅。只需单击任意页面右侧导航面板顶部的&#x200B;**记录问题**&#x200B;链接，即可创建问题。
+问题让您可以轻松地描述您对文档的改进想法，并且 AEM 文档团队成员可以对其进行审核。只需单击任意页面右侧导航面板顶部的&#x200B;**记录问题**&#x200B;链接，即可创建问题。
 
 ### 创建拉取请求 {#create-a-pull-request}
 
-如果您发现了问题并且确切知道如何解决该问题，请考虑创建拉取请求。通过创建拉取请求，您可以自行对文档进行编辑，您所做的编辑稍后将由 AEM 文档团队成员进行审阅以确定是否要将其包含到文档中。只需单击任意页面右侧导航面板顶部的&#x200B;**编辑此页面**&#x200B;链接，即可进行建议的更改并创建拉取请求。
+如果您发现了问题并且确切知道如何解决该问题，请考虑创建拉取请求。通过拉取请求，您可以对文档自行进行编辑。AEM 文档团队成员将审核编辑内容，以决定是否纳入。只需单击任意页面右侧导航面板顶部的&#x200B;**编辑此页面**&#x200B;链接，即可进行建议的更改并创建拉取请求。
 
-所有拉取请求都必须附有已签署的[内容贡献者许可协议（简称 CLA）。](https://opensource.adobe.com/cla.html)这将允许 Adobe 在项目中再次分发您贡献的内容。您只需提交一次 Adobe CLA 即可，因此，如果您以前已经提交过，则无需再次提交！
+所有拉取请求都必须附有已签署的[贡献者许可协议（简称 CLA）](https://opensource.adobe.com/cla.html)。CLA 这将允许 Adobe 在项目中再次分发您的贡献。您只需提交一次 Adobe CLA 即可，因此，如果您以前已经提交过，则无需再次提交！
 
 ### 快速视频介绍
 
@@ -52,10 +52,10 @@ ht-degree: 100%
 
 ### 来自 Adobe 员工的内容贡献
 
-如果您是 Adobe 员工并且有内容要贡献，请使用公司 git 中的 `AdobeDocs` 组织。
+如果您是 Adobe 员工并且有内容要贡献，使用公司 git 中的 `AdobeDocs` 组织。
 
-我们很乐意收到任何内容贡献，如果您是通过公共存储库贡献内容的，我们将审查您贡献的内容，不过，由 Adobe 员工创建的拉取请求更易于处理，并且可以在公司存储库中更快地获得批准。请确保仅在公司存储库中讨论任何专有信息。
+Adobe 很高兴接收任何贡献内容，并且如果您在公共存储库中做出贡献，Adobe 会对其进行审查。不过，Adobe 员工提出的拉取请求更容易处理，在企业版存储库上批准的速度也更快。请确保任何专有信息只在公司存储库中讨论。
 
 ## 更多信息
 
-有关如何使用 GitHub 创作平台的更多详细信息，请参阅 [Adobe 文档内容贡献者指南](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=zh-Hans)。
+有关如何使用 GitHub 创作平台的更多详细信息，请参阅 [Adobe 文档内容贡献者指南](https://experienceleague.adobe.com/en/docs/contributor/contributor-guide/introduction)。

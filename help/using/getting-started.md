@@ -2,10 +2,10 @@
 title: HTL 快速入门
 description: 了解 HTL，AEM 中适用于 HTML 的首选和推荐的服务器端模板系统，并了解该语言的主要概念及其基本结构。
 exl-id: c95eb1b3-3b96-4727-8f4f-d54e7136a8f9
-source-git-commit: 88edbd2fd66de960460df5928a3b42846d32066b
+source-git-commit: ebeac25c38b81c92011c163c7860688f43547a7d
 workflow-type: tm+mt
-source-wordcount: '2147'
-ht-degree: 100%
+source-wordcount: '2050'
+ht-degree: 62%
 
 ---
 
@@ -22,11 +22,11 @@ HTML 模板语言 (HTL) 是 Adobe Experience Manager 中适用于 HTML 的首选
 
 ## HTL 图层 {#layers}
 
-AEM 中使用的 HTL 可以由多个层定义。
+在AEM中，许多层定义HTL。
 
 1. **[HTL 规范](specification.md)** – HTL 是一个开源、不依赖于平台的规范，任何人都可以自由实施。
 1. **[Sling HTL 脚本引擎](specification.md)** – Sling 项目创建了 HTL 的参考实施，供 AEM 使用。
-1. **[AEM 扩展功能](specification.md)** – AEM 构建在 Sling HTL 脚本引擎之上，以便为开发者提供 AEM 特有的方便功能。
+1. **[AEM扩展](specification.md)** - AEM构建在Sling HTL脚本引擎之上，为开发人员提供特定于AEM的方便功能。
 
 本 HTL 文档侧重于使用 HTL 开发 AEM 解决方案。 因此，它涉及所有三层，必要时连接外部资源。
 
@@ -50,18 +50,18 @@ HTML 模板语言使用表达式语言将内容片段插入到呈现的标记中
 
 可以辨别出两种不同种类的语法：
 
-* **块语句** – 为有条件地显示 `<h1>` 元素，使用了 `data-sly-test` HTML5 数据属性。 HTL 提供了多个此类属性，允许将行为附加到任何 HTML 元素，并且所有属性都以 `data-sly` 为前缀。
-* **表达式语言** – HTL 表达式通过 `${` 和 `}` 字符进行分隔。 在运行时，计算这些表达式并将其值注入到传出的 HTML 流中。
+* **块语句** — 如果要有条件地显示`<h1>`元素，请使用`data-sly-test`HTML5数据属性。 HTL 提供了多个此类属性，允许将行为附加到任何 HTML 元素，并且所有属性都以 `data-sly` 为前缀。
+* **表达式语言** - `${`和`}`字符分隔了HTL表达式。 在运行时，计算这些表达式并将其值注入到传出的 HTML 流中。
 
 有关两种语法的详细信息，请参阅 [HTL 规范](specification.md)。
 
 ### SLY 元素 {#the-sly-element}
 
-HTL 的一个中心概念是可以重复使用现有的 HTML 元素来定义块语句，从而无需插入额外的分隔符来定义语句的开始和结束位置。这种将静态 HTML 转换为正常使用的动态模板的不造成干扰的标记注释提供了不破坏 HTML 代码的有效性的好处，因此即使作为静态文件也能正确显示。
+HTL的一个中心概念是可以重复使用现有HTML元素来定义块语句。 这种重用避免了插入额外的分隔符来定义语句的开始和结束位置。 对标记进行无干扰的注释可将静态HTML转换为动态模板，而不会破坏HTML的有效性，从而确保即使作为静态文件也能正确显示。
 
-但是，有时在必须插入块语句的确切位置上可能没有现有元素。对于这种情况，可以插入一个特殊的 `sly` 元素，将自动从输出中移除该元素，但会执行附加的块语句并相应地显示其内容。
+但是，有时在必须插入块语句的确切位置上可能没有现有元素。在这种情况下，您可以插入一个特殊的`sly`元素。 在运行附加的块语句并相应地显示其内容时，此元素将自动从输出中删除。
 
-以下示例...
+以下示例：
 
 ```xml
 <sly data-sly-test="${properties.jcr:title && properties.jcr:description}">
@@ -70,14 +70,14 @@ HTL 的一个中心概念是可以重复使用现有的 HTML 元素来定义块�
 </sly>
 ```
 
-...将输出类似于以下 HTML 的内容，但前提是同时定义了 `jcr:title` 和 `jcr:description` 属性，并且它们都不为空：
+输出类似于以下HTML的内容，但前提是同时定义了`jcr:title`和`jcr:description`属性，并且它们都不为空：
 
 ```xml
 <h1>MY TITLE</h1>
 <p>MY DESCRIPTION</p>
 ```
 
-要记住，只有在没有可用块语句注释现有元素时，才使用 `sly` 元素。 这是因为 `sly` 元素阻止该语言所提供的值，即在使其成为动态时不改变静态 HTML。
+要记住，只有在没有可用块语句注释现有元素时，才使用 `sly` 元素。 原因是`sly`元素阻止该语言提供的值在使其成为动态时不更改静态HTML。
 
 例如，如果前面的示例已经封装在 `div` 元素中，那么添加的 `sly` 元素将是滥用的：
 
@@ -90,7 +90,7 @@ HTL 的一个中心概念是可以重复使用现有的 HTML 元素来定义块�
 </div>
 ```
 
-并且 `div` 元素可以使用条件进行注释：
+并且`div`元素可以使用条件进行注释：
 
 ```xml
 <div data-sly-test="${properties.jcr:title && properties.jcr:description}">
@@ -108,21 +108,21 @@ HTL 的一个中心概念是可以重复使用现有的 HTML 元素来定义块�
 <!-- An HTML Comment -->
 ```
 
-HTL 注释是使用其他类似于 JavaScript 的语法的 HTML 注释。整个 HTL 注释及其中的任何内容都将被处理器完全忽略并从输出中删除。
+HTL 注释是使用其他类似于 JavaScript 的语法的 HTML 注释。处理器会完全忽略整个HTL注释及其中的任何内容，并将其从输出中删除。
 
-不过，将传递标准 HTML 注释的内容，并计算注释中的表达式。
+但是，标准HTML注释的内容会被传递，并且会计算注释中的表达式。
 
 HTML 注释不能包含 HTL 注释，反之亦然。
 
 ### 特殊上下文 {#special-contexts}
 
-为了能够充分利用 HTL，很好地了解它基于 HTML 语法的结果很重要。
+为了能够充分利用HTL，很好地了解它基于HTML语法的结果很重要。
 
 有关详细信息，请参阅 HTL 规范的[显示上下文部分](https://github.com/adobe/htl-spec/blob/1.4/SPECIFICATION.md#121-display-context)。
 
 ### 元素和属性名称 {#element-and-attribute-names}
 
-表达式只能放置到 HTML 文本或属性值中，而不能放置到元素名称或属性名称中，否则它就不再是有效的 HTML。 要动态设置元素名称，可以在所需的元素上使用 `data-sly-element` 语句；要动态设置属性名称，甚至同时设置多个属性，可以使用 `data-sly-attribute` 语句。
+表达式只能放置到 HTML 文本或属性值中，而不能放置到元素名称或属性名称中，否则它就不再是有效的 HTML。 要动态设置元素名称，可以在所需的元素上使用`data-sly-element`语句；要动态设置属性名称，甚至同时设置多个属性，可以使用`data-sly-attribute`语句。
 
 ```xml
 <h1 data-sly-element="${myElementName}" data-sly-attribute="${myAttributeMap}">...</h1>
@@ -130,17 +130,17 @@ HTML 注释不能包含 HTL 注释，反之亦然。
 
 ### 没有块语句的上下文 {#contexts-without-block-statements}
 
-由于 HTL 使用数据属性来定义块语句，因此无法在以下上下文中定义此类块语句，并且只能在这里使用表达式：
+由于HTL使用数据属性来定义块语句，因此无法在以下上下文中定义此类块语句，并且只能在那里使用表达式：
 
 * HTML 注释
 * Script 元素
 * Style 元素
 
-原因是这些上下文的内容是文本而不是 HTML，并且包含的 HTML 元素将被视为简单的字符数据。因此，没有真正的 HTML 元素，也无法执行 `data-sly` 属性。
+原因是这些上下文的内容是文本而不是 HTML，并且包含的 HTML 元素将被视为简单的字符数据。因此，如果没有真正的HTML元素，也无法运行`data-sly`属性。
 
-这可能听起来像是重大限制，但需要如此，因为不应滥用 HTML 模板语言来生成非 HTML 的输出。 下面的[用于访问逻辑的 Use-API](#use-api-for-accessing-logic) 部分介绍了如何从模板调用其他逻辑，可以在需要为这些上下文准备复杂输出时使用它。例如，将数据从后端发送到前端脚本的简单方法是让组件的逻辑生成一个 JSON 字符串，然后可以使用简单的 HTL 表达式将其放在数据属性中。
+这种做法听起来可能是一种重大限制。 但是，最好是这样，因为HTML模板语言只应生成有效的HTML输出。 下面的[用于访问逻辑的 Use-API](#use-api-for-accessing-logic) 部分介绍了如何从模板调用其他逻辑，可以在需要为这些上下文准备复杂输出时使用它。要将数据从后端发送到前端脚本，请使用组件的逻辑生成一个JSON字符串，然后使用简单的HTL表达式将其置于数据属性中。
 
-以下示例说明了 HTML 注释的行为，但在 script 或 style 元素中，将观察到相同的行为：
+以下示例说明了HTML注释的行为，但在script或style元素中，将观察到相同的行为：
 
 ```xml
 <!--
@@ -149,7 +149,7 @@ HTML 注释不能包含 HTL 注释，反之亦然。
 -->
 ```
 
-将输出类似于以下 HTML 的内容：
+输出类似于以下HTML的内容：
 
 ```xml
 <!--
@@ -160,7 +160,7 @@ HTML 注释不能包含 HTL 注释，反之亦然。
 
 ### 需要显式上下文 {#explicit-contexts-required}
 
-如下面的[自动上下文感知转义](#automatic-context-aware-escaping)部分中所述，HTL 的一个目标是通过自动将上下文感知转义应用于所有表达式来降低引入跨站点脚本 (XSS) 漏洞的风险。虽然 HTL 可以自动检测放置在 HTML 标记内的表达式的上下文，但它不会分析内联 JavaScript 或 CSS 的语法，因此依赖开发人员显式指定必须将哪个确切上下文应用于此类表达式。
+如下面的[自动上下文感知转义](#automatic-context-aware-escaping)部分中所述，HTL 的一个目标是通过自动将上下文感知转义应用于所有表达式来降低引入跨站点脚本 (XSS) 漏洞的风险。HTL会检测HTML标记中表达式的上下文，但不分析内联JavaScript或CSS，因此开发人员必须为这些表达式指定确切的上下文。
 
 由于没有在 XSS 漏洞中应用正确的转义结果，因此 HTL 会在尚未声明上下文时删除脚本和样式上下文中的所有表达式的输出。
 
@@ -179,13 +179,13 @@ HTML 注释不能包含 HTL 注释，反之亦然。
 
 ### 用于访问逻辑的 Use-API {#use-api-for-accessing-logic}
 
-利用 HTML 模板语言 (HTL) Java Use-API，HTL 文件可以通过 `data-sly-use` 访问自定义 Java 类中的 helper 方法。这样可以将所有复杂的业务逻辑封装在 Java 代码中，而 HTL 代码只处理直接标记生成。
+利用 HTML 模板语言 (HTL) Java Use-API，HTL 文件可以通过 `data-sly-use` 访问自定义 Java 类中的 helper 方法。此过程允许将所有复杂的业务逻辑封装在Java代码中，而HTL代码只处理直接标记生成。
 
 有关更多详细信息，请参阅 [HTL Java Use-API](java-use-api.md) 文档。
 
 ### 自动上下文感知转义 {#automatic-context-aware-escaping}
 
-考虑以下示例：
+请考虑以下示例：
 
 ```xml
 <p data-sly-use.logic="logic.js">
@@ -197,7 +197,7 @@ HTML 注释不能包含 HTL 注释，反之亦然。
 
 在大多数模板语言中，此示例可能会造成跨站点脚本 (XSS) 漏洞，因为即使所有变量都会自动进行 HTML 转义，`href` 属性仍必须经过专门的 URL 转义。这种遗漏是常见的错误之一，因为它容易被遗忘，并且很难自动发现。
 
-为帮助解决这个问题，HTML 模板语言会根据每个变量所在的上下文自动对每个变量进行转义。此功能的实现得益于 HTL 对 HTML 语法的理解。
+为帮助实现此目的，HTML模板语言会根据每个变量所在的上下文自动对每个变量进行转义。 此方法之所以可行，是因为HTL理解HTML的语法。
 
 假设以下 `logic.js` 文件：
 
@@ -211,7 +211,7 @@ use(function () {
 });
 ```
 
-初始示例然后会生成以下输出：
+初始示例会产生以下输出：
 
 ```xml
 <p>
@@ -227,23 +227,23 @@ use(function () {
 
 ### 自动删除空属性 {#automatic-removal-of-empty-attributes}
 
-考虑以下示例：
+请考虑以下示例：
 
 ```xml
 <p class="${properties.class}">some text</p>
 ```
 
-如果 `class` 属性的值碰巧为空，则 HTML 模板语言将自动从输出中删除整个 `class` 属性。
+如果`class`属性的值碰巧为空，则HTML模板语言将自动从输出中删除整个`class`属性。
 
-此功能的实现同样得益于 HTL 对 HTML 语法的理解，因此只有当属性的值不为空时，才能有条件地显示具有动态值的属性。 这十分方便，因为它避免了在属性周围添加条件块，这会使标记无效和不可读。
+此流程同样是可行的，因为HTL理解HTML语法，因此只有当属性的值不为空时，才能有条件地显示具有动态值的属性。 这个原因非常方便，因为它避免了在属性周围添加条件块，这会使标记无效和不可读。
 
 此外，放置在表达式中的变量的类型很重要：
 
 * **字符串：**
-   * **非空：**&#x200B;将字符串设置为属性值。
+   * **不为空：**&#x200B;将字符串设置为属性值。
    * **空：**&#x200B;完全删除属性。
 
-* **数字：**&#x200B;将值设置为属性值。
+* **数字：**&#x200B;将该值设置为属性值。
 
 * **布尔型：**
    * **true：**&#x200B;显示没有值的属性（作为布尔 HTML 属性）
@@ -259,7 +259,7 @@ use(function () {
 
 ## 使用 HTL 的常见模式 {#common-patterns-with-htl}
 
-此部分介绍一些常见场景以及如何使用 HTML 模板语言很好地解决它们。
+本节介绍一些常见场景。 它解释了如何使用HTML模板语言最好地解决这些场景。
 
 ### 加载客户端库 {#loading-client-libraries}
 
@@ -296,7 +296,7 @@ use(function () {
 </html>
 ```
 
-在本示例中，如果 HTML `head` 和 `body` 元素放置在不同的文件中，则 `clientlib.html` 模板必须加载到需要它的每个文件中。
+在此示例中，如果HTML`head`和`body`元素在单独的文件中，则`clientlib.html`模板必须加载到需要它的每个文件中。
 
 [HTL 规范](specification.md)中有关 template 和 call 语句的部分提供了有关声明和调用此类模板的工作原理的更多详细信息。
 
@@ -304,7 +304,7 @@ use(function () {
 
 一般来说，将数据传递给客户端的更方便、更轻松的方式是使用 `data` 属性，对于 HTL 来说更是如此。
 
-以下示例显示了如何使用逻辑（也可以使用 Java 编写）来非常方便地将要传递给客户端的对象序列化为 JSON，然后可以很轻松地将其放置到 `data` 属性中：
+以下示例演示如何将对象序列化为JSON（也可以在Java中序列化）以传递给客户端。 然后，可以将其轻松置于`data`属性中：
 
 ```xml
 <!--/* template.html file: */-->
@@ -325,7 +325,7 @@ use(function () {
 });
 ```
 
-从那里，可以轻松地设想客户端 JavaScript 如何访问该属性并再次解析 JSON。例如，下面是要放置到客户端库中的相应 JavaScript：
+从那里，可以轻松地设想客户端 JavaScript 如何访问该属性并再次解析 JSON。例如，此方法是将相应的JavaScript放置到客户端库中：
 
 ```javascript
 var elements = document.querySelectorAll("[data-json]");
@@ -353,16 +353,16 @@ for (var i = 0; i < elements.length; i++) {
 </div>
 ```
 
-如上所示，将包含到 `script` 元素中的标记可以包含 HTL 块语句，并且表达式无需提供显式上下文，因为 Handlebars 模板的内容已被隔离在自己的文件中。 此外，此示例显示了如何将服务器端执行的 HTL（例如在 `h2` 元素上）与 Handlebars 之类的客户端执行的模板语言（显示在 `h3` 元素上）混合。
+`script`元素的标记可以包含没有显式上下文的HTL块语句，因为Handlebars模板内容隔离在自己的文件中。 此外，此示例显示了如何将服务器端运行HTL（例如在`h2`元素上）与客户端运行的模板语言（例如显示在`h3`元素上的Handlebars）混合。
 
 不过，一种更现代的技术是改用 HTML `template` 元素，因为这样做的好处是无需将模板的内容隔离到单独的文件中。
 
 ### 解除特殊上下文的限制 {#lifting-limitations-of-special-contexts}
 
-在需要绕过脚本、样式和注释上下文的限制的特殊情况下，可以将它们的内容隔离在单独的 HTL 文件中。 位于自己文件中的所有内容都将由 HTL 解释为普通的 HTML 片段，而忘记了可能包含它的限制上下文。
+在需要绕过脚本、样式和注释上下文的限制的特殊情况下，可以将它们的内容隔离在单独的 HTL 文件中。 HTL将其自身文件中的所有内容解释为标准HTML片段，忽略包含它的位置中的任何限制上下文。
 
 请参阅下面的[使用客户端模板](#working-with-client-side-templates)部分来获取示例。
 
 >[!CAUTION]
 >
->这种技术可能会引入跨站点脚本 (XSS) 漏洞，如果必须使用它，应仔细研究安全方面。 通常有比依赖这种做法更好的方法来实施同样的目的。
+>此技术可能会引入跨站点脚本(XSS)漏洞。 如果采用这种方法，应仔细研究安全方面。 通常有比依赖这种做法更好的方法来实施同样的目的。
