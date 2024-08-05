@@ -3,9 +3,9 @@ title: HTL 全局对象
 description: 了解 HTL 中可枚举对象、Java 支持的对象和 JavaScript 支持的对象。
 exl-id: ca590b92-f1b3-4e44-a04a-a2c10dff256f
 source-git-commit: c6bb6f0954ada866cec574d480b6ea5ac0b51a3f
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '164'
-ht-degree: 87%
+ht-degree: 100%
 
 ---
 
@@ -30,7 +30,7 @@ ht-degree: 87%
 
 ## Java 支持的对象 {#java-backed-objects}
 
-相应的Java对象支持以下每个对象。
+相应的 Java 对象支持下列每个对象。
 
 | 变量名称 | 描述 |
 |---|---|
@@ -62,4 +62,4 @@ ht-degree: 87%
 
 ## JavaScript 支持的对象 {#javascript-backed-objects}
 
-可以使用 JavaScript 支持 HTL 逻辑。但是，首选或推荐的方法是使用[Sling模型](https://sling.apache.org/documentation/bundles/models.html)。
+可以使用 JavaScript 支持 HTL 逻辑。但是，首选或推荐的方法是使用 [Sling 模型](https://sling.apache.org/documentation/bundles/models.html)。

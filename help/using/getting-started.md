@@ -3,9 +3,9 @@ title: HTL 快速入门
 description: 了解 HTL，AEM 中适用于 HTML 的首选和推荐的服务器端模板系统，并了解该语言的主要概念及其基本结构。
 exl-id: c95eb1b3-3b96-4727-8f4f-d54e7136a8f9
 source-git-commit: c6bb6f0954ada866cec574d480b6ea5ac0b51a3f
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '2050'
-ht-degree: 99%
+ht-degree: 100%
 
 ---
 
@@ -18,7 +18,7 @@ HTML 模板语言 (HTL) 是 Adobe Experience Manager 中适用于 HTML 的首选
 
 >[!TIP]
 >
->本文档介绍了 HTL 的目的及其基本结构和概念。 如果您对特定语法有疑问，请参阅[HTL规范](specification.md)。
+>本文档介绍了 HTL 的目的及其基本结构和概念。 如果您对特定语法有疑问，请参阅 [HTL 规范](specification.md)。
 
 ## HTL 图层 {#layers}
 
