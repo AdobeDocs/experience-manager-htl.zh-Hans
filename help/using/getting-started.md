@@ -4,8 +4,8 @@ description: 了解 HTL，AEM 中适用于 HTML 的首选和推荐的服务器�
 exl-id: c95eb1b3-3b96-4727-8f4f-d54e7136a8f9
 source-git-commit: c6bb6f0954ada866cec574d480b6ea5ac0b51a3f
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '2050'
+ht-degree: 100%
 
 ---
 
