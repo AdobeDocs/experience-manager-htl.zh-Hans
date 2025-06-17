@@ -2,14 +2,14 @@
 sub-product: Adobe Experience Manager HTL
 user-guide-title: Adobe Experience Manager HTL
 breadcrumb-title: HTL 指南
-user-guide-description: 对于传统的AEM项目，使用HTML模板语言(HTL)创建企业级Web框架。
+user-guide-description: 对于传统的 AEM 项目，使用 HTML 模板语言 (HTL) 创建企业级 Web 框架。
 feature-set: Experience Manager
 feature: Developer Tools
 role: Developer
 source-git-commit: e9148a152c5b9298233346d93809c80e35f980d0
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '50'
-ht-degree: 68%
+ht-degree: 100%
 
 ---
 
