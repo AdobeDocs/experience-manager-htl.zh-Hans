@@ -2,10 +2,10 @@
 title: HTL 历史记录
 description: 对于 AEM 的长期用户，本文档提供了 HTL 的背景知识、它如何取代 JSP，以及 Sightly 的名称更改。
 exl-id: 00985b35-2130-4946-959a-0a09a34a0f05
-source-git-commit: c6bb6f0954ada866cec574d480b6ea5ac0b51a3f
-workflow-type: ht
-source-wordcount: '540'
-ht-degree: 100%
+source-git-commit: addc69e4b4e56a9b1c5f91ce9af26fa2d326d981
+workflow-type: tm+mt
+source-wordcount: '530'
+ht-degree: 96%
 
 ---
 
@@ -61,6 +61,9 @@ Adobe 建议对于新的 AEM 项目使用 HTML 模板语言。原因是与 JSP �
 
 >[!NOTE]
 >
->此命名更改不会影响代码或 API，因此兼容性不受影响。有关更多信息，请[参考此公告视频](https://helpx.adobe.com/cn/experience-manager/how-to/announce-htl.html)。
+>此命名更改不会影响代码或API，因此兼容性不受影响。
+
+<!-- LINK IS 404
+For more information, watch [this announcement video](https://helpx.adobe.com/experience-manager/how-to/announce-htl.html). -->
 
 要了解有关 HTL 的更多信息，请参阅 [HTML 模板语言 (HTL) 入门指南](overview.md)。

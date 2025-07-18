@@ -1,13 +1,13 @@
 ---
-source-git-commit: 22f62868df0fcfc558e5d62434dde843a9f3ca83
+source-git-commit: addc69e4b4e56a9b1c5f91ce9af26fa2d326d981
 workflow-type: tm+mt
-source-wordcount: '74'
-ht-degree: 85%
+source-wordcount: '73'
+ht-degree: 84%
 
 ---
 # Adobe Experience Manager HTL 文档
 
-Adobe Experience ManagerHTML模板语言(HTL)文档存储库。
+Adobe Experience Manager HTML模板语言(HTL)文档存储库。
 
 欢迎您贡献文档内容。请参阅以下资源：
 
