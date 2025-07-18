@@ -113,7 +113,7 @@ public class Info extends WCMUsePojo {
 }
 ```
 
-有关详细信息，请参见`com.adobe.cq.sightly.WCMUsePojo`](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/adobe/cq/sightly/WCMUsePojo.html) 的 [Java docs。
+有关详细信息，请参见`com.adobe.cq.sightly.WCMUsePojo`[&#128279;](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/adobe/cq/sightly/WCMUsePojo.html) 的 Java docs。
 
 现在让我们看看代码的不同部分。
 
