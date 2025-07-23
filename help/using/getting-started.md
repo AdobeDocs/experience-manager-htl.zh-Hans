@@ -3,9 +3,9 @@ title: HTL 快速入门
 description: 了解 HTL，AEM 中适用于 HTML 的首选和推荐的服务器端模板系统，并了解该语言的主要概念及其基本结构。
 exl-id: c95eb1b3-3b96-4727-8f4f-d54e7136a8f9
 source-git-commit: addc69e4b4e56a9b1c5f91ce9af26fa2d326d981
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '2045'
-ht-degree: 97%
+ht-degree: 100%
 
 ---
 
@@ -18,15 +18,15 @@ HTML 模板语言 (HTL) 是 Adobe Experience Manager 中适用于 HTML 的首选
 
 >[!TIP]
 >
->本文档介绍了 HTL 的目的及其基本结构和概念。 如果您对特定语法有疑问，请参阅[HTL规范](specification.md)。
+>本文档介绍了 HTL 的目的及其基本结构和概念。 如果您对特定语法有疑问，请参阅 [HTL 规范](specification.md)。
 
 ## HTL 图层 {#layers}
 
 在 AEM 中，多个层定义了 HTL。
 
 1. **[HTL 规范](specification.md)** – HTL 是一个开源、不依赖于平台的规范，任何人都可以自由实施。
-1. **[`Sling`HTL脚本引擎](specification.md)** - `Sling`项目已创建HTL的参考实现，供AEM使用。
-1. **[AEM扩展](specification.md)** - AEM在`Sling` HTL脚本引擎的基础上进行构建，为开发人员提供AEM特有的方便功能。
+1. **[`Sling`Sling HTL 脚本引擎](specification.md)** – `Sling` 项目创建了 HTL 的参考实施，供 AEM 使用。 
+1. **[AEM 扩展](specification.md)** – AEM 构建在 `Sling` HTL 脚本引擎之上，以便为开发者提供 AEM 特有的方便功能。
 
 本 HTL 文档侧重于使用 HTL 开发 AEM 解决方案。 因此，它涉及所有三层，必要时连接外部资源。
 

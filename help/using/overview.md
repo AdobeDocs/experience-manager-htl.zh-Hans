@@ -3,9 +3,9 @@ title: HTL 概述
 description: 了解 AEM 如何支持 HTL（HTML 模板语言）以提供增强安全性的高效企业级 Web 框架。该框架让没有Java 知识的 HTML 开发人员能够更好地参与 AEM 项目。
 exl-id: 5d06ff25-d681-4b95-8375-c28a8364eb7e
 source-git-commit: addc69e4b4e56a9b1c5f91ce9af26fa2d326d981
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '677'
-ht-degree: 98%
+ht-degree: 100%
 
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 98%
 >
 >**您是否考虑过使用适合 AEM 的 Edge Delivery Services？**
 >
->您可以继续为现有项目使用本文档中描述的方法。但是，对于新项目，Adobe建议利用[Edge Delivery Services。](https://experienceleague.adobe.com/zh-hans/docs/experience-manager-cloud-service/content/edge-delivery/overview)
+>您可以继续为现有项目使用本文档中描述的方法。但是对于新项目，Adobe 建议使用 [Edge Delivery Services。](https://experienceleague.adobe.com/zh-hans/docs/experience-manager-cloud-service/content/edge-delivery/overview)
 
 HTML 模板语言 (HTL) 由 Adobe Experience Manager (AEM) 支持，旨在提供增强安全性的高效企业级 Web 框架。它还使没有Java 知识的 HTML 开发人员能够更好地参与 AEM 项目。
 

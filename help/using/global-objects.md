@@ -3,9 +3,9 @@ title: HTL 全局对象
 description: 了解 HTL 中的可枚举对象和 Java 支持的对象。
 exl-id: ca590b92-f1b3-4e44-a04a-a2c10dff256f
 source-git-commit: addc69e4b4e56a9b1c5f91ce9af26fa2d326d981
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '203'
-ht-degree: 81%
+ht-degree: 100%
 
 ---
 
@@ -66,6 +66,6 @@ ht-degree: 81%
 
 >[!NOTE]
 >
->[JavaScript Use API](https://github.com/adobe/htl-spec/blob/master/SPECIFICATION.md#42-javascript-use-api)现已弃用以便与AEM as a Cloud Service一起使用。 请改用[Java Use API](https://experienceleague.adobe.com/zh-hans/docs/experience-manager-htl/content/java-use-api)。
+>[JavaScript Use API](https://github.com/adobe/htl-spec/blob/master/SPECIFICATION.md#42-javascript-use-api) 现已弃用，不再用于 AEM as a Cloud Service。请改用 [Java Use API](https://experienceleague.adobe.com/zh-hans/docs/experience-manager-htl/content/java-use-api)。
 >
->有关已弃用和已删除功能的详细信息，请参阅[AEM as a Cloud Service发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-manager-cloud-service/content/release-notes/deprecated-removed-features)。
+>有关已弃用和已删除功能的更多信息，请参阅 [AEM as a Cloud Service 发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-manager-cloud-service/content/release-notes/deprecated-removed-features)。

@@ -3,9 +3,9 @@ title: HTL Java Use-API
 description: HTL Java Use-API 让 HTL 文件可以访问自定义 Java 类中的 Helper 方法。
 exl-id: 9a9a2bf8-d178-4460-a3ec-cbefcfc09959
 source-git-commit: addc69e4b4e56a9b1c5f91ce9af26fa2d326d981
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '1132'
-ht-degree: 99%
+ht-degree: 100%
 
 ---
 
@@ -113,7 +113,7 @@ public class Info extends WCMUsePojo {
 }
 ```
 
-有关详细信息，请参见`com.adobe.cq.sightly.WCMUsePojo`[&#128279;](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/adobe/cq/sightly/WCMUsePojo.html) 的 Java docs。
+有关详细信息，请参见`com.adobe.cq.sightly.WCMUsePojo`](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/adobe/cq/sightly/WCMUsePojo.html) 的 [Java docs。
 
 现在让我们看看代码的不同部分。
 
@@ -312,7 +312,7 @@ public class Info extends WCMUsePojo {
 
 初始化时，可将参数传递给 use 类。
 
-有关详细信息，请参阅`Sling` [HTL脚本引擎文档](https://sling.apache.org/documentation/bundles/scripting/scripting-htl.html#passing-parameters-to-java-use-objects)。
+有关详细信息，请参阅 `Sling` [HTL 脚本引擎文档](https://sling.apache.org/documentation/bundles/scripting/scripting-htl.html#passing-parameters-to-java-use-objects)。
 
 ### 捆绑的 Java 类 {#bundled-java-class}
 
