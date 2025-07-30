@@ -2,12 +2,14 @@
 title: AEM 扩展
 description: 为开发人员方便起见，AEM 提供了面向 AEM 的 HTL 规范扩展。
 exl-id: d78cb84d-f958-45e2-9c6c-df86a68277d5
-source-git-commit: c6bb6f0954ada866cec574d480b6ea5ac0b51a3f
-workflow-type: ht
+index: false
+source-git-commit: a496d23277902a5cd573a6a8af770f27b0269f05
+workflow-type: tm+mt
 source-wordcount: '228'
 ht-degree: 100%
 
 ---
+
 
 # AEM 扩展 {#aem-extensions}
 
@@ -21,7 +23,7 @@ ht-degree: 100%
 * `hint`
 * `basename`
 
-然而，在 AEM 中，HTL 的[国际化支持](https://experienceleague.adobe.com/zh-hans/docs/ experience-manager-65/content/implementing/developing/components/internationalization/i18n-dev)是在 `com.day.cq.i18n` 包中的 API 帮助下实施的。
+然而，在 AEM 中，HTL 的[国际化支持](https://experienceleague.adobe.com/zh-hans/docs/experience-manager-65/content/implementing/developing/components/internationalization/i18n-dev)是在 `com.day.cq.i18n` 包中的 API 帮助下实施的。
 
 ## `data-sly-include` {#data-sly-include}
 
