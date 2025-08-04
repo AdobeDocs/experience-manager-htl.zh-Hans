@@ -4,7 +4,7 @@ description: HTL Java Use-API 让 HTL 文件可以访问自定义 Java 类中的
 exl-id: 9a9a2bf8-d178-4460-a3ec-cbefcfc09959
 index: false
 source-git-commit: a496d23277902a5cd573a6a8af770f27b0269f05
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '1132'
 ht-degree: 100%
 
