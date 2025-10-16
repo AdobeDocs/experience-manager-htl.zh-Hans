@@ -20,7 +20,7 @@ ht-degree: 100%
 
 HTML 模板语言 (HTL) 由 Adobe Experience Manager (AEM) 支持，旨在提供增强安全性的高效企业级 Web 框架。它还使没有Java 知识的 HTML 开发人员能够更好地参与 AEM 项目。
 
-[在 AEM 6.0 中引入的 ](history.md)HTML 模板语言是 AEM 中适用于 HTML 的首选和推荐的服务器端模板系统。 对于需要构建强大企业网站的 Web 开发者来说，HTML 模板语言有助于提高安全性和开发效率。
+[在 AEM 6.0 中引入的](history.md)HTML 模板语言是 AEM 中适用于 HTML 的首选和推荐的服务器端模板系统。 对于需要构建强大企业网站的 Web 开发者来说，HTML 模板语言有助于提高安全性和开发效率。
 
 ## 提高了安全性 {#increased-security}
 
