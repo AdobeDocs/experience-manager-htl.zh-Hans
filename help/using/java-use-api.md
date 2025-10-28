@@ -3,10 +3,10 @@ title: HTL Java Use-API
 description: HTL Java Use-API 让 HTL 文件可以访问自定义 Java 类中的 Helper 方法。
 exl-id: 9a9a2bf8-d178-4460-a3ec-cbefcfc09959
 index: false
-source-git-commit: a496d23277902a5cd573a6a8af770f27b0269f05
-workflow-type: ht
-source-wordcount: '1132'
-ht-degree: 100%
+source-git-commit: 391c5279f0021dbedaffb0c63e67e037d6c782e1
+workflow-type: tm+mt
+source-wordcount: '1133'
+ht-degree: 99%
 
 ---
 
@@ -195,7 +195,7 @@ public class Info extends WCMUsePojo {
 
 通常，[activate](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/adobe/cq/sightly/WCMUsePojo.html) 方法用于根据当前上下文（例如当前请求和资源）预先计算和存储（在成员变量中）HTL 代码中所需的值。
 
-`WCMUsePojo` 类提供对 HTL 文件中同样的上下文对象集的访问（请参阅[全局对象](global-objects.md)文档。）
+`WCMUsePojo` 类提供对 HTL 文件中同样的上下文对象集的访问（请参阅[全局对象](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/global-objects)文档。）
 
 在扩展 `WCMUsePojo`的类中，你可以使用其名称访问上下文对象：
 

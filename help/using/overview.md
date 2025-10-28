@@ -2,10 +2,10 @@
 title: HTL 概述
 description: 了解 AEM 如何支持 HTL（HTML 模板语言）以提供增强安全性的高效企业级 Web 框架。该框架让没有Java 知识的 HTML 开发人员能够更好地参与 AEM 项目。
 exl-id: 5d06ff25-d681-4b95-8375-c28a8364eb7e
-source-git-commit: 3c7afd180151f35db74e105b23ae7e0ed50c7e4e
+source-git-commit: 391c5279f0021dbedaffb0c63e67e037d6c782e1
 workflow-type: tm+mt
-source-wordcount: '677'
-ht-degree: 100%
+source-wordcount: '680'
+ht-degree: 99%
 
 ---
 
@@ -20,7 +20,11 @@ ht-degree: 100%
 
 HTML 模板语言 (HTL) 由 Adobe Experience Manager (AEM) 支持，旨在提供增强安全性的高效企业级 Web 框架。它还使没有Java 知识的 HTML 开发人员能够更好地参与 AEM 项目。
 
-[在 AEM 6.0 中引入的HTML 模板语言](history.md)，是 AEM 中适用于 HTML 的首选和推荐的服务器端模板系统。 对于需要构建强大企业网站的 Web 开发者来说，HTML 模板语言有助于提高安全性和开发效率。
+[在 AEM 6.0 中引入的HTML 模板语言](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/history)，是 AEM 中适用于 HTML 的首选和推荐的服务器端模板系统。 对于需要构建强大企业网站的 Web 开发者来说，HTML 模板语言有助于提高安全性和开发效率。
+
+<!--
+history.md
+-->
 
 ## 提高了安全性 {#increased-security}
 
@@ -54,8 +58,16 @@ HTML 模板语言易于学习，且其功能经过刻意限制，可确保既简
 
 >[!VIDEO](https://video.tv.adobe.com/v/19504/?quality=9)
 
-请注意，视频中是以[其原名 Sightly 指代 HTL](history.md)。
+请注意，视频中是以[其原名 Sightly 指代 HTL](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/history)。
+
+<!--
+history.md
+-->
 
 ## 后续步骤 {#next-steps}
 
-现在您已经了解了 HTL 的目标和优势，您可以开始使用该语言。请参见[HTML 模板语言快速入门](getting-started.md)。
+现在您已经了解了 HTL 的目标和优势，您可以开始使用该语言。请参见[HTML 模板语言快速入门](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/getting-started)。
+
+<!--
+getting-started.md
+-->

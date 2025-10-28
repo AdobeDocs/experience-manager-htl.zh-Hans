@@ -3,9 +3,9 @@ title: HTL 历史记录
 description: 对于 AEM 的长期用户，本文档提供了 HTL 的背景知识、它如何取代 JSP，以及 Sightly 的名称更改。
 exl-id: 00985b35-2130-4946-959a-0a09a34a0f05
 index: false
-source-git-commit: 3a416e337337d31f7a7fdb2c78efac46ecf64096
-workflow-type: ht
-source-wordcount: '530'
+source-git-commit: 391c5279f0021dbedaffb0c63e67e037d6c782e1
+workflow-type: tm+mt
+source-wordcount: '532'
 ht-degree: 100%
 
 ---
@@ -50,7 +50,7 @@ Adobe 建议对于新的 AEM 项目使用 HTML 模板语言。原因是与 JSP �
 
 ### HTL 与 JSP 相比有何主要好处？ {#benefits}
 
-安全性和项目效率是主要好处，在[概述](overview.md)中对此进行了详细介绍。
+安全性和项目效率是主要好处，在[概述](https://experienceleague.adobe.com/zh-hans/docs/experience-manager-htl/content/overview)中对此进行了详细介绍。
 
 ### JavaServer Pages（JSP）会消失吗？ {#go-away}
 
@@ -64,4 +64,4 @@ Adobe 建议对于新的 AEM 项目使用 HTML 模板语言。原因是与 JSP �
 >
 >此命名更改不会影响代码或 API，因此兼容性不受影响。
 
-要了解有关 HTL 的更多信息，请参阅 [HTML 模板语言 (HTL) 入门指南](overview.md)。
+要了解有关 HTL 的更多信息，请参阅 [HTML 模板语言 (HTL) 入门指南](https://experienceleague.adobe.com/zh-hans/docs/experience-manager-htl/content/overview)。
