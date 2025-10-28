@@ -24,7 +24,7 @@ HTML 模板语言 (HTL) 是 Adobe Experience Manager 中适用于 HTML 的首选
 
 >[!TIP]
 >
->本文档介绍了 HTL 的目的及其基本结构和概念。如果您对特定语法有疑问，请参阅 [HTL 规范](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/specification)。
+>本文档介绍了 HTL 的目的及其基本结构和概念。如果您对特定语法有疑问，请参阅 [HTL 规范](https://experienceleague.adobe.com/zh-hans/docs/experience-manager-htl/content/specification)。
 
 <!--
 specification.md
@@ -34,9 +34,9 @@ specification.md
 
 在 AEM 中，多个层定义了 HTL。
 
-1. **[HTL规范](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/specification)** - HTL是一个开源、不依赖于平台的规范，任何人都可以自由实施。
-1. **[`Sling`HTL脚本引擎](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/specification)** - `Sling`项目已创建HTL的参考实现，供AEM使用。
-1. **[AEM扩展](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/specification)** - AEM构建在`Sling` HTL脚本引擎之上，以便为开发人员提供AEM特有的方便功能。
+1. **[HTL规范](https://experienceleague.adobe.com/zh-hans/docs/experience-manager-htl/content/specification)** - HTL是一个开源、不依赖于平台的规范，任何人都可以自由实施。
+1. **[`Sling`HTL脚本引擎](https://experienceleague.adobe.com/zh-hans/docs/experience-manager-htl/content/specification)** - `Sling`项目已创建HTL的参考实现，供AEM使用。
+1. **[AEM扩展](https://experienceleague.adobe.com/zh-hans/docs/experience-manager-htl/content/specification)** - AEM构建在`Sling` HTL脚本引擎之上，以便为开发人员提供AEM特有的方便功能。
 
 本 HTL 文档侧重于使用 HTL 开发 AEM 解决方案。 因此，它涉及所有三层，必要时连接外部资源。
 
@@ -63,7 +63,7 @@ HTML 模板语言使用表达式语言将内容片段插入到呈现的标记中
 * **块语句** – 如果你想有条件地显示 `<h1>` 元素，请使用 `data-sly-test` HTML5 数据属性。 HTL 提供了多个此类属性，允许将行为附加到任何 HTML 元素，并且所有属性都以 `data-sly` 为前缀。
 * **表达式语言** – HTL 表达式通过 `${` 和 `}` 字符进行分隔。 在运行时，计算这些表达式并将其值注入到传出的 HTML 流中。
 
-有关两种语法的详细信息，请参阅 [HTL 规范](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/specification)。
+有关两种语法的详细信息，请参阅 [HTL 规范](https://experienceleague.adobe.com/zh-hans/docs/experience-manager-htl/content/specification)。
 
 ### SLY 元素 {#the-sly-element}
 
@@ -308,7 +308,7 @@ use(function () {
 
 在此示例中，如果 HTML `head` 和 `body` 元素位于单独的文件中，则必须在每个需要它的文件中加载 `clientlib.html` 模板。
 
-[HTL 规范](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/specification)中有关 template 和 call 语句的部分提供了有关声明和调用此类模板的工作原理的更多详细信息。
+[HTL 规范](https://experienceleague.adobe.com/zh-hans/docs/experience-manager-htl/content/specification)中有关 template 和 call 语句的部分提供了有关声明和调用此类模板的工作原理的更多详细信息。
 
 ### 将数据传递给客户端 {#passing-data-to-the-client}
 

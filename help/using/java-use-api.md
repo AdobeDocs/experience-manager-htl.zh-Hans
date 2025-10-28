@@ -195,7 +195,7 @@ public class Info extends WCMUsePojo {
 
 通常，[activate](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/adobe/cq/sightly/WCMUsePojo.html) 方法用于根据当前上下文（例如当前请求和资源）预先计算和存储（在成员变量中）HTL 代码中所需的值。
 
-`WCMUsePojo` 类提供对 HTL 文件中同样的上下文对象集的访问（请参阅[全局对象](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/global-objects)文档。）
+`WCMUsePojo` 类提供对 HTL 文件中同样的上下文对象集的访问（请参阅[全局对象](https://experienceleague.adobe.com/zh-hans/docs/experience-manager-htl/content/global-objects)文档。）
 
 在扩展 `WCMUsePojo`的类中，你可以使用其名称访问上下文对象：
 
