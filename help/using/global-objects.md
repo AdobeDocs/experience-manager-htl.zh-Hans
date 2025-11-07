@@ -3,9 +3,9 @@ title: HTL 全局对象
 description: 了解 HTL 中的可枚举对象和 Java 支持的对象。
 exl-id: ca590b92-f1b3-4e44-a04a-a2c10dff256f
 index: false
-source-git-commit: 391c5279f0021dbedaffb0c63e67e037d6c782e1
+source-git-commit: 84db446b019d74070ce4af64091dd0674dab9d33
 workflow-type: tm+mt
-source-wordcount: '204'
+source-wordcount: '202'
 ht-degree: 100%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 100%
 
 # HTL 全局对象 {#htl-global-objects}
 
-无需指定任何内容，HTL 允许开发人员访问许多对其十分有用的对象。 这些对象是对可能通过 [Use-API](https://experienceleague.adobe.com/zh-hans/docs/experience-manager-htl/content/java-use-api) 引入的任何对象的补充。
+无需指定任何内容，HTL 允许开发人员访问许多对其十分有用的对象。 这些对象是对可能通过 [Use-API](java-use-api.md) 引入的任何对象的补充。
 
 >[!NOTE]
 >
@@ -67,6 +67,6 @@ ht-degree: 100%
 
 >[!NOTE]
 >
->[JavaScript Use API](https://github.com/adobe/htl-spec/blob/master/SPECIFICATION.md#42-javascript-use-api) 现已弃用，不再用于 AEM as a Cloud Service。请改用 [Java Use API](https://experienceleague.adobe.com/zh-hans/docs/experience-manager-htl/content/java-use-api)。
+>[JavaScript Use API](https://github.com/adobe/htl-spec/blob/master/SPECIFICATION.md#42-javascript-use-api) 现已弃用，不再用于 AEM as a Cloud Service。请改用 [Java Use API](java-use-api.md)。
 >
 >有关已弃用和已删除功能的更多信息，请参阅 [AEM as a Cloud Service 发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-manager-cloud-service/content/release-notes/deprecated-removed-features)。

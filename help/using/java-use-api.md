@@ -3,10 +3,10 @@ title: HTL Java Use-API
 description: HTL Java Use-API 让 HTL 文件可以访问自定义 Java 类中的 Helper 方法。
 exl-id: 9a9a2bf8-d178-4460-a3ec-cbefcfc09959
 index: false
-source-git-commit: 391c5279f0021dbedaffb0c63e67e037d6c782e1
+source-git-commit: 84db446b019d74070ce4af64091dd0674dab9d33
 workflow-type: tm+mt
-source-wordcount: '1133'
-ht-degree: 99%
+source-wordcount: '1132'
+ht-degree: 100%
 
 ---
 
@@ -17,7 +17,7 @@ HTL Java Use-API 让 HTL 文件可以访问自定义 Java 类中的 Helper 方�
 
 ## 用例 {#use-case}
 
-HTL Java Use-API 让 HTL 文件可以通过 `data-sly-use` 访问自定义 Java 类中的 Helper 方法。 这种方法允许将所有复杂的业务逻辑封装在 Java 代码中，而 HTL 代码只处理直接标记生成。
+HTL Java Use-API 让 HTL 文件可以通过 `data-sly-use` 访问自定义 Java 类中的 Helper 方法。 这种方法允许将所有复杂的业务逻辑封装在 Java 代码中，而 HTL 代码只处理直接标记生产。
 
 Java Use-API 对象可以是一个简单的 POJO，由特定的实现通过 POJO 的默认构造器实例化。
 
@@ -114,7 +114,7 @@ public class Info extends WCMUsePojo {
 }
 ```
 
-有关详细信息，请参见`com.adobe.cq.sightly.WCMUsePojo`[&#128279;](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/adobe/cq/sightly/WCMUsePojo.html) 的 Java docs。
+有关详细信息，请参见`com.adobe.cq.sightly.WCMUsePojo`](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/adobe/cq/sightly/WCMUsePojo.html) 的 [Java docs。
 
 现在让我们看看代码的不同部分。
 
@@ -195,7 +195,7 @@ public class Info extends WCMUsePojo {
 
 通常，[activate](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/adobe/cq/sightly/WCMUsePojo.html) 方法用于根据当前上下文（例如当前请求和资源）预先计算和存储（在成员变量中）HTL 代码中所需的值。
 
-`WCMUsePojo` 类提供对 HTL 文件中同样的上下文对象集的访问（请参阅[全局对象](https://experienceleague.adobe.com/zh-hans/docs/experience-manager-htl/content/global-objects)文档。）
+`WCMUsePojo` 类提供对 HTL 文件中同样的上下文对象集的访问（请参阅[全局对象](global-objects.md)文档。）
 
 在扩展 `WCMUsePojo`的类中，你可以使用其名称访问上下文对象：
 
