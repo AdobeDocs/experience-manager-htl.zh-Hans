@@ -2,14 +2,16 @@
 title: AEM 扩展
 description: 为开发人员方便起见，AEM 提供了面向 AEM 的 HTL 规范扩展。
 exl-id: d78cb84d-f958-45e2-9c6c-df86a68277d5
-index: false
-source-git-commit: a496d23277902a5cd573a6a8af770f27b0269f05
-workflow-type: ht
-source-wordcount: '228'
+index: no
+TQID: https://experienceleague.adobe.com/DstGHNLbStXG1SHZgLhmMz2tYVV056CvxWOsl4tuGW4
+product_v2: id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+role_v2: id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
+source-git-commit: a9c0f2ea176e8226d8f3eb30ecff63ebafd3e2ae
+workflow-type: tm+mt
+source-wordcount: 228
 ht-degree: 100%
 
 ---
-
 
 # AEM 扩展 {#aem-extensions}
 
