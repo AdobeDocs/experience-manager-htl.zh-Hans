@@ -6,7 +6,7 @@ user-guide-description: 对于传统的 AEM 项目，使用 HTML 模板语言 (H
 feature-set: Experience Manager
 feature: Developer Tools
 role: Developer
-source-git-commit: b73388b1c6db9993cf979f8d3023410dea8d8ae8
+source-git-commit: 9bb2178569ef69312334b50032b799f00bab5727
 workflow-type: tm+mt
 source-wordcount: '50'
 ht-degree: 100%
@@ -16,13 +16,12 @@ ht-degree: 100%
 
 # Adobe Experience Manager HTL 帮助 {#content}
 
-+ [概述](overview.md)
-+ [HTL 快速入门](getting-started.md)
-+ [HTL 规范](specification.md)
-+ [HTL 全局对象](global-objects.md)
-+ [HTL Java Use-API](java-use-api.md)
-+ [AEM 扩展](aem-extensions.md)
-+ [开发人员工具](developer-tools.md)
-+ [代码示例](code-samples.md)
-+ [HTL 历史记录](history.md)
-
++ [概述](/help/using/overview.md)
++ [HTL 快速入门](/help/using/getting-started.md)
++ [HTL 规范](/help/using/specification.md)
++ [HTL 全局对象](/help/using/global-objects.md)
++ [HTL Java Use-API](/help/using/java-use-api.md)
++ [AEM 扩展](/help/using/aem-extensions.md)
++ [开发人员工具](/help/using/developer-tools.md)
++ [代码示例](/help/using/code-samples.md)
++ [HTL 历史记录](/help/using/history.md)
