@@ -3,9 +3,12 @@ title: HTL 概述
 description: 了解 AEM 如何支持 HTL（HTML 模板语言）以提供增强安全性的高效企业级 Web 框架。该框架让没有Java 知识的 HTML 开发人员能够更好地参与 AEM 项目。
 exl-id: 5d06ff25-d681-4b95-8375-c28a8364eb7e
 TQID: https://experienceleague.adobe.com/aJOvBYeraXDv104qRJqUlp7d0as9YW1lSIg0EKaAUD0
-product_v2: id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
-role_v2: id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
-topic_v2: id: a732f735-539c-44c2-ad33-4aa4f7480b3a
+product_v2:
+  - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+role_v2:
+  - id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
+topic_v2:
+  - id: a732f735-539c-44c2-ad33-4aa4f7480b3a
 source-git-commit: a9c0f2ea176e8226d8f3eb30ecff63ebafd3e2ae
 workflow-type: tm+mt
 source-wordcount: 677
