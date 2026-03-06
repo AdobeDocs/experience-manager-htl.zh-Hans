@@ -2,15 +2,15 @@
 title: AEM 扩展
 description: 为开发人员方便起见，AEM 提供了面向 AEM 的 HTL 规范扩展。
 exl-id: d78cb84d-f958-45e2-9c6c-df86a68277d5
-index: no
+index: false
 TQID: https://experienceleague.adobe.com/DstGHNLbStXG1SHZgLhmMz2tYVV056CvxWOsl4tuGW4
 product_v2:
   - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
 role_v2:
   - id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
-source-git-commit: a9c0f2ea176e8226d8f3eb30ecff63ebafd3e2ae
+source-git-commit: 944fa924e7ccba0a195b2c92584ab75df86b1f83
 workflow-type: tm+mt
-source-wordcount: 228
+source-wordcount: 325
 ht-degree: 100%
 
 ---
@@ -35,7 +35,7 @@ ht-degree: 100%
 
 ## `data-sly-resource` {#data-sly-resource}
 
-除了路径和 `Resources` 之外，`data-sly-resource` 块元素还可以与 [`Maps`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html) 或 [`Records`](https://github.com/apache/sling-org-apache-sling-scripting-sightly-runtime/blob/master/src/main/java/org/apache/sling/scripting/sightly/Record.java) 一起使用。对于这两种方法，必须提供 `resourceName` String 属性。其值用于创建包含在渲染上下文中的[合成资源](https://www.javadoc.io/doc/org.apache.sling/org.apache.sling.api/latest/org/apache/sling/api/resource/SyntheticResource.html)。 传递给 `data-sly-resource` 的 `Record` 或 `Map` 中的其余属性，将作为正常 `Resource` 属性使用。 如果此映射中缺少 `sling:resourceType` 属性，则资源类型将被假定为 `resourceType` [表达式选项](https://github.com/adobe/htl-spec/blob/1.4/SPECIFICATION.md#229-resource)的值，或者是驱动渲染的当前资源的资源类型。
+除了路径和 `Resources` 之外，`data-sly-resource` 块元素还可以与 [`Maps`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html) 或 [`Records`](https://github.com/apache/sling-org-apache-sling-scripting-sightly-runtime/blob/master/src/main/java/org/apache/sling/scripting/sightly/Record.java) 一起使用。 对于这两种方法，必须提供 `resourceName` String 属性。 其值用于创建包含在渲染上下文中的[合成资源](https://www.javadoc.io/doc/org.apache.sling/org.apache.sling.api/latest/org/apache/sling/api/resource/SyntheticResource.html)。 传递给 `data-sly-resource` 的 `Record` 或 `Map` 中的其余属性，将作为正常 `Resource` 属性使用。 如果此映射中缺少 `sling:resourceType` 属性，则资源类型将被假定为 `resourceType` [表达式选项](https://github.com/adobe/htl-spec/blob/1.4/SPECIFICATION.md#229-resource)的值，或者是驱动渲染的当前资源的资源类型。
 
 给定脚本范围中可用的以下映射/记录属性为 `map`：
 

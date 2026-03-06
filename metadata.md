@@ -3,19 +3,19 @@ solution: Experience Manager
 type: Documentation
 product: adobe experience manager
 git-repo: https://github.com/AdobeDocs/experience-manager-htl.zh-Hans
-index: y
+index: true
 landing-page-name: experience-manager
 landing-page-breadcrumb-title: AEM
 recommendations: noDisplay
-source-git-commit: 5c7a0f5795bcbb3b4a5fb34f2d49aad6aa31122f
+source-git-commit: 944fa924e7ccba0a195b2c92584ab75df86b1f83
 workflow-type: tm+mt
-source-wordcount: '81'
-ht-degree: 40%
+source-wordcount: '86'
+ht-degree: 2%
 
 ---
 
 
-# 内部使用的元数据
+# 元数据供内部使用
 
 GitHub创作系统按层级定义元数据，并增加前一项的级别，如下所示：
 
@@ -31,7 +31,7 @@ metadata.md
 
 * `product`
 * `git-repo`
-* `index: y`
+* `index: true`
 
 已不再使用：
 
@@ -42,7 +42,7 @@ metadata.md
 * `tutorials-title`
 * `tutorials-url`
 
-ToC
+ToCs
 
 * `sub-product`
 * `user-guide-title`
@@ -51,5 +51,5 @@ ToC
 
 * `title`
 * `description`
-* `index: n`（仅适用于组件的以前版本）
+* `index: false` （仅适用于组件的以前版本）
 

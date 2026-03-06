@@ -2,15 +2,15 @@
 title: HTL 全局对象
 description: 了解 HTL 中的可枚举对象和 Java 支持的对象。
 exl-id: ca590b92-f1b3-4e44-a04a-a2c10dff256f
-index: no
+index: false
 TQID: https://experienceleague.adobe.com/zhQ4NTPQXgqIUNL9TeYk7sHqVQ5x-xWjps3OylhPJL4
 product_v2:
   - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
 role_v2:
   - id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
-source-git-commit: a9c0f2ea176e8226d8f3eb30ecff63ebafd3e2ae
+source-git-commit: 944fa924e7ccba0a195b2c92584ab75df86b1f83
 workflow-type: tm+mt
-source-wordcount: 202
+source-wordcount: 277
 ht-degree: 100%
 
 ---
@@ -25,7 +25,7 @@ ht-degree: 100%
 
 ## 可枚举对象 {#enumerable-objects}
 
-这些对象提供对常用信息的便捷访问。可以使用点表示法访问它们的内容，并且可以使用 `data-sly-list` 或 `data-sly-repeat` 循环访问它们。
+这些对象提供对常用信息的便捷访问。 可以使用点表示法访问它们的内容，并且可以使用 `data-sly-list` 或 `data-sly-repeat` 循环访问它们。
 
 | 变量名称 | 描述 | 支持方 |
 |--- |--- |--- |
@@ -67,10 +67,10 @@ ht-degree: 100%
 
 ## JavaScript 支持的对象 {#javascript-backed-objects}
 
-可以使用 JavaScript 支持 HTL 逻辑。但是，首选或推荐的方法是使用 [Sling 模型](https://sling.apache.org/documentation/bundles/models.html)。
+可以使用 JavaScript 支持 HTL 逻辑。 但是，首选或推荐的方法是使用 [Sling 模型](https://sling.apache.org/documentation/bundles/models.html)。
 
 >[!NOTE]
 >
->[JavaScript Use API](https://github.com/adobe/htl-spec/blob/master/SPECIFICATION.md#42-javascript-use-api) 现已弃用，不再用于 AEM as a Cloud Service。请改用 [Java Use API](java-use-api.md)。
+>[JavaScript Use API](https://github.com/adobe/htl-spec/blob/master/SPECIFICATION.md#42-javascript-use-api) 现已弃用，不再用于 AEM as a Cloud Service。 请改用 [Java Use API](java-use-api.md)。
 >
 >有关已弃用和已删除功能的更多信息，请参阅 [AEM as a Cloud Service 发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-manager-cloud-service/content/release-notes/deprecated-removed-features)。
