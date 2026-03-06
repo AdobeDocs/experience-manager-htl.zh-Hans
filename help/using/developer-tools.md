@@ -4,8 +4,10 @@ description: 查看这些工具，以帮助您在 HTL 中进行开发。
 exl-id: c5683ee4-a052-4a6f-8ad1-e18a4201414e
 index: false
 TQID: https://experienceleague.adobe.com/ip-WYHSwpvxvdvKMYXDFxXQwuTZjd9Hz1jBeybfmvmI
-product_v2: id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
-role_v2: id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
+product_v2:
+  - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+role_v2:
+  - id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
 source-git-commit: 944fa924e7ccba0a195b2c92584ab75df86b1f83
 workflow-type: tm+mt
 source-wordcount: 101
