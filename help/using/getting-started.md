@@ -11,15 +11,15 @@ topic_v2:
   - id: a732f735-539c-44c2-ad33-4aa4f7480b3a
   - id: ea99d093-20a6-45a0-99ac-a82e7018eb37
 source-git-commit: f487047a68e98d1b089e0e7124ab91f3281d51ad
-workflow-type: tm+mt
-source-wordcount: 2077
-ht-degree: 99%
+workflow-type: ht
+source-wordcount: 2153
+ht-degree: 100%
 
 ---
 
 # HTL 快速入门 {#getting-started-with-htl}
 
-HTML模板语言(HTL)是Adobe Experience Manager中适用于HTML的首选和推荐的服务器端模板系统。 像在所有 HTML 服务器端模板系统中一样，HTL 文件通过指定 HTML 本身、一些基本的表示逻辑和要在运行时计算的变量来定义发送到浏览器的输出。
+HTML 模板语言 (HTL) 是 Adobe Experience Manager 中适用于 HTML 的首选和推荐的服务器端模板系统。像在所有 HTML 服务器端模板系统中一样，HTL 文件通过指定 HTML 本身、一些基本的表示逻辑和要在运行时计算的变量来定义发送到浏览器的输出。
 
 本文档概述了 HTL 的用途，并介绍了该语言的基本概念和结构。
 
@@ -27,25 +27,25 @@ HTML模板语言(HTL)是Adobe Experience Manager中适用于HTML的首选和推�
 >
 >**您是否考虑过使用适合 AEM 的 Edge Delivery Services？**
 >
->您可以继续为现有项目使用本文档中描述的方法。但是对于新项目，Adobe 建议使用 [Edge Delivery Services。](https://experienceleague.adobe.com/zh-hans/docs/experience-manager-cloud-service/content/edge-delivery/overview)
+>您可以继续为现有项目使用本文档中描述的方法。 但是对于新项目，Adobe 建议使用 [Edge Delivery Services。](https://experienceleague.adobe.com/zh-hans/docs/experience-manager-cloud-service/content/edge-delivery/overview)
 
 >[!TIP]
 >
->本文档介绍了 HTL 的目的及其基本结构和概念。如果您对特定语法有疑问，请参阅 [HTL 规范](specification.md)。
+>本文档介绍了 HTL 的目的及其基本结构和概念。 如果您对特定语法有疑问，请参阅 [HTL 规范](specification.md)。
 
 ## HTL 图层 {#layers}
 
 在 AEM 中，多个层定义了 HTL。
 
 1. **[HTL 规范](specification.md)** – HTL 是一个开源、不依赖于平台的规范，任何人都可以自由实施。
-1. **[`Sling`Sling HTL 脚本引擎](specification.md)** – `Sling` 项目创建了 HTL 的参考实施，供 AEM 使用。 
+1. **[`Sling`Sling HTL 脚本引擎](specification.md)** – `Sling` 项目创建了 HTL 的参考实施，供 AEM 使用。
 1. **[AEM 扩展](specification.md)** – AEM 构建在 `Sling` HTL 脚本引擎之上，以便为开发者提供 AEM 特有的方便功能。
 
 本 HTL 文档侧重于使用 HTL 开发 AEM 解决方案。 因此，它涉及所有三层，必要时连接外部资源。
 
 ## HTL 的基本概念 {#fundamental-concepts-of-htl}
 
-HTML 模板语言使用表达式语言将内容片段插入到呈现的标记中，并使用 HTML5 数据属性来定义标记块上的语句（如条件或迭代）。在 HTL 编译为 Java Servlet 时，表达式和 HTL 数据属性都完全在服务器端进行计算，不会显示在生成的 HTML 中。
+HTML 模板语言使用表达式语言将内容片段插入到呈现的标记中，并使用 HTML5 数据属性来定义标记块上的语句（如条件或迭代）。 在 HTL 编译为 Java Servlet 时，表达式和 HTL 数据属性都完全在服务器端进行计算，不会显示在生成的 HTML 中。
 
 >[!TIP]
 >
@@ -70,9 +70,9 @@ HTML 模板语言使用表达式语言将内容片段插入到呈现的标记中
 
 ### SLY 元素 {#the-sly-element}
 
-HTL 的一个核心概念是提供重用现有 HTML 元素来定义块语句的可能性。这种重用避免了插入额外的分隔符来定义语句的开始和结束位置的需要。通过不干扰地注释标记，可以将静态 HTML 转换为动态模板，而不会破坏 HTML 有效性，从而确保即使是静态文件也能正确显示。
+HTL 的一个核心概念是提供重用现有 HTML 元素来定义块语句的可能性。 这种重用避免了插入额外的分隔符来定义语句的开始和结束位置的需要。 通过不干扰地注释标记，可以将静态 HTML 转换为动态模板，而不会破坏 HTML 有效性，从而确保即使是静态文件也能正确显示。
 
-但是，有时在必须插入块语句的确切位置上可能没有现有元素。在这种情况下，您可以插入一个特殊的 `sly` 元素。在运行附加的块语句并相应地显示其内容时，此元素会自动从输出中删除。
+但是，有时在必须插入块语句的确切位置上可能没有现有元素。 在这种情况下，您可以插入一个特殊的 `sly` 元素。 在运行附加的块语句并相应地显示其内容时，此元素会自动从输出中删除。
 
 以下示例：
 
@@ -121,7 +121,7 @@ HTL 的一个核心概念是提供重用现有 HTML 元素来定义块语句的�
 <!-- An HTML Comment -->
 ```
 
-HTL 注释是使用其他类似于 JavaScript 的语法的 HTML 注释。整个 HTL 注释及其中的任何内容都将被处理器完全忽略并从输出中删除。
+HTL 注释是使用其他类似于 JavaScript 的语法的 HTML 注释。 整个 HTL 注释及其中的任何内容都将被处理器完全忽略并从输出中删除。
 
 不过，将传递标准 HTML 注释的内容，并计算注释中的表达式。
 
@@ -149,9 +149,9 @@ HTML 注释不能包含 HTL 注释，反之亦然。
 * Script 元素
 * Style 元素
 
-原因是这些上下文的内容是文本而不是 HTML，并且包含的 HTML 元素将被视为简单的字符数据。因此，没有真正的 HTML 元素，也无法执行 `data-sly` 属性。
+原因是这些上下文的内容是文本而不是 HTML，并且包含的 HTML 元素将被视为简单的字符数据。 因此，没有真正的 HTML 元素，也无法执行 `data-sly` 属性。
 
-这种方法听起来可能像是一个重大的限制。然而，它是首选，因为 HTML 模板语言应该只生成有效的 HTML 输出。下面的[用于访问逻辑的 Use-API](#use-api-for-accessing-logic) 部分介绍了如何从模板调用其他逻辑，可以在需要为这些上下文准备复杂输出时使用它。要将数据从后端发送到前端脚本，请使用组件的逻辑生成 JSON 字符串，并使用简单的 HTL 表达式将其放置在数据属性中。
+这种方法听起来可能像是一个重大的限制。 然而，它是首选，因为 HTML 模板语言应该只生成有效的 HTML 输出。 下面的[用于访问逻辑的 Use-API](#use-api-for-accessing-logic) 部分介绍了如何从模板调用其他逻辑，可以在需要为这些上下文准备复杂输出时使用它。 要将数据从后端发送到前端脚本，请使用组件的逻辑生成 JSON 字符串，并使用简单的 HTL 表达式将其放置在数据属性中。
 
 以下示例说明了 HTML 注释的行为，但在 script 或 style 元素中，将观察到相同的行为：
 
@@ -173,7 +173,7 @@ HTML 注释不能包含 HTL 注释，反之亦然。
 
 ### 需要显式上下文 {#explicit-contexts-required}
 
-如下面的[自动上下文感知转义](#automatic-context-aware-escaping)部分中所述，HTL 的一个目标是通过自动将上下文感知转义应用于所有表达式来降低引入跨站点脚本 (XSS) 漏洞的风险。HTL 检测 HTML 标记中表达式的上下文，但不分析内联 JavaScript 或 CSS，因此开发人员必须为这些表达式指定确切的上下文。
+如下面的[自动上下文感知转义](#automatic-context-aware-escaping)部分中所述，HTL 的一个目标是通过自动将上下文感知转义应用于所有表达式来降低引入跨站点脚本 (XSS) 漏洞的风险。 HTL 检测 HTML 标记中表达式的上下文，但不分析内联 JavaScript 或 CSS，因此开发人员必须为这些表达式指定确切的上下文。
 
 由于没有在 XSS 漏洞中应用正确的转义结果，因此 HTL 会在尚未声明上下文时删除脚本和样式上下文中的所有表达式的输出。
 
@@ -192,7 +192,7 @@ HTML 注释不能包含 HTL 注释，反之亦然。
 
 ### 用于访问逻辑的 Use-API {#use-api-for-accessing-logic}
 
-利用 HTML 模板语言 (HTL) Java Use-API，HTL 文件可以通过 `data-sly-use` 访问自定义 Java 类中的 helper 方法。这样可以将所有复杂的业务逻辑封装在 Java 代码中，而 HTL 代码只处理直接标记生产。
+利用 HTML 模板语言 (HTL) Java Use-API，HTL 文件可以通过 `data-sly-use` 访问自定义 Java 类中的 helper 方法。 这样可以将所有复杂的业务逻辑封装在 Java 代码中，而 HTL 代码只处理直接标记生产。
 
 有关更多详细信息，请参阅 [HTL Java Use-API](java-use-api.md) 文档。
 
@@ -208,9 +208,9 @@ HTML 注释不能包含 HTL 注释，反之亦然。
 </p>
 ```
 
-在大多数模板语言中，此示例可能会造成跨站点脚本 (XSS) 漏洞，因为即使所有变量都会自动进行 HTML 转义，`href` 属性仍必须经过专门的 URL 转义。这种遗漏是常见的错误之一，因为它容易被遗忘，并且很难自动发现。
+在大多数模板语言中，此示例可能会造成跨站点脚本 (XSS) 漏洞，因为即使所有变量都会自动进行 HTML 转义，`href` 属性仍必须经过专门的 URL 转义。 这种遗漏是常见的错误之一，因为它容易被遗忘，并且很难自动发现。
 
-为帮助解决这个问题，HTML 模板语言会根据每个变量所在的上下文自动对每个变量进行转义。此功能的实现得益于 HTL 对 HTML 语法的理解。
+为帮助解决这个问题，HTML 模板语言会根据每个变量所在的上下文自动对每个变量进行转义。 此功能的实现得益于 HTL 对 HTML 语法的理解。
 
 假设以下 `logic.js` 文件：
 
@@ -272,17 +272,17 @@ use(function () {
 
 ## 使用 HTL 的常见模式 {#common-patterns-with-htl}
 
-本节介绍几种常见的场景。它解释了如何使用 HTML 模板语言最好地解决这些情况。
+本节介绍几种常见的场景。 它解释了如何使用 HTML 模板语言最好地解决这些情况。
 
 ### 加载客户端库 {#loading-client-libraries}
 
-在 HTL 中，通过 AEM 提供的帮助程序模板来加载客户端库，可通过 `data-sly-use` 访问模板。此文件中提供了三个模板，可通过 `data-sly-call` 来调用它们：
+在 HTL 中，通过 AEM 提供的帮助程序模板来加载客户端库，可通过 `data-sly-use` 访问模板。 此文件中提供了三个模板，可通过 `data-sly-call` 来调用它们：
 
 * **`css`** - 仅加载引用的客户端库的 CSS 文件。
 * **`js`** - 仅加载引用的客户端库的 JavaScript 文件。
 * **`all`** - 加载引用的客户端库的所有文件（CSS 和 JavaScript）。
 
-每个帮助程序模板都需要一个 `categories` 选项来引用所需的客户端库。该选项可以是字符串值的数组，也可以是包含逗号分隔值列表的字符串。
+每个帮助程序模板都需要一个 `categories` 选项来引用所需的客户端库。 该选项可以是字符串值的数组，也可以是包含逗号分隔值列表的字符串。
 
 以下是两个简短示例。
 
@@ -317,7 +317,7 @@ use(function () {
 
 一般来说，将数据传递给客户端的更方便、更轻松的方式是使用 `data` 属性，对于 HTL 来说更是如此。
 
-下面的示例说明如何将对象序列化为 JSON（在 Java 中也可以）以传递给客户端。然后可以轻松地将其放入 `data` 属性中：
+下面的示例说明如何将对象序列化为 JSON（在 Java 中也可以）以传递给客户端。 然后可以轻松地将其放入 `data` 属性中：
 
 ```xml
 <!--/* template.html file: */-->
@@ -338,7 +338,7 @@ use(function () {
 });
 ```
 
-从那里，可以轻松地设想客户端 JavaScript 如何访问该属性并再次解析 JSON。此方法将相应的 JavaScript 放入客户端库中，例如：
+从那里，可以轻松地设想客户端 JavaScript 如何访问该属性并再次解析 JSON。 此方法将相应的 JavaScript 放入客户端库中，例如：
 
 ```javascript
 var elements = document.querySelectorAll("[data-json]");
@@ -350,7 +350,7 @@ for (var i = 0; i < elements.length; i++) {
 
 ### 使用客户端模板 {#working-with-client-side-templates}
 
-可以合法使用[解除特殊上下文的限制](#lifting-limitations-of-special-contexts)部分中说明的技术的一种特殊情况是编写位于 `scrip` 元素内的客户端模板（例如 Handlebars）。在该情况下可以安全使用此技术的原因是，`script` 元素没有像假设的那样包含 JavaScript，而是包含更多的 HTML 元素。下面是有关它的工作原理的示例：
+可以合法使用[解除特殊上下文的限制](#lifting-limitations-of-special-contexts)部分中说明的技术的一种特殊情况是编写位于 `scrip` 元素内的客户端模板（例如 Handlebars）。 在该情况下可以安全使用此技术的原因是，`script` 元素没有像假设的那样包含 JavaScript，而是包含更多的 HTML 元素。 下面是有关它的工作原理的示例：
 
 ```xml
 <!--/* template.html file: */-->
@@ -366,7 +366,7 @@ for (var i = 0; i < elements.length; i++) {
 </div>
 ```
 
- `script` 元素的标记可以包含没有明确上下文的 HTL 块语句，因为 Handlebars 模板内容被隔离在其自己的文件中。此外，此示例显示了如何将服务器端执行的 HTL（例如在 `h2` 元素上）与 Handlebars 之类的客户端执行的模板语言（显示在 `h3` 元素上）混合。
+`script` 元素的标记可以包含没有明确上下文的 HTL 块语句，因为 Handlebars 模板内容被隔离在其自己的文件中。 此外，此示例显示了如何将服务器端执行的 HTL（例如在 `h2` 元素上）与 Handlebars 之类的客户端执行的模板语言（显示在 `h3` 元素上）混合。
 
 不过，一种更现代的技术是改用 HTML `template` 元素，因为这样做的好处是无需将模板的内容隔离到单独的文件中。
 
@@ -378,4 +378,4 @@ for (var i = 0; i < elements.length; i++) {
 
 >[!CAUTION]
 >
->该技术可能引入跨站点脚本（XSS）漏洞。如果使用这种方法，应该仔细研究安全性方面。通常有比依赖这种做法更好的方法来实施同样的目的。
+>该技术可能引入跨站点脚本（XSS）漏洞。 如果使用这种方法，应该仔细研究安全性方面。 通常有比依赖这种做法更好的方法来实施同样的目的。
