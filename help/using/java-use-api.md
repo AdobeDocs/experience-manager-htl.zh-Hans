@@ -1,34 +1,31 @@
 ---
 title: HTL Java Use-API
-description: HTL Java Use-API 让 HTL 文件可以访问自定义 Java 类中的 Helper 方法。
+description: HTL Java Use-API 让 HTL 文件可以访问自定义 Java 类中的辅助方法。
 exl-id: 9a9a2bf8-d178-4460-a3ec-cbefcfc09959
 index: false
-TQID: https://experienceleague.adobe.com/lCMIs0khRwcDzk97TQcNMMl4h7OZNf3KlK2YA4ANbZQ
+TQID: 'https://experienceleague.adobe.com/lCMIs0khRwcDzk97TQcNMMl4h7OZNf3KlK2YA4ANbZQ'
 product_v2:
   - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+    internal-label: Experience Manager
 role_v2:
   - id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
-topic_v2:
-  - id: a732f735-539c-44c2-ad33-4aa4f7480b3a
-  - id: ea99d093-20a6-45a0-99ac-a82e7018eb37
-source-git-commit: 944fa924e7ccba0a195b2c92584ab75df86b1f83
-workflow-type: ht
-source-wordcount: 1643
+    internal-label: Developer
+source-git-commit: ad1e15465b8b969663842d4946a1fa182821bcc1
+workflow-type: tm+mt
+source-wordcount: '1643'
 ht-degree: 100%
-
 ---
-
 # HTL Java Use-API {#htl-java-use-api}
 
 HTL Java Use-API 让 HTL 文件可以访问自定义 Java 类中的 Helper 方法。
 
 ## 用例 {#use-case}
 
-HTL Java Use-API 让 HTL 文件可以通过 `data-sly-use` 访问自定义 Java 类中的 Helper 方法。 这种方法允许将所有复杂的业务逻辑封装在 Java 代码中，而 HTL 代码只处理直接标记生产。
+HTL Java Use-API 让 HTL 文件可以通过 `data-sly-use` 访问自定义 Java 类中的 Helper 方法。 这种方法允许将所有复杂的商业逻辑封装在 Java 代码中，而 HTL 代码只处理直接标记的生成。
 
 Java Use-API 对象可以是一个简单的 POJO，由特定的实现通过 POJO 的默认构造器实例化。
 
-Use-API POJO 也可以使用以下签名公开名为 init 的公共方法：
+Use-API POJO 还可以公开一个名为 init 的公共方法，其签名如下：
 
 ```java
     /**
@@ -68,7 +65,7 @@ Use-API POJO 也可以使用以下签名公开名为 init 的公共方法：
 }
 ```
 
-当用户访问此内容时，系统会执行 HTL 文件。 在 HTL 代码内，使用上下文对象 `properties` 来访问当前资源的 `title` 和 `description`，并显示它们。 输出文件 `/content/my-example.html` 如下：
+当访问此内容时，系统会执行 HTL 文件。 在 HTL 代码内，使用上下文对象 `properties` 来访问当前资源的 `title` 和 `description`，并显示它们。 输出文件 `/content/my-example.html` 如下：
 
 ```html
 <div>
@@ -125,11 +122,11 @@ public class Info extends WCMUsePojo {
 
 现在让我们看看代码的不同部分。
 
-### 局部与捆绑 Java 类 {#local-vs-bundle-java-class}
+### 本地与捆绑包 Java 类 {#local-vs-bundle-java-class}
 
 Java use 类有以下两种安装方式：
 
-* **局部** – 在局部安装中，Java 源文件与 HTL 文件放在一起，位于同一个存储库文件夹下。 根据需要自动编译源。 无需单独的编译或打包步骤。
+* **局部** – 在局部安装中，Java 源文件与 HTL 文件放在一起，位于同一个存储库文件夹下。 按需自动编译源。 无需单独的编译或打包步骤。
 * **捆绑** – 在捆绑安装中，必须使用标准 AEM 捆绑部署机制在 OSGi 捆绑包中编译和部署 Java 类（参阅[捆绑的 Java 类](#bundled-java-class)部分）。
 
 要知道何时使用哪种方法，请记住以下两点：
@@ -159,7 +156,7 @@ public class Info extends WCMUsePojo {
 
 >[!NOTE]
 >
->在 AEM 开发中，建议在存储库项目名称中使用连字符。 但是在 Java 包名称中，连字符是无效的。 因此，**存储库路径中的所有连字符在包名称中必须转换为下划线**。
+>在 AEM 开发中，建议在存储库项目名称中使用连字符。 但是在 Java 包名称中，不允许使用连字符。 因此，**存储库路径中的所有连字符在包名称中必须转换为下划线**。
 
 ### 扩展 `WCMUsePojo` {#extending-wcmusepojo}
 
@@ -208,7 +205,7 @@ public class Info extends WCMUsePojo {
 
 [`<T> T get(String name, Class<T> type)`](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/adobe/cq/sightly/WCMUsePojo.html)
 
-或者，可以通过本表中列出的适当方便方法直接访问常用的上下文对象。
+或者，可以通过本表中列出的适当便捷方法直接访问常用的上下文对象。
 
 | 对象 | 方便方法 |
 |---|---|
@@ -232,7 +229,7 @@ public class Info extends WCMUsePojo {
 
 一旦 use 类初始化，HTL 文件即会运行。 在此阶段，HTL 通常会拉入 use 类的各种成员变量的状态，并渲染它们以便呈现。
 
-要提供从 HTL 文件内访问这些值的权限，您必须根据以下命名惯例在 use 类中定义自定义 getter 方法：
+要使能够从 HTL 文件中访问这些值，您必须根据以下命名惯例在 use 类中定义自定义 getter 方法：
 
 * 表单 `getXyz` 的一种方法会在 HTL 文件内公开一个名为 `xyz` 的对象属性。
 
@@ -257,7 +254,7 @@ public class Info extends WCMUsePojo {
 
 ### `data-sly-use`属性 {#data-sly-use-attribute}
 
-`data-sly-use` 属性用于初始化 HTL 代码中的 use 类。 在该示例中，`data-sly-use` 属性声明我们需要使用类 `Info`： 你可以只使用该类的局部名称，因为你使用的是局部安装（Java 源文件与 HTL 文件放在同一文件夹中）。 如果我们使用捆绑安装，则必须指定完全限定的类名称。
+`data-sly-use` 属性用于初始化 HTL 代码中的 use 类。 在该示例中，`data-sly-use` 属性声明我们需要使用类 `Info`： 您可以只使用该类的本地名称，因为您使用的是本地安装（Java 源文件与 HTL 文件放在同一文件夹中）。 如果您使用捆绑包安装，则必须指定完全限定的类名称。
 
 注意本 `/apps/my-example/component/info/info.html` 示例中的用法。
 

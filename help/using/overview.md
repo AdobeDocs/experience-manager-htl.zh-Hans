@@ -2,20 +2,18 @@
 title: HTL 概述
 description: 了解 AEM 如何支持 HTL（HTML 模板语言）以提供增强安全性的高效企业级 Web 框架。 该框架让没有Java 知识的 HTML 开发人员能够更好地参与 AEM 项目。
 exl-id: 5d06ff25-d681-4b95-8375-c28a8364eb7e
-TQID: https://experienceleague.adobe.com/aJOvBYeraXDv104qRJqUlp7d0as9YW1lSIg0EKaAUD0
+TQID: 'https://experienceleague.adobe.com/aJOvBYeraXDv104qRJqUlp7d0as9YW1lSIg0EKaAUD0'
 product_v2:
   - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+    internal-label: Experience Manager
 role_v2:
   - id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
-topic_v2:
-  - id: a732f735-539c-44c2-ad33-4aa4f7480b3a
-source-git-commit: a9c0f2ea176e8226d8f3eb30ecff63ebafd3e2ae
-workflow-type: ht
-source-wordcount: 716
+    internal-label: Developer
+source-git-commit: ad1e15465b8b969663842d4946a1fa182821bcc1
+workflow-type: tm+mt
+source-wordcount: '716'
 ht-degree: 100%
-
 ---
-
 # 概述 {#overview}
 
 >[!TIP]
@@ -30,13 +28,13 @@ HTML 模板语言 (HTL) 由 Adobe Experience Manager (AEM) 支持，旨在提供
 
 ## 提高了安全性 {#increased-security}
 
-HTML 模板语言 (HTL) 通过自动对所有输出变量应用上下文感知转义来增强站点安全性，使其比大多数其他模板系统更安全。 HTL 使这种方法成为可能，因为它理解 HTML 语法，并由此根据表达式在标记中的位置调整表达式所需的转义。 这种方法会导致置于 `href` 或 `src` 属性中表达式的转义与置于其他属性或其他位置中的表达式转义不同。
+HTML 模板语言 (HTL) 通过自动对所有输出变量应用上下文感知转义来增强网站安全性，使其比大多数其他模板系统更安全。 HTL 使这种方法成为可能，因为它理解 HTML 语法，并由此根据表达式在标记中的位置调整表达式所需的转义。 这种方法会导致置于 `href` 或 `src` 属性中表达式的转义与置于其他属性或其他位置中的表达式转义不同。
 
-虽然使用 JSP 等模板语言可以实现同样的结果，但开发者必须手动确保将正确的转义应用于每个变量。 由于所应用转义中的单个遗漏或错误就可能足以造成跨站点脚本编制 (XSS) 漏洞，因此 Adobe 决定使用 HTL 自动执行这项任务。 如果需要，开发者仍可以对表达式指定不同的转义，但是使用 HTL，默认行为更有可能与所需行为对应，从而降低出错的可能性。
+虽然使用 JSP 等模板语言可以实现同样的结果，但开发者必须手动确保将正确的转义应用于每个变量。 由于所应用转义中的单个遗漏或错误就可能足以造成跨站点脚本 (XSS) 漏洞，因此 Adobe 决定使用 HTL 自动执行这项任务。 如果需要，开发者仍可以对表达式指定不同的转义，但是使用 HTL，默认行为更有可能与所需行为对应，从而降低出错的可能性。
 
 ## 简化了开发 {#simplified-development}
 
-HTML 模板语言易于学习，且其功能经过刻意限制，可确保既简单又直接。 它还拥有强大的机制来构造标记和调用逻辑，同时始终严格隔离标记和逻辑间的问题。 HTL 是标准 HTML5，使用表达式和数据属性来注释具有动态行为的标记。 这种方法保持了标记的有效性和可读性。 表达式和数据属性的评估完全在服务器端完成，在客户端不可见，在客户端可以使用任何所需的 JavaScript 框架而不会产生干扰。
+HTML 模板语言易于学习，且其功能经过刻意限制，可确保既简单又直接。 它还拥有强大的机制来构造标记和调用逻辑，同时始终严格分离标记和逻辑的关注点。 HTL 是标准 HTML5，使用表达式和数据属性来注释具有动态行为的标记。 这种方法保持了标记的有效性和可读性。 表达式和数据属性的评估完全在服务器端完成，在客户端不可见，并且可以在客户端使用任何所需的 JavaScript 框架而不会造成干扰。
 
 这些功能让没有Java 知识的 HTML 开发人员能够编辑 HTL 模板、融入开发团队并简化与全栈Java 开发人员的协作。 反过来，这也让 Java 开发者能够专注于后端代码，而无需担心 HTML。
 
