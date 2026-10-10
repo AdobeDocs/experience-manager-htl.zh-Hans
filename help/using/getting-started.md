@@ -2,21 +2,18 @@
 title: HTL 快速入门
 description: 了解 HTL，AEM 中适用于 HTML 的首选和推荐的服务器端模板系统，并了解该语言的主要概念及其基本结构。
 exl-id: c95eb1b3-3b96-4727-8f4f-d54e7136a8f9
-TQID: https://experienceleague.adobe.com/6IcNpWu2-PLGresZ1H-HM9HAFL-dY5eF0OyIdXJbJ4s
+TQID: 'https://experienceleague.adobe.com/6IcNpWu2-PLGresZ1H-HM9HAFL-dY5eF0OyIdXJbJ4s'
 product_v2:
   - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+    internal-label: Experience Manager
 role_v2:
   - id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
-topic_v2:
-  - id: a732f735-539c-44c2-ad33-4aa4f7480b3a
-  - id: ea99d093-20a6-45a0-99ac-a82e7018eb37
-source-git-commit: f487047a68e98d1b089e0e7124ab91f3281d51ad
+    internal-label: Developer
+source-git-commit: ad1e15465b8b969663842d4946a1fa182821bcc1
 workflow-type: tm+mt
-source-wordcount: 2153
+source-wordcount: '2153'
 ht-degree: 100%
-
 ---
-
 # HTL 快速入门 {#getting-started-with-htl}
 
 HTML 模板语言 (HTL) 是 Adobe Experience Manager 中适用于 HTML 的首选和推荐的服务器端模板系统。 像在所有 HTML 服务器端模板系统中一样，HTL 文件通过指定 HTML 本身、一些基本的表示逻辑和要在运行时计算的变量来定义发送到浏览器的输出。
@@ -61,7 +58,7 @@ HTML 模板语言使用表达式语言将内容片段插入到呈现的标记中
 </h1>
 ```
 
-可以辨别出两种不同种类的语法：
+可以区分两种不同的语法：
 
 * **块语句** – 如果你想有条件地显示 `<h1>` 元素，请使用 `data-sly-test` HTML5 数据属性。 HTL 提供了多个此类属性，允许将行为附加到任何 HTML 元素，并且所有属性都以 `data-sly` 为前缀。
 * **表达式语言** – HTL 表达式通过 `${` 和 `}` 字符进行分隔。 在运行时，计算这些表达式并将其值注入到传出的 HTML 流中。
@@ -72,7 +69,7 @@ HTML 模板语言使用表达式语言将内容片段插入到呈现的标记中
 
 HTL 的一个核心概念是提供重用现有 HTML 元素来定义块语句的可能性。 这种重用避免了插入额外的分隔符来定义语句的开始和结束位置的需要。 通过不干扰地注释标记，可以将静态 HTML 转换为动态模板，而不会破坏 HTML 有效性，从而确保即使是静态文件也能正确显示。
 
-但是，有时在必须插入块语句的确切位置上可能没有现有元素。 在这种情况下，您可以插入一个特殊的 `sly` 元素。 在运行附加的块语句并相应地显示其内容时，此元素会自动从输出中删除。
+但是，有时在必须插入块语句的确切位置可能没有现有元素。 在这种情况下，您可以插入一个特殊的 `sly` 元素。 在运行附加的块语句并相应地显示其内容时，此元素会自动从输出中删除。
 
 以下示例：
 
@@ -121,15 +118,15 @@ HTL 的一个核心概念是提供重用现有 HTML 元素来定义块语句的�
 <!-- An HTML Comment -->
 ```
 
-HTL 注释是使用其他类似于 JavaScript 的语法的 HTML 注释。 整个 HTL 注释及其中的任何内容都将被处理器完全忽略并从输出中删除。
+HTL 注释是带有额外的类似 JavaScript 语法的 HTML 注释。 整个 HTL 注释及其中的任何内容都将被处理器完全忽略并从输出中删除。
 
-不过，将传递标准 HTML 注释的内容，并计算注释中的表达式。
+不过，标准 HTML 注释的内容会被传递，且注释中的表达式会被求值。
 
 HTML 注释不能包含 HTL 注释，反之亦然。
 
 ### 特殊上下文 {#special-contexts}
 
-为了能够充分利用 HTL，很好地了解它基于 HTML 语法的结果很重要。
+为了能够充分利用 HTL，充分了解它基于 HTML 语法这一事实所带来的影响非常重要。
 
 有关详细信息，请参阅 HTL 规范的[显示上下文部分](https://github.com/adobe/htl-spec/blob/1.4/SPECIFICATION.md#121-display-context)。
 
@@ -151,7 +148,7 @@ HTML 注释不能包含 HTL 注释，反之亦然。
 
 原因是这些上下文的内容是文本而不是 HTML，并且包含的 HTML 元素将被视为简单的字符数据。 因此，没有真正的 HTML 元素，也无法执行 `data-sly` 属性。
 
-这种方法听起来可能像是一个重大的限制。 然而，它是首选，因为 HTML 模板语言应该只生成有效的 HTML 输出。 下面的[用于访问逻辑的 Use-API](#use-api-for-accessing-logic) 部分介绍了如何从模板调用其他逻辑，可以在需要为这些上下文准备复杂输出时使用它。 要将数据从后端发送到前端脚本，请使用组件的逻辑生成 JSON 字符串，并使用简单的 HTL 表达式将其放置在数据属性中。
+这种方法听起来可能是一个很大的限制。 然而，这样做更可取，因为 HTML 模板语言应该只生成有效的 HTML 输出。 下面的[用于访问逻辑的 Use-API](#use-api-for-accessing-logic) 部分介绍了如何从模板调用其他逻辑，可以在需要为这些上下文准备复杂输出时使用它。 要将数据从后端发送到前端脚本，请使用组件的逻辑生成 JSON 字符串，并使用简单的 HTL 表达式将其放置在数据属性中。
 
 以下示例说明了 HTML 注释的行为，但在 script 或 style 元素中，将观察到相同的行为：
 
@@ -192,7 +189,7 @@ HTML 注释不能包含 HTL 注释，反之亦然。
 
 ### 用于访问逻辑的 Use-API {#use-api-for-accessing-logic}
 
-利用 HTML 模板语言 (HTL) Java Use-API，HTL 文件可以通过 `data-sly-use` 访问自定义 Java 类中的 helper 方法。 这样可以将所有复杂的业务逻辑封装在 Java 代码中，而 HTL 代码只处理直接标记生产。
+利用 HTML 模板语言 (HTL) Java Use-API，HTL 文件可以通过 `data-sly-use` 访问自定义 Java 类中的 helper 方法。 这样可以将所有复杂的商业逻辑封装在 Java 代码中，而 HTL 代码只处理直接生成标记。
 
 有关更多详细信息，请参阅 [HTL Java Use-API](java-use-api.md) 文档。
 
@@ -208,7 +205,7 @@ HTML 注释不能包含 HTL 注释，反之亦然。
 </p>
 ```
 
-在大多数模板语言中，此示例可能会造成跨站点脚本 (XSS) 漏洞，因为即使所有变量都会自动进行 HTML 转义，`href` 属性仍必须经过专门的 URL 转义。 这种遗漏是常见的错误之一，因为它容易被遗忘，并且很难自动发现。
+在大多数模板语言中，此示例可能会造成跨站点脚本 (XSS) 漏洞，因为即使所有变量都会自动进行 HTML 转义，`href` 属性仍必须经过专门的 URL 转义。 这种遗漏是最常见的错误之一，因为它容易被遗忘，并且很难自动发现。
 
 为帮助解决这个问题，HTML 模板语言会根据每个变量所在的上下文自动对每个变量进行转义。 此功能的实现得益于 HTL 对 HTML 语法的理解。
 
@@ -224,7 +221,7 @@ use(function () {
 });
 ```
 
-初始示例然后会生成以下输出：
+初始示例会生成以下输出：
 
 ```xml
 <p>
@@ -253,14 +250,14 @@ use(function () {
 此外，放置在表达式中的变量的类型很重要：
 
 * **字符串：**
-   * **非空：**&#x200B;将字符串设置为属性值。
-   * **空：**&#x200B;完全删除属性。
+  * **非空：**&#x200B;将字符串设置为属性值。
+  * **空：**&#x200B;完全删除属性。
 
 * **数字：**&#x200B;将值设置为属性值。
 
 * **布尔型：**
-   * **true：**&#x200B;显示没有值的属性（作为布尔 HTML 属性）
-   * **false：**&#x200B;完全删除属性。
+  * **true：**&#x200B;显示没有值的属性（作为布尔 HTML 属性）
+  * **false：**&#x200B;完全删除属性。
 
 下面是布尔表达式如何允许控制布尔 HTML 属性的示例：
 
@@ -338,7 +335,7 @@ use(function () {
 });
 ```
 
-从那里，可以轻松地设想客户端 JavaScript 如何访问该属性并再次解析 JSON。 此方法将相应的 JavaScript 放入客户端库中，例如：
+由此，可以轻松想象客户端 JavaScript 如何访问该属性并再次解析 JSON。 例如，以下是要放入客户端库中的相应 JavaScript：
 
 ```javascript
 var elements = document.querySelectorAll("[data-json]");
